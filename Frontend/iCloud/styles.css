@@ -1,0 +1,288 @@
+*{
+    margin: 0;
+   
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        
+}
+
+nav{
+    height: 40px;
+    /*background-color: black;*/
+    background-color: white ; opacity: 95% ; 
+    width: calc(100vw-30px);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    backdrop-filter: blur;
+    
+}
+
+.icloud{
+    /*background-color: green;*/
+    height: 100%;
+    width: 3%;
+    float: left;
+}
+
+
+.logo_a {
+    /*background-color: red;*/
+    height: 100%;
+    width: 10%;
+    float: left;
+}
+
+.icloud_logo{
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 28px;
+}
+
+.logo_ke_side_Wala {
+    padding-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+.three_dots{
+    /*background-color: aqua;*/
+    height: 100%;
+    width: 4%;
+    float: right;
+    cursor: pointer;
+    
+}
+
+.dot {
+    margin-top: 18px;
+    height: 4px;
+    width: 4px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.login{
+    margin-top: 4%;
+    width: calc(100vw - 51%);
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    box-shadow: 0px 8px 10px gray,
+            -10px 8px 15px gray, 10px 8px 15px gray;
+    min-width: 414px;
+
+}
+
+.round_logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px ;
+}
+
+.logo_space{
+    padding-top: 50px;
+    width: 100%;
+    height: 22%;
+    /*background-color: gold;*/
+}
+
+.heading{
+    margin-top: 9%;
+    /*background-color: red;*/
+    text-align: center;
+    font-size: 15px;
+    cursor: default ;
+}
+
+.input{
+   /* background-color: black;*/
+    height: 10%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    text-align: center;
+}
+
+
+.login_id{
+    box-sizing: border-box;
+    padding-left: 12px;
+    width: 50% ;
+    height: 58%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl0CUatsHdweiQCUS7FkcjDXaNnjMqXIi4-LbZ02m38w&s);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: right;
+    background-position-x: 97%;
+    outline: none;
+    -webkit-transition: 0.5ms;
+}
+
+
+.login_id:focus{
+    outline: none;
+    border: 2px solid rgb(3, 104, 255);
+}
+
+.others{
+/*background-color: orange;*/
+height: 8%;
+font-size: 16px;
+color: gray;
+}
+
+.check{
+    margin-left: 38%;
+}
+
+.something{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+
+}
+
+.something a{
+    text-decoration: none;
+    color: rgb(26, 173, 223);
+}
+
+footer {
+    margin-top: 200px;
+    height: 80px ;
+    /*background-color: aqua;*/
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.062);
+    display: flex;
+    align-items: center;
+}
+
+
+.left{
+    /* background-color: orange; */
+    width: 33%;
+    height: 100%;
+    float: left;
+}
+
+.leftmost{
+    width: 18%;
+    /* background-color: purple; */
+    height: 100%;
+    float: left;
+}
+
+.info{
+    /*background-color: blue;*/
+    height: 100%;
+    width: 75%;
+    float: right;
+}
+
+.info a{
+    text-decoration: none;
+    color: gray;
+    font-size: 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+
+.center{
+    /*background-color: white;*/
+    width: 38%;
+    height: 100%;
+    float: left;
+}
+
+.right{
+    /*background-color: green;*/
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.right p {
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 11px;
+    color: gray;
+
+}
+
+@media screen and (max-width:759px) {
+    body {}
+
+    .login {
+        border: none;
+        box-shadow: none;
+    }
+
+    nav{
+        background-color: rgba(128, 128, 128, 0.11);
+    }
+    .icloud_logo{
+        position: fixed;
+        left : 15px
+    }
+
+    .logo_ke_side_Wala{
+        position: fixed;
+        top: 2px;
+        left: 55px;
+    }
+    .three_dots{
+        position: fixed;
+        right: 25px;
+    }
+
+    footer{
+        text-align: center;
+        height: fit-content;
+        line-height: 25px;
+    }
+    .left{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .leftmost{
+        width: 0;
+    }
+
+    .center{
+        width: 0;
+    }
+    .right{
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 50px;
+    }
+
+    .right p {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .three_dots{
+        min-width: 25px;
+    }
+}

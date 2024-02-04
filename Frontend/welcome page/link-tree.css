@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: cursive;
+    font-size: 20px;
+
+    /* visibility: hidden; */
+}
+
+.main{
+    height: calc(100vh - 60px);
+    background-image: url(https://cdn.discordapp.com/attachments/997762434318221353/997762491331379220/shattered-island.gif);
+    width: 100vw;
+    position: absolute;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-container{
+    /* background-color: lightcoral; */
+    height: 90vh;
+    width: 50%;
+    padding: 20px;
+
+
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    overflow: hidden;
+
+}
+
+.a , .f , .d{
+    float: left;
+}
+
+.b, .c , .e{
+    float: right;
+}
+
+.wlcm-container{
+    /* background-color: lightgreen; */
+    height: 90vh;
+    width: 50vw;
+}
+
+
+.welcome{
+    height: 90%;
+    position: relative;
+    top: 30px;
+    left: 30%;
+    animation: then 3s infinite linear;
+}
+
+
+.links{
+    background-color: black;
+    padding: 10px;
+    border: 2px double white;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+    height: 12%;
+    margin: 25px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 200px;
+    
+}
+
+
+.links:hover{
+    background-color: rgb(94, 132, 155);
+    color: black;
+}
+
+.soon{
+    background-color: rgb(163, 48, 48);
+}
+
+.inv{
+    display: none ;
+}
+
+
+
+@keyframes start {
+    from {
+        top: -100%;
+    }    
+
+    to{
+        top: 0;
+    }
+}
+
+@keyframes then {
+
+    0%{
+        top: 30px;
+    }
+
+    25%{
+        top: 10px;
+    }
+    
+    50%{
+        top: 30px;
+    }
+
+    75%{
+        top: 10px;
+    }
+
+    100%{
+        top: 30px;
+    }
+}
+
+
+@media screen and (max-width :450px) {
+
+        .main{
+            padding: 0;
+            display: block;
+            height: calc(100vh - 60px);
+        }
+
+        .wlcm-container {
+            width: 100vw;
+            height: 60vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+
+        .welcome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: auto;
+        }
+
+        .link-container{
+            display: inline-block;
+            margin-top: 40px;
+            height: 30vh;
+            width: 100%;
+            /* background-color: aliceblue; */
+            position: fixed;
+            bottom: 0;
+        }
+
+        .link-con{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .links{
+            display: inline-flex;
+            height: 70px;
+            width: 70px;
+            margin: 20px;
+            font-size: 10px;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .inv {
+            opacity: 0;
+        }
+
+}

@@ -1,0 +1,431 @@
+@font-face {
+    font-family: 'DIN Round Pro';
+    src: local('DIN Round Pro Medium'), local('DIN-Round-Pro-Medium'),
+        url('DINRoundPro-Medi.woff2') format('woff2'),
+        url('DINRoundPro-Medi.woff') format('woff'),
+        url('DINRoundPro-Medi.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DIN Round Pro';
+}
+
+.left-panel{
+    height: 100vh;
+    width: 260px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border-right: 1px solid #E5E5E5;
+    position: fixed;
+    top: 0;
+}
+
+.logo-div{
+    width: 100%;
+    height: 92px;
+    padding: 32px 0 30px 16px ;
+}
+
+.learn-div , .leader-div , .shop-div , .profile-div , .more-div{
+    /* background-color: green; */
+    height: 52px;
+    width: 100%;
+    padding: 8px 8px 0px 8px;
+    border-radius: 12px;
+    margin-bottom: 7px;
+
+}
+
+.left-panel-img-div {
+    /* background-color: aqua; */
+    width: fit-content;
+    margin-left: 6px;
+    height: 38px;
+    width: 32px;
+    float: left;
+}
+
+.left-panel img{
+    width: 32px;
+    height: 32px;
+}
+
+.profile-img{
+    border-radius: 50%;
+}
+
+.logo-div img {
+    width: 60%;
+}
+
+.left-panel-text {
+    box-sizing: border-box;
+    margin-left: 50px;
+    /* background-color: lightcoral; */
+    height: 70%;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 550;
+    padding: 8px 5px 2px 8px;
+    color: #777777;
+}
+
+.learn-div:active, .leader-div:active, .shop-div:active, .profile-div:active, .more-div:active {
+    background-color: #DDF4FF;
+    color: #5AB0F6;
+    border: 1px solid #84D8FF;
+}
+
+.learn-div:hover , .leader-div:hover , .shop-div:hover , .profile-div:hover , .more-div:hover {
+    background-color: #F7F7F7;
+    border : 1px #F7F7F7 solid;
+}
+
+/* <!--                   ---        MIDDLE           ---                   --> */
+
+.middle-panel{
+    width: 47%;
+    height: 100vh;
+    margin-left: 260px;
+    /* border-right: 1px solid #E5E5E5; */
+    padding: 22px 46px 22px 22px;
+    /* background-color: aqua; */
+    
+}
+
+.middle-panel-top {
+    background-color: #58CC02;
+    width: 101%;
+    height: 110px;
+    border-radius: 10px;
+    /* background-image: linear-gradient(90deg,  green , lightgreen); */
+    padding: 29px 10px 15px 18px;
+    text-align: left;
+    /* font-family: 'D-DIN', sans-serif;
+    font-family: 'D-DIN Condensed', sans-serif;
+    font-family: 'D-DIN Exp', sans-serif; */
+    font-size: 18px;
+    line-height: 18px;
+    font-family: 200;
+    color: white;
+}
+
+.practice , .top{
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    box-shadow: 1px 3px 1px #777777;
+    position: fixed;
+    top: 88vh;
+    background-color: white;
+}
+
+.top {
+    padding: 14px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 1px #777777;
+    left : 62%;
+    top: 89vh;
+}
+
+
+.unit{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.left {
+    /* background-color: aqua; */
+    width: 60%;
+    float: left;
+}
+
+.right{
+    /* background-color: yellow; */
+    width: 32%;
+    height: 74%;
+    float: right;
+    border-radius: 16px ;
+    border: 2px solid #9B7A01;
+    box-shadow: 1px 3px 1px gray;
+}
+
+.right-img{
+    /* background-color: yellow; */
+    width: 30px;
+    float: left;
+}
+.right img{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 24px;
+    width: 24px;
+    
+    /* background-color: lightcoral; */
+}
+.right-text {
+    padding: 15px 0 2px 0px;
+    /* background-color: aqua; */
+    height: 80%;
+    width: 120px;
+    float: right;
+}
+
+.right-text p {
+    display: flex;
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    font-weight: 600;
+    color: white;
+}
+
+.right-panel {
+    /* background-color: green; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 405px;
+}
+
+.right-panel-info{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 98%;
+    /* background-color: yellow; */
+    padding: 20px 5px 15px 10px ;
+}
+
+.nation {
+    height: 40px;
+    width: 110px;
+    /* background-color: lightcoral; */
+    padding-bottom: 5px;
+}
+
+.flag {
+    display: inline-block;
+    margin-top: 10px;
+    height: 30px;
+    width: 40px;
+    /* background-color: lightblue; */
+    background-image: url(https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg);
+    background-size: 36px; 
+    background-repeat: no-repeat;
+    /* background-position-y: -86px; */
+    overflow: hidden;
+}
+
+.flag-name{
+    position: relative;
+    top: -10px;
+    left: -3px;
+    /* background-color: aqua; */
+    display: inline-block;
+    height: 20px;
+    width: 60px;
+    font-size: 12px;
+    /* font-family: 'D-DIN', sans-serif;
+    font-family: 'D-DIN Condensed', sans-serif;
+    font-family: 'D-DIN Exp', sans-serif; */
+    font-weight: 800;
+    color : #777777
+}
+
+.fire ,.lingot{
+    display: inline;
+    /* background-color: lightblue; */
+    margin-top: 8px;
+    height: 30px;
+    width: 80px;
+}
+
+.fire img , .lingot img {
+    margin-top: 2px;
+    width: 23.33px;
+    height: 28px;
+}
+
+.fire-days , .lingot-num{
+    position:  relative;
+    top: -24px;
+    left : 30px;
+    font-size: 14px;
+    color : #FF4B4B;
+    font-weight: 550;
+}
+
+.fire-days{
+    color: #FF9600;
+}
+
+.right-panel-league{
+    margin-top: 10px;
+    border: 2px solid #E5E5E5;
+    border-radius: 15px;
+    width: 94%;
+    height: 160px;
+    padding: 20px;
+}
+
+.league-heading{
+    display: flex;
+    /* background-color: lightgreen; */
+    height: 30px;
+    width: 100%;
+    color: black;
+    justify-content: space-between;
+}
+
+.league-name{
+    margin-top: 2px;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.link{
+    position: relative;
+    top: 9px;
+    margin-top: 2px;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #1FC1FF ;
+    text-decoration: none;
+}
+
+.league-main{
+    /* background-color: chocolate ; */
+    width: 100%;
+    height: 100px;
+    padding: 20px 10px 0 5px;
+}
+
+.league-logo{
+    display: inline-block;
+    /* background-color: palegoldenrod; */
+    height: 60px;
+    width: 60px;
+}
+
+.league-text{
+    float: right;
+    /* background-color: hotpink; */
+    height: 80%;
+    width: 80%;
+    padding: 0 5px 0px 10px;
+    line-height: 30px;
+}
+.league-text span {
+    color: #58CC53;
+}
+.hii{
+    font-size: 17px;
+    font-weight: 700;
+    
+}
+
+.lolo{
+    color: #7F7F7F;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1px;
+}
+
+.right-panel-quest{
+    margin-top: 14px;
+    border: 2px solid #E5E5E5;
+    border-radius: 15px;
+    width: 94%;
+    height: 420px;
+    padding-top: 20px;
+}
+.right-panel-heading{
+    padding-left: 22px;
+    font-size: 22px;
+    font-weight: 700;
+    /* background-color: orange; */
+    width: 100%;
+    height: 30px;
+
+}
+
+.right-panel-1st , .right-panel-2nd {
+    height: 110px;
+    border-bottom: 2px solid #E5E5E5;
+    padding: 22px;
+}
+
+.right-panel-3rd{
+
+    height: 170px;
+    padding: 22px;
+
+}
+
+.quest-text {
+    float: right;
+    /* background-color: hotpink; */
+    height: 95%;
+    width: 80%;
+    padding: 0 5px 0px 10px;
+    line-height: 30px;
+    /* background-color: #58CC53; */
+}
+
+.progress {
+    margin-top: -10px;
+    display: inline-block;
+}
+
+.spinner-border{
+    margin: 50%;
+}
+
+
+
+@media screen and (min-width: 1160px) {
+    .small-img{
+        visibility: collapse;
+    }    
+}
+
+@media screen and (max-width:1159px) {
+        .left-panel-text{
+            visibility: hidden;
+        }
+        .big-img{
+            visibility: collapse;
+        }
+
+        .left-panel{
+            width: 100px;
+        }
+        .small-img{
+            position: absolute;
+            top: 30px;
+            left: 16px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .middle-panel{
+            margin-left: 100px;
+            width: 60%;
+        }
+
+        .middle-panel-top{
+            width: 80%;
+        }
+}
+
+

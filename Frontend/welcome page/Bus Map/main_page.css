@@ -1,0 +1,71 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.map{
+    width: 75%;
+    height: 100%;
+    background-color: lightblue;
+}
+
+.panel{
+    width: 25%;
+    height: 100%;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+}
+.greetings{
+    width: 100%;
+    height: 8%;
+    background-color: lightgreen ;
+}
+
+.selected_bus{
+    width: 100%;
+    height: 35%;
+    background-color: orange;
+    padding: 10px;
+}
+
+.bus_details{
+    height: 30%;
+    width: 100%;
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+.other_buses_div{
+    width: 100%;
+    height: 35%;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.other_bus{
+    width: 100%;
+    height: 30%;
+    background-color: lightsalmon;
+    border-radius: 10px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reminder{
+    width: 100%;
+    height: 22%;
+    background-color: darkslateblue;
+}

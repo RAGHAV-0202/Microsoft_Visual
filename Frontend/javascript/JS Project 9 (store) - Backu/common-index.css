@@ -1,0 +1,305 @@
+
+@font-face {
+    font-family: 'AmazonBold';
+    src: url(KFPk-9IF4FqAqY-.woff2);
+}
+@font-face {
+    font-family: 'AmazonThin';
+    src: url(pDxWAF1pBB0dzGB.woff2);
+}
+*{
+    font-family: AmazonThin;
+    /* overflow-x: hidden; */
+}
+
+.nav-bar{
+    background-color: #131921;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px 10px 8px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+.nav-bar div{
+    height: 100%;
+    margin-right: 2px;
+}
+
+.nav-bar div:hover {
+    border: 1px solid white;
+    /* border-radius: 10px; */
+}
+
+.logo{
+    /* background-color: lightcoral; */
+    height: 100%;
+    width: 10.5%;
+    overflow: hidden;
+    padding:  0 2px 0 0;
+}
+.logoIMG{
+    width: 92%;
+}
+
+.address{
+    /* background-color: lightgreen; */
+    width: 10%;
+    line-height: 15px;
+    padding: 2px;
+    text-align: center;
+}
+
+.address-1{
+    color: lightgray;
+    font-family: AmazonThin;
+    font-size: 0.75em;
+    display: block;
+    padding: 2px 0 0 10px;
+}
+
+.address-2{
+    padding: 0 0 5px 0;
+}
+.address-2 i {
+    transform: translateY(-3px);
+}
+.address-3{
+    color: white;
+    font-family: AmazonBold;
+    font-size: 0.9em;
+}
+
+
+.dropdown , .searchInput , .searchBTN{
+    margin-left: 10px;
+    height: 40px;
+    width: 50px;
+    /* padding: 2px 12px 2px 10px; */
+    outline: none;
+    border: 1px solid gray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 0.8em;
+
+}
+.searchInput{
+    width: 40%;
+    margin-left: 0px;
+    border-left: 0;
+    border-radius: 0 0 0 0;
+    font-size: 1em;
+    padding: 2px 0 2px 10px;
+}
+
+.searchBTN{
+    width: 45px;
+    margin-left: 0;
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+    background-color: #F3A847;
+}
+
+.languageDIV{
+    /* background-color: lightblue; */
+    margin-left: 5px;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    padding: 2px 0 0 8px;
+}
+.flag{
+    /* background-color: lightcoral; */
+    display: block;
+    width: 22px;
+    transform: translateY(2px);
+}
+.flag img {
+    width: 100%;
+    border-radius: 1px;
+}
+
+.EN{
+    font-family: AmazonBold;
+    color: white;
+    padding: 5px 0 0 2px;
+}
+
+.accountName{
+    text-align: left;
+    font-family: AmazonBold;
+}
+
+.account , .orders{
+    padding-top: 3px;
+}
+
+.orders{
+    width: 6%;
+}
+.returns{
+    padding-left: 4px ;
+}
+
+.cart{
+    font-family: AmazonBold;
+    color: white;
+    /* background-color: aqua; */
+    width: 9%;
+    padding-top: 7px;
+    padding-left: 8px;
+    margin-left: 2px;
+    overflow: hidden;
+}
+.cart i {
+    font-size: 1.87em;
+}
+
+.itemNum p{
+    font-size: 1.2em;
+    transform: translate(15px , -41px );
+    color: #DD7E07;
+}
+
+.categories{
+    background-color: #232F3E;
+    color: white;
+    height: 39px;
+    padding: 0 10px 0 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.categories div {
+    width: fit-content;
+    padding: 8px 9px;
+}
+
+
+.categories div:hover {
+    border: 1px solid white;
+
+}
+
+.allBTN{
+    font-family: AmazonBold;
+}
+
+.allBTN i {
+   font-size: 1.2em;
+   transform: translateY(2px);
+}
+
+.allCategory {
+    width: 365px ;
+    background-color: white;
+    position: fixed ;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+    
+    opacity: 0;
+    display: none;
+    scale: 0;
+
+    z-index: 100000;
+    overflow-x: hidden; 
+}
+.allCategory div{
+    border-top: 1px solid gray;
+}
+
+
+.user{
+    background-color: #232F3E;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 365px;
+}
+
+.exitBTN{
+    margin-right: 20px;
+    background-color: rgb(255, 0, 0);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fa-user{
+    /* background-color: white; */
+    /* border-radius: 50%;
+    width: 25px;
+    height: 25px; */
+    color: white;
+    margin-right: 15px;
+}
+
+.topics{
+    padding: 20px;
+}
+
+.topics h1 {
+    font-size: 1.3em;
+    font-family: AmazonBold;
+}
+
+.topics button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0s;
+}
+.fadeOut {
+    animation: 0.5s fadeOut backwards;
+    animation-delay: 0s;
+}
+
+@keyframes fadeIn {
+    from{
+        left: -365px;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        left: 0;
+        top: 0;
+    }
+
+    to {
+        scale: 0;
+        opacity: 0;
+        left: -365px;
+    }
+}

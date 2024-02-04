@@ -1,0 +1,277 @@
+@font-face {
+    font-family: ndot-47-inspired-by-nothing ;
+    src: url(ndot-47-inspired-by-nothing.otf) format("opentype");
+}
+
+@font-face {
+    font-family: mirror-82;
+    src: url(mirror\ 82.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+    
+}
+body{
+    z-index: 1;
+}
+
+.page-1 , .page-2, .page-3 , .page-4 , .page-5 , .page-6{
+    width: 100vw;
+    height: 95vh;
+    /* background-color: lightblue; */
+}
+
+.big-div{
+    width: 65vw;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+        /* background-color: lightblue; */
+}
+
+.small-div{
+    width: 35vw;
+    height: 100%;
+    /* background-color: #F4F4F2; */
+    float: right;
+    font-family: 'PT Mono', monospace;
+}
+
+
+.page-1 .big-div{
+    background-image: url(https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Alakazam_DA_-_2560x2040_87efc792-92ea-4d5f-838c-ac60237779c4_892x.jpg?v=1686655968);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-2 .big-div{
+    background-image: url(https://cdn.shopify.com/s/files/1/0586/3270/0077/files/hp-pc_892x.jpg?v=1670318592);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-4 .big-div{
+    background-image: url(https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear-stick-05_8479a094-c8f5-4df8-962e-0197a8e622ec_892x.jpg?v=1667542791);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-5 .big-div{
+    background-image: url(https://cdn.shopify.com/s/files/1/0586/3270/0077/files/android_14_2560x2040_26a22268-9b66-46a1-b336-34047b9d2f0f_892x.jpg?v=1683650574);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-6 .big-div{
+    background-image: url(https://cdn.shopify.com/s/files/1/0586/3270/0077/files/8Image_1280x1020_8ca243be-6c65-42fb-b867-d58582ab2ac8_892x.png?v=1658150052);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-3-video{
+    position: relative;
+    width: 150%;
+    left: -200px;
+}
+
+.nav-whole{
+    height: 30px;
+    padding: 8px 80px 1px 0;
+}
+
+.links{
+    color: white;
+    text-decoration: none;
+    font-family: ndot-47-inspired-by-nothing;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.other-link {
+    display: block;
+    color: black;
+    padding-left: 3%;
+    margin-top: 8px;
+}
+
+.writing-section{
+    /* background-color: lightblue; */
+    width: 100%;
+    height: 65%;
+    margin-top: 54%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.small-text{
+    /* background-color: gray; */
+    width: 100%;
+    height: 30px;
+}
+.first-text {
+    display: inline-block;
+    /* background-color: orange; */
+    height: 100%;
+    width: 35%;
+}
+.second-text{
+    display: inline-block;
+}
+
+.heading{
+    margin-top: 40px;
+    font-size: 60px;
+    font-family: mirror-82;
+    line-height: 50px;
+}
+
+.info{
+    /* background-color: gold; */
+    padding-top: 30px;
+    line-height: 35px;
+    font: 15px;
+}
+.learn-more-button{
+    width: 100%;
+    padding: 2px 37% 2px 37%;
+    background-color: #00285C;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.review{
+    width: 100%;
+    height: 45vh;
+    font-family: mirror-82;
+}
+
+.review-1, .review-2, .review-3{
+    height: 100%;
+    width: 33.3333%;
+    /* background-color: orange; */
+    float: left;
+    text-align: center;
+    padding: 93px 36px;
+    font-size: 25px;
+}
+
+.review-heading{
+    font-weight: bolder;
+}
+
+.foot{
+    background-color: #DCD7D2;
+    width: 100%;
+    height: 43vh;
+
+}
+
+.foot-part-1{
+    /* background-color: orange; */
+    width: 100%;
+    height: 80%;
+}
+
+.part-1, .part-2 , .part-3, .part-4 {
+    float: left;
+    height: 100%;
+    width: 17%;
+}
+
+.part-5{
+    width: 32%;
+    height: 100%;
+    float: right;
+    padding-left: 20px;
+}
+.foot-links{
+    font-family: ndot-47-inspired-by-nothing;
+    text-decoration: none;
+    color: rgb(99, 98, 98);
+    display: block;
+    font-size: 13px;
+    padding: 0 0 0 10px;
+    letter-spacing: 1px;
+}
+
+.first-link{
+    padding-top: 10px;
+    /* padding-bottom: 12px; */
+}
+
+.foot-part-2{
+    width: 100%;
+    height: 20%;
+    /* background-color: orange; */
+}
+
+.one{
+    height: 100%;
+    width: 40% ;
+    /* background-color: gold; */
+    float: left;
+}
+
+.one-one , .two-two {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.three-three{
+    width: 33.33%;
+    height: 100%;
+    float: right;
+}
+
+.two{
+    height: 100%;
+    width: 55%;
+    /* background-color: chartreuse; */
+    float: left;
+}
+.cc{
+    padding-top: 5%;
+    padding-left: 20%;
+}
+
+
+.three {
+    height: 100%;
+    width: 5%;
+    /* background-color: mediumpurple; */
+    float: left;
+        
+}
+
+.in{
+    padding-top: 70%;
+    text-decoration: underline;
+}
+
+
+.side-text{
+    font-family: ndot-47-inspired-by-nothing;
+    writing-mode: vertical-lr;
+    font-size: 100px;
+}
+
+.video-text{
+    position: relative;
+    top: 0;
+}
+
+.video{
+    position: absolute;
+    z-index: 1;
+}

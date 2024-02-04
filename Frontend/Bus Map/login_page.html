@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn - Bus Tracker</title>
+    <link rel="shortcut icon" href="   https://cdn-icons-png.flaticon.com/512/1068/1068631.png " type="image/x-icon">
+    <link rel="stylesheet" href="login_page.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+</head>
+<body>
+    <div class="left">
+        <div class="left_header heading"><p>Bus <span> Tracker</span></p></div>
+        <div class="left_content">
+            <div class="left_container">
+                <div class="bold heading">Log in</div>
+                <div class="login_form">
+                    <span><p>E-Mail address</p></span>
+                    <input class="email" type="email" placeholder="example@domain.com">
+                    <span><p>Password</p></span>
+                    <input class="password" type="password" placeholder="Enter Password"> 
+                    <p class="login_info"></p>
+                    <button class="sign_up_btn" onclick="login()">Login</button>
+                    <span class="center" ><p class="black"></p>Not registered yet ?<a class="login_link" href="signup_page.html"> Sign Up</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right_header">
+            <div class="button_div">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <a href="#" class="btn-other btn">About</a>
+            <a href="signup_page.html" class="btn-login btn">Sign Up</a>
+        </div>
+        <div class="right_content">
+            <div class="right_container"></div>
+        </div>
+    </div>
+    <script src="login_page.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'AmazonBold';
+    src: url(KFPk-9IF4FqAqY-.woff2);
+}
+
+@font-face {
+    font-family: 'AmazonThin';
+    src: url(pDxWAF1pBB0dzGB.woff2);
+}
+
+* {
+    font-family: AmazonThin;
+    /* overflow-x: hidden; */
+}
+
+.fullContainer{
+    width: 100vw;
+    height: calc(fit-content + 100px);
+    /* background-color: lightblue; */
+    padding: 60px 20px 0 20px ;
+    display: flex;
+    flex-direction: row;
+}
+
+.spaceForImage {
+    width: 40%;
+    height: calc(80% + 30px);
+    /* background-color: lightcoral; */
+    transform: translateY(-30px);
+    padding: 0px 5px 0 5px;
+}
+.spaceForImage p {
+    padding-left: 20px ;
+}
+.cate-div{
+    height: 10%;
+    width: 100%;
+    /* background-color: lightblue; */
+    color: gray;
+    font-size: 0.9em;
+}
+.image-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spaceForImage img{
+    width: 60%;
+    text-align: center;
+}
+
+.part2{
+    width: 35%;
+    height: 100%;
+    /* background-color: lightsalmon; */
+    padding: 10px 10px 0 15px;
+}
+
+
+.nameOfProduct{
+    padding-bottom: 15px;
+    font-family: AmazonThin;
+    font-size: 24px;
+}
+
+.checked{
+    color: rgb(230, 151, 4);
+}
+
+.numRate{
+    color: #2c87dd;
+        padding-left: 20px;
+}
+
+.fakeInfo{
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 5px;
+}
+
+.discount{
+    color: red;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.price{
+    font-size: AmazonBold;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+.details{
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.offers{
+    padding-top: 10px;
+    width: 100%;
+    /* background-color: lightgreen; */
+    height: fit-content;
+    padding-bottom: 15px ;
+    border-bottom: 1px solid gainsboro;
+}
+
+.offerlogo{
+    height: 30px;
+    width: 30px;
+    /* padding-right: 30px; */
+    display: inline-block;
+    background-image: url(https://m.media-amazon.com/images/G/31/A2I_CEPC/VSX/vsx_sprite_2x.png) ;
+    background-size: cover;
+    background-position-y: -30px;
+}
+#abcd{
+    display: inline-block;
+    transform: translateY(-9px);
+    padding-left: 10px;
+    font-family: AmazonBold;
+}
+
+.offer{
+    border-radius: 10px; 
+    height: 118px;
+    width: 154px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .3);
+    padding: 7px 10px;
+    word-wrap: normal;
+    /* line-height: 15px; */
+    font-size: 14px;
+    margin:  3.2px 8px 5px 1.6px;
+    
+    border-bottom: 1px solid gainsboro;
+}
+.hahah{
+    display: flex;
+    flex-direction: row;
+}
+
+.offer h6{
+    font-family: AmazonBold;
+    font-size: 14px;
+}
+
+
+.mrp{
+    /* color: gray; */
+    font-size: 0.9em;
+}
+
+.MRP{
+    text-decoration: line-through;
+}
+
+.otherDetails{
+    margin: 10px;
+    display: flex;
+    flex-direction: row ;
+    height: 70px;
+    /* background-color: lightblue; */
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 20px;
+}
+
+
+.od1{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #3A91A1;
+    padding-bottom: 30px;
+}
+
+.od1 img{
+    width: 35px;
+    height: 35px;
+    transform: translateX(60%);
+}
+
+.info{
+    padding: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+.info p{
+    display: inline-block;
+}
+.info-heading{
+    font-family: AmazonBold;
+    line-height: 0px;
+}
+
+.about{
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid gainsboro;
+}
+.about h6 {
+    font-family: AmazonBold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.price-order {
+    width: 242px;
+    height: 430px;
+    /* background-color: lightgreen; */
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    margin-left: 2%;
+    padding: 10px;
+}
+
+.price-order-1, .price-order-2 ,.price-order-3 , .price-order-4 , .price-order-5 , .price-order-6 {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+}
+.price-order-1{
+    height: 60px;
+    /* background-color: aqua; */
+    font-family: AmazonBold;
+}
+
+.price000{
+    color: #B32704;
+    font-size: 15px;
+}
+.price-order-2 {
+    height: 70px;
+    /* background-color: #FF91D3; */
+
+}
+.price-order-3 {
+    height: 40px;
+    /* background-color: #CAEF9F; */
+    display: flex;
+    align-items: center;
+}
+.price-order-3 i  ,.price-order-6 i {
+    padding-right: 20px;
+}
+
+.price-order-4 {
+    height: 100px;
+    /* background-color: #1E9389; */
+}
+.price-order-5 {
+    height: 100px;
+    /* background-color: #D2E2B5; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.price-order-5 button {
+    width: 90%;
+    padding: 5px 25px 5px 25px;
+    border-radius: 20px;
+    border: none;
+}
+
+.addCart {
+        background-color: #F7CA00;
+}
+
+.buy{
+    background-color: #FA8900;
+}
+
+
+.price-order-6 {
+    height: 40px;
+    /* background-color: #FECA68; */
+}
+.price-order-2 span {
+    color: #007842;
+}
+
+.price-order-4 span , .price-order-6 span , .price-order-3 span , .blue{
+    color: #2f8897;
+}
+
+.price-order-4 h6 {
+    color: #007842;
+    font-size: 18px;
+}

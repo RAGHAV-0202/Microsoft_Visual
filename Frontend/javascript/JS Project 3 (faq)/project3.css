@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@700&family=Rubik:wght@300&display=swap');
+/* font-family: 'Lora',serif;
+font-family: 'Montserrat',sans-serif;
+font-family: 'Rubik',sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(/images/faq-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7% 20% 0% 20%
+}
+
+.faq{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+
+    width: 100%;
+
+}
+
+h1{
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.first, .second , .third {
+    border-bottom: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    font-family: 'Lora', serif;
+    font-weight: 600;
+
+    transition: .5s;
+
+    font-size: 15px;
+}
+
+.hidden{
+    display: none;
+    padding: 0 15px 10px 15px;
+    margin: 0 10px 10px 10px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.block {
+    display: block;
+    padding: 0 15px 10px 15px;
+    margin: 0 10px 10px 10px;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#transition{
+    transition: .5s;
+}
+
+.fa-plus{
+    color: #037180;
+}
+
+.fa-minus{
+    color: #ef476b;
+}
+
+@media screen and (max-width : 759px) {
+    body{
+        padding: 15% 2% 0 2%;
+    }    
+}

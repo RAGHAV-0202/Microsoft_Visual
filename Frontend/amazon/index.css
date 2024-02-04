@@ -1,0 +1,279 @@
+ @import url('https://fonts.cdnfonts.com/css/amazon-ember');
+/**{
+    border: 1px red solid;
+}*/
+body {
+    margin: 0px;
+    background-color: rgba(128, 128, 128, 0.301);
+}
+
+nav {
+    width: 100vw;
+    height: 60px;
+    background-color: #0F1111;
+    padding-left: 0.3%;
+    padding-top: 0.2%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+nav div:hover {
+    border: 1px solid white;
+    border-radius: 3px;
+    border-width: 100%;
+    text-decoration: none;
+}
+
+
+.logo,
+.search, .en , .abcd{
+    width: 9.5%;
+    height: 80%;
+    margin-left: 0.8%;
+    margin-top: 0.3%;
+    float: left;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.address {
+    width: 9%;
+    height: 80%;
+    margin-left: 1%;
+    margin-right: 2%;
+    float: left;
+    padding: 0;
+    margin-top: 0.3%;
+    word-spacing: 1px;
+    text-align: center;
+    font: 1px;
+}
+
+.abc {
+    color: gray;
+    margin-top: 0;
+    font: 1px;
+
+}
+
+.address img {
+    height: 40%;
+    margin-top: 0;
+}
+
+.address p {
+    display: inline;
+    color: white;
+}
+
+.all {
+    background-color: white;
+    width: 3.5%;
+    height: 65%;
+    margin-left: 0.1%;
+    margin-top: 0.65%;
+    float: left;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    border-right: solid 0.5px gray;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.all p {
+    float: left;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    margin-left: 15%;
+
+}
+
+.all:hover{
+    border: none;
+    background-color: gray;
+}
+
+.searc-icon:hover{
+    border: none;
+    background-color: rgb(160, 160, 4);
+}
+
+.search:hover{
+    text-decoration: none;
+     border: none;
+}
+
+.search {
+    background-color: white;
+    margin-left: 0;
+    margin-top: 0.65%;
+    width: 38.1%;
+    height: 65%;
+    text-align: center;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.search p {
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 5%;
+}
+
+.searc_icon {
+    background-color: yellow;
+    width: 3.5%;
+    height: 65%;
+    margin-top: 0.65%;
+    float: left;
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.en {
+    text-align: center;
+    width: 6%;
+    margin-left: 0.2%;
+    color: white;
+    font-weight: bold;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.flag{
+    height: 15px;
+    margin-top: 15%;
+}
+
+
+.account{
+    width: 11%;
+    height: 80%;
+    color: white;
+    float: left;
+    margin-top: 0.4%;
+    padding-left: 1%;
+    padding-top: 0.3%;
+}
+
+.ho{
+    text-align: left;
+    font-size: 80%;
+}
+
+.orders {
+    width: 5%;
+    height: 80%;
+    color: white;
+    float: left;
+    text-align: left;
+    margin-left: 0.5%;
+    margin-top: 0.4%;
+}
+
+
+
+.cart {
+    width: 7%;
+    height: 80%;
+    margin-left: 1%;
+    margin-top: 0.4%;
+    color: white;
+    float: left;
+    text-align: left;
+}
+
+.cart_img{
+    width: 120%;
+}
+
+
+.header{
+    width: 100vw;
+    height: 35px;
+    background-color: #232f3e;
+}
+
+.header a{
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    color: white;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 0.8em;
+    height: 100%;
+    padding: 0.8% 0.8% 0 0.8%;
+    
+}
+.header a:hover{
+    border:1px solid white;
+    border-radius: 2px;
+    width: auto;
+    border-width: 100%;
+    
+}
+
+.bhola{
+    width: 100vw;
+}
+
+.items{
+    width: 100vw;
+    z-index: 2;
+    margin-top: -304px;
+}
+
+.items div{
+    display: inline-block;
+    margin-left: 1.8%;
+}
+
+.first, .second, .third , .forth{
+    background-color: aqua;
+    width: 22.2%;
+    height: 300px;
+
+}
+
+.second {
+    background-color: red;
+}
+
+.third {
+    background-color: green
+}
+
+.forth {
+    background-color: rgb(238, 26, 185)
+}
+
+.items_2{
+    width: 100vw;
+}
+
+
+.ad, .second_second, .third_third{
+    margin-left: 1.8%;
+    height: 200px;
+    margin-top: 1.8%;
+    display: inline-block;
+}
+
+.ad{
+    width: 46.5%;
+    background-color: purple;
+}
+
+.second_second{
+    background-color: orange;
+    width: 22.4%;
+}
+
+.third_third{
+    background-color: yellow;
+    width: 22.4%;
+}

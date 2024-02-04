@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="stylesheet" href="P7 Weather.Css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1163/1163763.png" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0RWB9V9M7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L0RWB9V9M7');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <i class="fa-duotone fa-location-dot fa-shake " style="--fa-animation-iteration-count: 1"></i>
+
+            <input type="text"  placeholder="Enter Location">
+
+            <button onclick="random()" class="randomCity"><i class="fa-solid fa-block-question fa-shake " style="--fa-animation-iteration-count: 1"></i></button>
+
+            <button onclick="search()" class="searchBTN"><i class="fa-solid fa-magnifying-glass fa-shake " style="--fa-animation-iteration-count: 1"></i></button>
+        </div>
+
+        <div class="not-found">
+            <img src="weather images/404.png" alt="error code : 404 NOT FOUND">            
+            <p> Oops, location not found</p>
+        </div>
+
+        <div class="timeDIV">
+            <p><span class="time"></span> <Br>  <span class="date"></span></p>
+        </div>
+
+        <Div class="weather-box">
+            <img class="weather-img" src="">
+            <p class="location"></p>
+            <p class="temperature"></p>
+            <p class="description"></p>
+        </Div>
+
+        <Div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </Div>
+    </div>
+    <script src="P7 Weather.js"></script>
+    <script src="P7 Cities.js"></script>
+</body>
+
+</html>

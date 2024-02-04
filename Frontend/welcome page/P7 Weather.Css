@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&family=Rubik:wght@300&display=swap');
+/* font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif; */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #004158; */
+    background-image: url(https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    font-family: 'Roboto', sans-serif;
+    width: 400px;
+    height: 105px;
+    /* height: 605px; */
+    border-radius: 20px;
+    /* background-color: white; */
+    background: rgb(186, 191, 255);
+    background: linear-gradient(0deg, rgba(186, 191, 255, 1) 0%, rgba(105, 121, 160, 1) 100%, rgba(2, 31, 38, 1) 100%);
+    padding: 28px 32px;
+    overflow: hidden;
+    transition: 0.6s ease-out;
+
+}
+
+.search{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    
+    /* border: 1px solid gray;
+    border-radius: 10px; */
+}
+.search button {
+    outline: none;
+    border: none;
+    background-color: lightblue;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+.search button:hover{
+    color: #fff;
+    background-color: #06283D;
+}
+
+.search input{
+    width: 80%;
+    padding: 8px 20px 8px 20px;
+    outline: none;
+    border: none;
+    color: #06283D;
+    font-size: 24px;
+    text-transform: capitalize;
+    border-radius: 15px;
+    position: relative;
+    left: 5%;
+}
+.fa-location-dot{
+    right: 1%;
+}
+.randomCity{
+    position: relative;
+    right: 6%;
+}
+
+.weather-box{
+    width: 100%;
+    height: 75%;
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.not-found {
+    margin-top: 20px;
+    height: 70%;
+    text-align: center;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.not-found img{
+    width: 78%;
+}
+
+.not-found p {
+    color: #862830;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.timeDIV{
+    scale: 0;
+    opacity: 0;
+    /* background-color: orange; */
+    font-size: 0.8em;
+    width: 100%;
+    color: black;
+    padding: 10px 0 2px 2px;
+    text-align: left;
+    transform: translateX(-5%);
+}
+.time{
+    font-size: 1.1em;
+}
+.date{
+    font-size: 0.9em;
+}
+.weather-img {
+    width: 250px;
+    padding: 0px 0px 10% 0px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.description {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+}
+
+
+.weather-details{
+    height: 70px;
+    /* background-color: orange; */
+    width: 100%;
+    margin-top: 20px;
+    /* padding-top: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.humidity , .wind{
+    /* background-color: lightcoral; */
+    width: 40%;
+    height: 60px;
+    display: block;
+}
+
+
+.humidity i , .wind i{
+    font-size: 28px;
+    transform: translateY(50%);
+    float: left;
+    padding: 1px 5px 0px 2px;
+}
+
+.text{
+    float: left;
+    transform: translate(5% , 20%);
+    font-weight: 500;
+}
+
+span{
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+
+.temperature {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.weather-box , .weather-details {
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+.location{
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+
+@keyframes fadeIn {
+    to {
+        scale : 1;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@media screen and (max-width : 450px) {
+    .container{
+        width: 100%;
+        height: 105px;
+        border-radius: 0;
+        min-width: 367px;
+        padding-bottom: 60px;
+    }    
+
+    .timeDIV{
+        padding-bottom: 20px;
+    }
+
+    
+}

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&family=Rubik:wght@300&display=swap');
+/* font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif; */
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.calculator-div{
+    background-color: #3a4452;
+    padding: 10px 10px 15px 10px;
+    width: 280px;
+    height: 410px;
+    border-radius: 15px
+}
+.screen{
+    width: 100%;
+    height: 80px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid red;
+}
+.screen .display {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px 0 5px;
+    outline: none;
+    overflow: hidden;
+    border: none;
+    cursor: default;
+
+    color: white;
+    font-weight: 600;
+    text-align: right;
+    font-size: 1.5em;
+}
+.storedValue , .operatorDISPLAY {
+    width: calc(100% - 15px);
+    text-align: right;
+    background-color: transparent;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+}
+.operatorDISPLAY{
+    width: 10px;
+    text-align: right;
+    color: lightgreen;
+}
+
+.buttons{
+    width: 100%;
+    height: calc(100% - 80px);
+    /* background-color: lightblue; */
+    padding: 5px 2px 2px 2px;
+}
+
+.functionBTN , .BTN {
+    width: 51px;
+    height: 51px;
+    margin: 5px;
+    outline: none;
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    box-shadow: -2px -2px 6px gray;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.functionBTN{
+    color: lightgreen;
+}
+.equals {
+    width: 115px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        align-items: center; 
+            background-color: #3a4452;
+     }
+
+    .calculator-div {
+        width: 100%;
+        height: max-content;
+        max-height: calc(100vh - 40px);
+        padding: 20px;
+        border-radius: none;
+        transform: translateY(-10%);
+    }
+
+    .screen {
+        height: 150px;
+        font-size: 2em;
+    }
+
+    .operatorDISPLAY , .storedValue {
+        font-size: 0.8em;
+    }
+
+    .storedValue{
+        width: 85%;
+        color: lightblue;
+    }
+    .operatorDISPLAY{
+        width: 10%;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        height: calc(100% - 150px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .row-1,
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .functionBTN,
+    .BTN{
+        width: calc(25% - 10px);
+    }
+    .equals {
+        width: calc(50% - 10px);
+    }
+}
+
+
+/* 
+bs iske bad back */
+
+
+
+
+
+/* @media screen and (max-width : 400px) {
+
+    .body{
+        height: 100vh;
+        width: 100vw;
+    }
+    .calculator-div{
+        width: 100%;
+        height: 100%;
+    }
+
+    .screen{
+        height: 35%;
+        font-size: 2em;
+    }
+
+    .storedValue{
+        width: 90%;
+        font-size: 1em;
+
+    }
+    .operatorDISPLAY{
+
+        width: 5%;
+    }
+
+    .buttons {
+        width: 100%;
+        height: 100%;
+
+        padding: 5px 2px 2px 2px;
+    }
+
+    button{
+        text-align: center;
+    }
+
+    .functionBTN , .BTN {
+    padding: 7%;
+    margin: 10px;
+    outline: none;
+    font-size: 1em;
+    font-weight: 700;}
+
+    .buttons {
+    width: 100%;
+    height: 100%;
+
+    padding: 5px 2px 2px 2px;
+} */
+
+

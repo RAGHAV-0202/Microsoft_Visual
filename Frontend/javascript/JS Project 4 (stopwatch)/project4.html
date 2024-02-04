@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/ab7766b91e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="project4.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@46,400,0,0" />
+</head>
+<body>
+    <h1 id='heading'>Stopwatch</h1>
+    <div class="container">
+        <div class="time-div">
+             <h1 id="time" class="time started"><span id = "main-time">00:00:00</span><span id="miliS">00</span> </h1>
+             <h6>Hours : Minutes : Seconds</h6>
+        </div>
+
+        <div class="buttons">
+
+            
+            <button onclick="start()" id="start" class="start"><i class="fa-solid fa-play fa-shake" style="--fa-animation-iteration-count: 1"></i></button>
+
+
+            <button onclick="stop()" id="reset" class="reset"><i class="fa-solid fa-arrow-rotate-left fa-shake" style="--fa-animation-iteration-count: 1"> </i></button>
+        </div>
+    </div>    
+
+    <script src="project4.js"></script>
+</body>
+</html>

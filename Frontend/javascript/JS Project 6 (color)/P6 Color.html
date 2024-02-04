@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Gen</title>
+    <link rel="stylesheet" href="P6 Color.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <!-- <script src="https://kit.fontawesome.com/ab7766b91e.js" crossorigin="anonymous"></script> -->
+    
+</head>
+<body>
+    
+    <button class="next" onclick="next()">Refresh</button>
+    <div class="container">
+        <div class="color1">
+            <div class="color1_code">
+                <button class="lock1 lock unlocked" onclick="lockBTN1()" >
+                    <i class="fa-regular fa-unlock fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>  
+                </button>
+                <p class='color_1_js'>#ADD8E6</p> 
+                <button class="copy" onclick="copy1()" >
+                    <i class="fa-light fa-copy fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                    <p class="tooltip1" id="tooltip">Click to Copy</p>
+                </button> 
+            </div>
+        </div>
+        <div class="color2">
+            <div class="color2_code">
+                <button class="lock2 lock unlocked" onclick="lockBTN2()">
+                    <i class="fa-regular fa-unlock fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                </button>
+                <p class="color_2_js">#F08080 </p>
+                <button class="copy" onclick="copy2()">
+                    <i class="fa-light fa-copy fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white "></i>
+                    <p class="tooltip2" id="tooltip">Click to Copy</p>
+                </button>
+            </div>
+        </div>
+        <div class="color3">
+            <div class="color3_code">
+                <button class="lock3 lock unlocked" onclick="lockBTN3()">
+                    <i class="fa-regular fa-unlock fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                </button>
+                <p class="color_3_js">#FFA07A </p>
+                <button class="copy" onclick="copy3()">
+                    <i class="fa-light fa-copy fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                    <p class="tooltip3" id="tooltip">Click to Copy</p>
+                </button>
+            </div>
+        </div>
+        <div class="color4">
+            <div class="color4_code">
+                <button class="lock4 lock unlocked" onclick="lockBTN4()">
+                    <i class="fa-regular fa-unlock fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                </button>
+                <p class="color_4_js">#20B2AA  </p>
+                <button class="copy" onclick="copy4()">
+                    <i class="fa-light fa-copy fa-lg fa-shake" style="--fa-animation-iteration-count: 1 ; color:white"></i>
+                    <p class="tooltip4" id="tooltip">Click to Copy</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="P6 Color.js"></script>
+</body>
+</html>
+
+ <!-- <i class="fa-regular fa-copy fa-shake" style="--fa-animation-iteration-count: 1"></i> -->

@@ -1,0 +1,125 @@
+body{
+    background-color: black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 30%;
+    padding-right: 10%;
+
+
+}
+
+
+.home_button{
+    background-color: black;
+    color: white;
+    padding: 1%;
+    border-radius: 100%;
+}
+
+.big_container {
+    width: 50%;
+    height: 90%;
+    background-color: white;
+    border-radius: 5%;
+    padding-top: 7% ;
+    
+
+    border: solid 6px;
+    border-color: goldenrod
+}
+.container{
+    width: 90%;
+    height: 80%;
+    background-image: url(/images/wallpaper.jpg);
+    background-size: cover;
+
+
+
+}
+
+p{
+    display: inline;
+    font-size: 100%;    
+    margin-top: 0;
+    color: white;
+}
+
+img{
+
+    height: 50%;
+    display: inline;
+    width: 20%;
+}
+
+nav{
+    height: 60px;
+    display: block;
+
+}
+
+.inner{
+    width: 33.33333333333%;
+    height: 100%;
+    float: left;
+    text-align: left;
+    word-spacing: 10%;
+}
+
+.inner_2 {
+    width: 33.33333333333%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.inner_3 {
+    width: 26.4%;
+    height: 100%;
+    float: left;
+    text-align: right;
+
+}
+
+.inner_4 {
+    width: 6.9%;
+    height: 100%;
+    float: right;
+    text-align: right;
+   
+}
+
+.battery_indic{
+    width: 100%;
+    height: 100%;
+}
+
+.battery_perc{
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.info{
+    margin: 0px;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 400%;
+    word-spacing: 2%;
+    color: white;
+}
+
+.day{
+    margin-top: 4%;
+    font-size: 40% ;
+}
+.test{
+    display: block;
+    line-height: 4px;
+}
+
+.unlock{
+    text-align: center;
+    margin-top: 80%;
+    margin-bottom: 20%;
+    padding-bottom: 4%;
+}
+

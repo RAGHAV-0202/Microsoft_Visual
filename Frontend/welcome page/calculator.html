@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <script src="https://kit.fontawesome.com/ab7766b91e.js" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0RWB9V9M7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L0RWB9V9M7');
+    </script>
+</head>
+<body>
+    <div class="calculator-div">
+        <div class="screen">
+            <input type ="text" class="storedValue" readonly >
+            <input type="text" class="operatorDISPLAY" readonly>
+            <input type="text" placeholder="0" class="display"  readonly>
+        </div>
+        <div class="buttons">
+            <div class="row-1">
+                <button class="functionBTN" value="AC" onclick="AC()">AC</button>
+                <button class="functionBTN" value="DE" onclick="DE()">DE</button>
+                <button class="functionBTN" onclick="dot()" value="." onclick="dot()">.</button>
+                <button class="functionBTN" id="ao" value="/" >&divide;</button>
+            </div>
+            <div class="row-2">
+                <button class="BTN" value="7" onclick="seven()">7</button>
+                <button class="BTN" value="8" onclick="eight()">8</button>
+                <button class="BTN" value="9" onclick="nine()">9</button>
+                <button class="functionBTN" id="ao" value="*" > &Cross;</button>
+            </div>
+            <div class="row-3">
+                <button class="BTN" value="4" onclick="four()">4</button>
+                <button class="BTN" value="5" onclick="five()">5</button>
+                <button class="BTN" value="6" onclick="six()">6</button>
+                <button class="functionBTN" id="ao" value="-" >&minus;</button>
+            </div>
+            <div class="row-4">
+                <button class="BTN" value="1" onclick="one()">1</button>
+                <button class="BTN" value="2" onclick="two()">2</button>
+                <button class="BTN" value="3" onclick="three()">3</button>
+                <button class="functionBTN" id="ao" value="+" >&plus;</button>
+            </div>
+            <div class="row-5">
+                <button class="BTN" value="00" onclick="doubleZero()">00</button>
+                <button class="BTN" value="0" onclick="zero()">0</button>
+                <button class="functionBTN equals" value="=" onclick="equal()">&equals;</button>
+            </div>
+        </div>
+    </div>
+<script src="calculator.js"></script>
+</body>
+</html>

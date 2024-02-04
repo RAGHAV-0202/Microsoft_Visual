@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+.full-page{
+    background-image: url(https://www.sw-india.com/wp-content/uploads/2023/01/forest-trees-northwestisbest-exploress.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    padding: 10%;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+
+}
+
+
+.btn{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+
+    position: fixed;
+    bottom: 20%;
+
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.dark {
+    filter: brightness(70%);
+}
+
+.model{
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    font-size: 13px;
+    padding: 12px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    filter: brightness(100%);
+
+    animation-name: modal ;
+    animation-duration: .4s;
+
+
+    display: none;
+}
+
+.close-btn{
+    margin-left: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    bottom: -3px;
+
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+    filter: brightness(50%);
+}
+
+@keyframes modal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+    
+}

@@ -1,0 +1,5 @@
+let myString = myArray.join(', ');   array to string
+let charArray = myString.split('');  string to characters
+let uniqueArray = [...new Set(myArray)];  gives uniques from the array
+
+let alphabeticString = myString.replace(/[^a-zA-Z]/g, '');   Remove non alphabets from string
