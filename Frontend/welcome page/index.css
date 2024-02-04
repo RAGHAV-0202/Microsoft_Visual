@@ -453,5 +453,45 @@ input:checked+.slider:before {
         border-radius: 0;
         width: 100%;
         margin: 0;
+        padding-bottom: 100px;
+    }
+
+    .mtop{
+        display: flex;
+        flex-direction: column;
+    }
+    .opt{
+        width: 100%;
+        height: max-content;
+        padding-bottom: 10px;
+        flex-direction: row;
+        margin-bottom: 12px;
+    }
+    .mobile{
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    .mbottom{
+        padding: 0 15% 0 15%;
+    }
+    .add-ons{
+        height: max-content;
+        padding-bottom: 12px;
+    }
+    .service_desc{
+        padding-left: 10px;
+    }
+    .s3{
+        padding-right: 60px;
+    }
+    .s1 h3{
+        font-size: 24px;
+    }
+    .s1 input{
+        margin-bottom: 20px;
+    }
+    .s2 .top p {
+        padding-bottom: 20px;
     }
 }
