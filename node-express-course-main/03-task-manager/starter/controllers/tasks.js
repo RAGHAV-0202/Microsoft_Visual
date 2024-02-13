@@ -1,13 +1,21 @@
+const Task = require('../models/task')
 const express = require("express")
 const contoller = express()
 
-const getAllTasks = (req,res)=>{
-    res.send(" <style> body{padding : 0 ; margin : 0 ; box-sizing : border-box ; display : flex ; align-items : center; justify-content : center ; background-color : lightblue; } </style>    <body> <h1> Get all tasks </h1> </body> ")
-}
+const getAllTasks = (req, res) => {
+    Task.find({}, (err, tasks) => {
+        res.json(tasks)
+    });
+};
 
-const createTask = (req,res)=>{
-    // res.send(" <style> body{padding : 0 ; margin : 0 ; box-sizing : border-box ; display : flex ; align-items : center; justify-content : center ; background-color : lightblue; } </style>    <body> <h1> Create Task </h1> </body> ")
-    res.json(req.body)
+const createTask = async (req,res)=>{
+    try{
+        const task = await Task.create(req.body)
+        res.status(201).json({task})
+    }catch(err){
+      res.status(400).json("must provide name")
+    }
+    
 }
 
 const getTask = (req,res)=>{
@@ -18,9 +26,21 @@ const updateTask = (req,res)=>{
     res.send("Update Task")
 }
 
-const deleteTask = (req,res)=>{ 
-    res.send("Delete task")
-}
+const deleteTask = (req, res) => {
+    const taskId = req.params.id; // Assuming the task ID is passed as a route parameter
+
+    Task.findByIdAndDelete(taskId, (err, deletedTask) => {
+        if (err) {
+            console.error("Error deleting task:", err);
+            res.status(500).json({ error: "Internal Server Error" });
+        } else if (!deletedTask) {
+            res.status(404).json({ error: "Task not found" });
+        } else {
+            res.json({ message: "Task deleted successfully", deletedTask });
+        }
+        
+    });
+};
 
 
 module.exports = {
