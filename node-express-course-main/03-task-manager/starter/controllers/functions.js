@@ -50,9 +50,7 @@ const updateTask = async (req,res)=>{
     }
 }
 
-const deleteTask = async (req, res) => {
-    // const taskId = req.params.id; // Assuming the task ID is passed as a route parameter   
-    
+const deleteTask = async (req, res) => {    
     try {
         const taskID = req.params.id
         const task = await Task.findOneAndDelete({_id : taskID})
@@ -63,9 +61,7 @@ const deleteTask = async (req, res) => {
     } catch (error) {
         res.status(200).json({error : error})
     }
-    
 };
-
 
 module.exports = {
     getAllTasks , createTask , getTask , updateTask , deleteTask
