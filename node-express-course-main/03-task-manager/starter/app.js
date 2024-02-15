@@ -1,4 +1,3 @@
-require('./db/connect')
 const express = require('express');
 const app = express()
 const tasks = require('./routes/tasks')
@@ -9,6 +8,7 @@ require('dotenv').config()
 // app creates routes , routes sends the data in the form of controller and controller has the main content
 //middleware
 app.use(express.json())
+app.use(express.static('./public'))
 
 app.get("/" ,(req,res)=>{
     res.send("<h1>Task Manager app</h1>")
