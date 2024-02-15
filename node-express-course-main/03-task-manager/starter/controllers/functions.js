@@ -18,7 +18,6 @@ const createTask = async (req,res)=>{
     }catch(err){
       res.status(400).json("must provide name")
     }
-    
 }
 
 const getTask = async (req,res)=>{
