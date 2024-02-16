@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express()
-const tasks = require('./routes/tasks')
+const tasks = require('./routes/routes')
 const connectDB = require("./db/connect")
 require('dotenv').config()
 
+const notFound = require("./Middleware/not-found")
 
 // app creates routes , routes sends the data in the form of controller and controller has the main content
 //middleware
+
 app.use(express.json())
 app.use(express.static('./public'))
 
@@ -15,7 +17,7 @@ app.get("/" ,(req,res)=>{
 })
 
 app.use("/api/v1/tasks" , tasks)
-
+app.use(notFound)
 const start = async () =>{
     try{
         await connectDB(process.env.MONGO_URI)
@@ -26,16 +28,3 @@ const start = async () =>{
 }
 
 start()
-
-
-
-
-
-
-
-
-//app.get('api/v1/tasks')          - get all the tasks
-//app.post('api/v1/tasks')         - create a new task
-//app.post('api/v1/tasks/:id')     - get single task
-//app.patch('api/v1/tasks/:id')    - update task
-//app.delete('api/v1/tasks/:id')   - delete task
