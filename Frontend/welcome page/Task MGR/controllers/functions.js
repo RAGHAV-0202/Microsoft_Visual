@@ -3,7 +3,7 @@ const express = require("express")
 const contoller = express()
 const asyncWrapper = require("../Middleware/async")
 
-const getAllTasks = asyncWrapper( async (req, res,next) => {
+const getAllTasks = asyncWrapper( async (req, res) => {
     const tasks = await Task.find({})
     res.status(200).json({amount : tasks.length , tasks})
 });
@@ -13,15 +13,11 @@ const createTask = asyncWrapper( async (req,res)=>{
     res.status(201).json({task})
 })
 
-const getTask = asyncWrapper( async (req,res,next)=>{
+const getTask = asyncWrapper( async (req,res)=>{
     const {id:taskID} = req.params
     const task = await Task.findOne({_id : taskID});
     if(!task){
-        const error =  new Error("not found");
-        error.status = 404 
-        return next(error)
         return res.status(404).json({msg : "No task with that id found"})
-        
     }
     res.status(200).json({task})
 })
