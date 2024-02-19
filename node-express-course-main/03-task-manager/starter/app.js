@@ -6,6 +6,8 @@ require('dotenv').config()
 const errorHandler = require("./Middleware/error")
 const notFound = require("./Middleware/not-found")
 
+const port = process.env.PORT || 3000
+
 // app creates routes , routes sends the data in the form of controller and controller has the main content
 //middleware
 
@@ -22,7 +24,7 @@ app.use(errorHandler)
 const start = async () =>{
     try{
         await connectDB(process.env.MONGO_URI)
-        app.listen(5000,()=>{console.log("Listening on the port 5000.")})
+        app.listen(port,()=>{console.log(`Listening on the port ${port}.`)})
     }catch(error){
         console.log(error)
     }
