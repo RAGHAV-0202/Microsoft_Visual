@@ -133,8 +133,12 @@ const products = [
 ]
 
 
-const getAllProducts = (req,res)=>{
+const getAllProducts = async (req,res)=>{
+    res.status(200).json({msg : 'products route'})
+}
+
+const getAllProductsStatic = async (req,res)=>{
     res.status(200).json({Products : products})
 }
 
-module.exports = getAllProducts
+module.exports = {getAllProductsStatic , getAllProducts}
