@@ -17,4 +17,4 @@ const createProduct = async (req,res)=>{
     res.status(201).json(product)
 }
 
-module.exports = {getAllProductsStatic , getAllProducts , createProduct}
+module.exports = {getAllProductsStatic , getAllProducts , createProduct} 
