@@ -2,7 +2,7 @@ const express = require("express")
 
 
 const function1 = (req,res)=>{
-    res.send("hello")
+    res.status(200).json("hii")
 }
 
 const function2= (req,res)=>{

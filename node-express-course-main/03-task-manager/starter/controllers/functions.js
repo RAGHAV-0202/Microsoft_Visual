@@ -1,6 +1,6 @@
 const Task = require('../models/task')
 const express = require("express")
-const contoller = express()
+const controller = express()
 const asyncWrapper = require("../Middleware/async")
 
 const getAllTasks = asyncWrapper( async (req, res,next) => {
