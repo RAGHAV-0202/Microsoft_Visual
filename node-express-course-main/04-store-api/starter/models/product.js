@@ -23,7 +23,7 @@ const Schema = new mongoose.Schema({
     },
     company : {
         type : String,
-        enum : ['ikea' , 'liddy' , 'caressa' , 'marcos' , "apple"],
+        
     }
 })
 
