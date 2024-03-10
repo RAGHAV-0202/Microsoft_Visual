@@ -1,16 +1,19 @@
 #include <stdio.h> 
 
 int main(){
-    int n ; 
-    printf("enter : ");
-    scanf("%d" , &n);
-
-    for(int i = 2 ; i <= n/2 ; i++ ){
-        if(n % i == 0){
-            printf("composite");
-            return 0;
+    int sum = 0 ; 
+    // checking perfect numbers
+    for(int i = 1 ; i <= 1000000000; i++){
+        sum = 0 ; 
+        for(int j = 1 ; j <= i / 2 ; j++){
+            if(i%j == 0){
+                sum = sum + j ; 
+            }
+        }
+        printf("i = %d , sum = %d\n" , i , sum);
+        if(sum == i ){
+            printf("%d," , i); 
         }
     }
-    printf("prime");
     return 0 ;
 }
