@@ -4,7 +4,7 @@ const mainBox = document.querySelector(".main-box");
 
 async function display(filters){
     try {
-        const response = await fetch(`http://localhost:5000/api/v1/products/`);
+        const response = await fetch(`/api/v1/products/`);
         const data = await response.json();
         console.log(data)
         data.products.forEach(product => {
