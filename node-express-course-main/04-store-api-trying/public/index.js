@@ -28,7 +28,7 @@ function search(){
 let data ; 
 async function display_new(filters){
     try{
-        const response = await fetch(`http://localhost:5000/api/v1/products/static?${filters}`);
+        const response = await fetch(`/api/v1/products/static?${filters}`);
         data = await response.json();
         console.log(data)
         if(data.number == 0){
