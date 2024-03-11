@@ -1,0 +1,50 @@
+*{
+    bottom: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main-box{
+    width: 60%;
+    height: max-content;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    align-items: center;
+}
+h1{
+    margin-bottom: 20px;
+}
+.filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+button{
+    height: 20px;
+    width: 40px;
+    padding: 3px;
+    margin-left: 20px;
+}
+
+.product_div{
+    height: auto;
+    width: 80%;
+    background-color: lightgreen;
+    margin: 10px;
+    padding: 20px;
+}
+
