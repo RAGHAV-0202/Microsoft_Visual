@@ -40,6 +40,13 @@ button{
     margin-left: 20px;
 }
 
+.input{
+    padding: 4px;
+}
+button{
+    padding-bottom: 4px;
+}
+
 .product_div{
     height: auto;
     width: 80%;
@@ -48,3 +55,18 @@ button{
     padding: 20px;
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+    .main-box{
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        background-color: lightblue;
+        padding-top: 50px;
+    }
+    .filter{
+        padding-bottom: 60px;
+    }
+}
