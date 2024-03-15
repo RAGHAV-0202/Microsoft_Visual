@@ -1,6 +1,8 @@
 const express = require("express");
 const CustomAPIError = require("../errors/custom-error")
 const db = require("../db/model")
+require("dotenv").config()
+const jwt = require("jsonwebtoken")
 
 
 const login = async(req,res)=>{
@@ -12,9 +14,10 @@ const login = async(req,res)=>{
     }else{
         const data = await db.create(req.body)    
         // console.log(data._id)
-        const token = jwt.sign(data._id , username)
-        res.status(200).json({registered : data})
-        console.log(data)
+        const db_id = data._id
+        const token = jwt.sign({db_id , username} , process.env.JWT_SECRET, {expiresIn : '30d'})
+        res.status(200).json({registered : data , token : token})
+        console.log(data , token)
     }
 
 
