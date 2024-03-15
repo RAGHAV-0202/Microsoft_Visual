@@ -10,7 +10,8 @@ int main(){
                 sum = sum + j ; 
             }
         }
-        printf("i = %d , sum = %d\n" , i , sum);
+        
+        // printf("i = %d , sum = %d\n" , i , sum);
         if(sum == i ){
             printf("%d," , i); 
         }
