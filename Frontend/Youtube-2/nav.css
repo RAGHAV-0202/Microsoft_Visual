@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
 }
 
 body{
@@ -208,7 +211,7 @@ left{
 
 .content {
     height: auto;
-    min-height: calc(100vh + 56px);
+    min-height: calc(100vh - 56px);
     padding-top: 56px;
     padding-left: 72px;
     padding: 16px 0 14px;
@@ -223,7 +226,8 @@ left{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: left;
+    min-height: calc(100vh);
 }
 
 
@@ -231,7 +235,6 @@ left{
     height: 318px;
     width: 30%;
     min-width: 260px;
-    background-color: lightcoral;
     margin-bottom: 5px;
     margin-right: 5px;
     display: flex;
@@ -241,7 +244,7 @@ left{
 .video .top {
     width: 100%;
     height: 62%;
-    background-color: lightpink;
+    background-color: lightsalmon;
 }
 
 .video .bottom{
@@ -264,13 +267,20 @@ left{
     display: flex;
     flex-direction: column;
 }
-.video .bottom .right .top{
+.video .bottom .right .top2{
     height: 50%;
     width: 100%;
-    background-color: orange;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 15px;
 }
 .video .bottom .right .bottom {
     height: 50%;
     width: 100%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: gray;
+    padding-left: 15px;
 }
