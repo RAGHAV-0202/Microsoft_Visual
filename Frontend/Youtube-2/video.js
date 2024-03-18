@@ -31,11 +31,18 @@ async function getVideo(videoId) {
         }
 
         const title = video.snippet.title
-        const like_count = video.statistics.like_count
+        let like_counts = video.statistics.likeCount
         const published = timeSince(video.snippet.publishedAt)
         const description =  video.snippet.description
         const channel_name = video.snippet.channelTitle ;
         const channel_id = video.snippet.channelId
+        // console.log(channel_id)
+        // console.log(like_counts)
+        if(like_counts > 10000){
+          like_counts = Math.floor(like_counts / 10000) + "K"
+        }else if (like_counts > 1000000){
+          like_counts = Math.floor(like_counts / 1000000) + "M"
+        }
 
         // const sub_count = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channel_id}&key=${api_key}`)
         // const sub_count2 = await sub_count.json()
@@ -50,7 +57,7 @@ async function getVideo(videoId) {
             channel_name_area.innerText = channel_name
             views_area.textContent = viewsformatted
             title_area.textContent = title
-            like_count_area.textContent = like_count
+            like_count_area.textContent = like_counts
             published_area.textContent = published
             desc_area.textContent = description
             channel_name_area.textContent = channel_name 
@@ -170,20 +177,36 @@ function createRVideos(data){
         viewsformatted = Math.floor(views/1000) + "K"
     }
     const ago = (timeSince(data.snippet.publishedAt))
-
+    const id = data.id ; 
   const newDiv = document.createElement("div");
-  newDiv.innerHTML = `<div class="recommended-video">
+  newDiv.innerHTML = `<a onclick = "storeID(event)" yt_id = ${id} style="text-decoration: none; color: white;"" href='video.html' class="recommended-video">
                 <div class="left">
-                <img src="${thumb_url}">
+                <img class="abcd" src="${thumb_url}">
                 </div>
                 <div class="right">
                     <p class="r_title">${title}</p>
                     <p class="r_channel_name">${channel_name}</p>
                     <p class="r_stats">${viewsformatted} Views · ${ago}</p>
                 </div>
-            </div>`
+            </a>`
     
   document.querySelector(".vid-right").appendChild(newDiv)
+}
+
+function storeID(e){
+
+  if(e.target.classList.contains("abcd")){
+    elem = e.target.parentElement.parentElement
+  }if(e.target.classList.contains("r_title")){
+    elem = e.target.parentElement.parentElement
+  }if (e.target.classList.contains("r_channel_name")){
+    elem = e.target.parentElement.parentElement
+  }if (e.target.classList.contains("r_stats")){
+    elem = e.target.parentElement.parentElement
+  }
+
+  id = elem.getAttribute("yt_id");
+  sessionStorage.setItem("id" , id);
 }
 
 function timeSince(dateString) {
