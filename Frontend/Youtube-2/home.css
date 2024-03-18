@@ -57,18 +57,24 @@ left{
     padding-left: 72px;
     padding: 16px 0 14px;
     padding-bottom: 0;
+    background-color: #0F0F0F;
+    display: flex;
+    /* align-items: center; */
+    /* Align content vertically center */
+    justify-content: center;
+    /* Align content horizontally center */
 }
 
-.videos-box{
+.videos-box {
     width: 100%;
     height: 100%;
     background-color: #0F0F0F;
-    padding: 60PX 10px 0 90px;
+    padding: 60px 10px 0 90px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    min-height: calc(100vh);
+    max-width: 2500px;
 }
 .videos-box img{
     border-radius: 12px;
@@ -79,6 +85,7 @@ left{
     height: 318px;
     width: 30%;
     min-width: 260px;
+    max-width: 350.197px;
     margin-bottom: 5px;
     margin-right: 5px;
     display: flex;
@@ -95,6 +102,8 @@ left{
 }
 .top_img{
     height: 100%;
+    object-fit: cover;
+
 }
 .video .bottom{
     width: 100%;
@@ -110,7 +119,7 @@ left{
     min-width: 20px;
     max-width : 40p;
     /* background-color: lightyellow; */
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 .channel_logo{
@@ -121,6 +130,8 @@ left{
 }
 .titile-span{
     overflow: hidden;
+    padding-right: 20px;
+    text-wrap: wrap;
 }
 .channel_logo_img{
     height: 100%;
@@ -139,8 +150,12 @@ left{
     font-size: 15px;
     padding-left: 15px;
     overflow: hidden;
-}
 
+}
+.top2{
+    padding-right: 10px;
+    padding-top: 5px;
+}
 .metrics{
     padding-top: 0;
     line-height: 2px;

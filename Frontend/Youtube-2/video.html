@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="video.css">
 </head>
-<body>
+<body onload="getVideos()">
 
     <navbar>
         <div class="one">
@@ -51,14 +51,51 @@
                         </span>
                     </div>
                 </div>
-                <div class="info-two"></div>
-                <div class="info-three"></div>
+                <div class="info-two">
+                    <button class="info-btns join">Join</button>
+                    <button class="info-btns subscribe">Subscribe</button>
+                </div>
+                <div class="info-three">
+                    <div class="like-dislike">
+                        <button  onclick="info_btn_click(event) " class="info-btns like2">
+                            <span class="material-symbols-outlined like unfilled">
+                                thumb_up
+                            </span>
+                            <p>25k</p>
+                        </button>
+                        <button  onclick="info_btn_click(event) "class="info-btns dislike2">
+                            <span class="material-symbols-outlined dislike unfilled">
+                                thumb_down
+                            </span>
+                        </button>
+                    </div>
+                    <button  onclick="info_btn_click(event) "class="info-btns share">
+                        <span class="material-symbols-outlined">
+                            share
+                        </span>
+                    </button>
+                    <button onclick="info_btn_click(event) " class="info-btns download">
+                        <span class="material-symbols-outlined">
+                            download
+                        </span>
+                        <p>Download</p>
+                    </button>
+                    <button class="info-btns others">...</button>
+                </div>
             </div>
-            <div class="stats"><span class="views-count">9.3M views</span> <span class="data">Published 8 months ago</span></div>
-            <div class="desc">it is a description and typically description is a bit long , maybe 100words or way more than that</div>
-            <div class="comments"></div>
+
+            <div class="desc">
+                <div class="stats"><span class="views-count">9.3M views</span> <span class="data">Published 8 months ago</span></div>
+               <div class="desc_data">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium natus vero quibusdam repudiandae id explicabo maxime quae exercitationem in. Quae nobis tempora magni dicta perspiciatis esse error possimus amet consequuntur ab laboriosam culpa praesentium provident delectus nisi quisquam maxime facere sed, enim nihil fuga corrupti nam. Nostrum, amet deserunt iusto itaque voluptas quo aut! Facere rem sit doloremque sunt cupiditate officia. Expedita pariatur, sapiente id delectus, asperiores sit aspernatur dolor cum ipsam rerum dolores distinctio quae aperiam ut et, eveniet recusandae magnam magni voluptatum perspiciatis maxime. Iste eligendi nobis ab quos minus dolores laborum sint labore quam! Eius reiciendis dolor quod minima, itaque, perferendis, quibusdam eveniet libero ipsa odio debitis qui porro et. Quis placeat cumque quasi perspiciatis ducimus aspernatur laborum, laboriosam hic a itaque dicta adipisci eligendi quo minima. Enim vero voluptates est eaque deleniti at minima quas. Illum quibusdam ab architecto tenetur nulla officia incidunt enim aliquam commodi?
+               </div>
+            </div>
+            <div class="comments">
+                <p style="font-size: 20px; font-weight: 500;"><span class="n_of_comments">661 </span> Comments </p>
+            </div>
         </div>
         <div class="vid-right">
+        
         </div>
     </div>
     <script src="video.js"></script>
