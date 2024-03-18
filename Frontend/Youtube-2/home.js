@@ -49,7 +49,12 @@ function timeSince(dateString) {
 
 
 function createVid(data){
-    const thumb_url = (data.snippet.thumbnails.maxres.url);
+  let thumb_url ; 
+    if(!data.snippet.thumbnails.maxres){
+      thumb_url = (data.snippet.thumbnails.high.url);
+    }else{
+      thumb_url = (data.snippet.thumbnails.maxres.url);
+    }
     const title = (data.snippet.title)
     const channel_name = (data.snippet.channelTitle); // channel
     let views = (data.statistics.viewCount)//views
@@ -59,13 +64,16 @@ function createVid(data){
     }else if (views > 1000){
         viewsformatted = Math.floor(views/1000) + "K"
     }
+    const id = data.id
     const ago = (timeSince(data.snippet.publishedAt))
     fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${data.snippet.channelId}&key=${api_key}`)
         .then(response => response.json())
         .then(channelData => {
             const channelLogoUrl = channelData.items[0].snippet.thumbnails.default.url;
 
-            const newdiv = document.createElement("div");
+            const newdiv = document.createElement("a");
+            newdiv.setAttribute("href" , "video.html")
+            newdiv.setAttribute("onclick" , "videoClicked(event)"  )
             newdiv.classList.add("video")
             newdiv.innerHTML = `<div class="top"><img class="top_img" src=${thumb_url}></div>
                 <div class="bottom">
@@ -84,13 +92,26 @@ function createVid(data){
                         </div>
                     </div>
                 </div>`
-
+            newdiv.setAttribute("yt_id", `${id}`);
             video_box.appendChild(newdiv);
+            
         })
         .catch(error => console.error(error));
 }
 
-
+function videoClicked(e){
+  // console.log(e.target);
+  let video ; 
+  if(e.target.classList.contains("top_img")){
+    video = (e.target.parentElement.parentElement)
+  }else if(e.target.classList.contains("titile-span")){
+    video = e.target.parentElement.parentElement.parentElement.parentElement
+  }
+ 
+  id = (video.getAttribute('yt_id'));
+  sessionStorage.setItem("id" , id)
+  
+}
 
 const categories = {
   "kind": "youtube#videoCategoryListResponse",

@@ -1,7 +1,7 @@
 
 body{
     /* background-color: aqua; */
-    background-color: #121515;
+    background: linear-gradient(to bottom, #0F0F0F, #121515);
     min-height: calc(100vh - 56px);
     color: white;
 }

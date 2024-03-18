@@ -1,4 +1,6 @@
-
+a {
+    text-decoration: none;
+}
 
 left{
     height: calc(100vh - 56px);
@@ -90,6 +92,12 @@ left{
     margin-right: 5px;
     display: flex;
     flex-direction: column;
+}
+.video a {
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
 }
 
 .video .top {
