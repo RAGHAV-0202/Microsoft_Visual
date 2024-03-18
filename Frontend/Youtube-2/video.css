@@ -59,8 +59,8 @@ body{
     min-height: min-content;
     padding-bottom: 5px;
     background-color: lightgreen;
-    margin-bottom: 2px
-
+    margin-bottom: 2px;
+    padding-top: 6px;
 }
 
 .title{
@@ -92,5 +92,72 @@ body{
 .info{
     width: 100%;
     height: 56px;
-    background-color: red;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.info-one{
+    width: 25%;
+    height: 100%;
+    /* background-color: orange; */
+    display: flex;
+    align-items: row;
+}
+.info-two{
+    width: 25%;
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+}
+
+.info-three{
+    width: 50%;
+    height: 100%;
+    background-color: green;
+}
+
+.info-one .channel-logo{
+    height: 100%;
+    width: 30%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.channel-logo img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.info-one .channel-info{
+    height: 100%;
+    width: calc(100% - 30%);
+    /* background-color: goldenrod; */
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.info-one .channel-info .channel-name{
+    height: 50%;
+    width: 100%;
+    /* background-color: lightpink; */
+    display: flex;
+    align-items: center;
+    font-weight: 600    ;
+    line-height: 2px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.info-one .channel-info .channel-subs{
+    height: 50%;
+    width: 100%;
+    /* background-color: limegreen; */
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
 }
