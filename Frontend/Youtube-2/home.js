@@ -5,6 +5,7 @@ const video_box = document.querySelector(".videos-box");
 const fetch_data = async()=>{
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=53&regionCode=US&videoCategoryId=0&key=${api_key}`);
     data = await response.json()
+    console.log(data)
     
     for(i = 0 ; i < data.items.length; i++){
         createVid(data.items[i])
@@ -79,7 +80,7 @@ function createVid(data){
                         </div>
                         <div class="bottom">
                             <span class="channel-name">${channel_name}</span>
-                            <span class="metrics">${viewsformatted} ~ ${ago}</span>
+                            <span class="metrics">${viewsformatted} <span style="display: inline-block; font-size: 14px; color: hsl(0, 0%, 18.82%); background: none; border-radius: 6px; padding-top : 8px">•</span> ${ago}</span>
                         </div>
                     </div>
                 </div>`
