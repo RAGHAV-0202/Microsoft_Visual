@@ -87,7 +87,7 @@ navbar {
 
 .two input {
     width: 72%;
-    min-width: 200px;
+    min-width: 150px;
     background: none;
     height: 40px;
     border: 1px solid hsl(0, 0%, 18.82%);
@@ -169,4 +169,58 @@ navbar {
 
 .profile img {
     height: 100%;
+}
+
+@media screen and (max-width : 460px) {
+    navbar{
+        padding-right: 15px;
+
+    }
+    .one{
+        width: 60%;
+        /* background-color: orange; */
+        padding-right: 50%;
+    }
+    .two{
+        width: 20%;
+        /* background-color: white; */
+        padding-right: 0;
+        min-width: 60px;
+
+    }
+    .three{
+        width: 5%;
+        min-width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        /* background-color: green; */
+    }
+    .one .options{
+        display: none;
+    }
+    .two input{
+        display: none;
+    }
+    .two .search-btn{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+    }
+    .three .profile{
+        display: none;
+    }
+    navbar .two {
+        padding: 0 0 0 20px;
+    }
+    .mic{
+        display: none;
+    }
+
+    .search-btn {
+        width: 40px;
+        min-width: 40px;
+        background-color: transparent !important;
+    }
 }
