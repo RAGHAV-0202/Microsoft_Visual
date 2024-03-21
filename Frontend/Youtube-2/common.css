@@ -201,7 +201,8 @@ navbar {
         display: none;
     }
     .two input{
-        display: none;
+        min-width : 10px !important ;
+        width : 20px;
     }
     .two .search-btn{
         width: 40px;
