@@ -3,6 +3,7 @@
 #include <stack>
 #include <queue>
 using namespace std;
+#include <vector>
 
 int main(){
 
@@ -179,19 +180,43 @@ int main(){
 
     /// Priority queue
     //first elem is >> than others
-    priority_queue <int> q ;
-    q.push(10);
-    q.push(100);
-    q.push(70);
-    q.push(30);
-    q.push(5);
+    // priority_queue <int> q ;
+    // q.push(10);
+    // q.push(100);
+    // q.push(70);
+    // q.push(30);
+    // q.push(5);
 
-    // cout << "top : " << q.top() << endl ; 
+    // // cout << "top : " << q.top() << endl ; 
 
-    while ( !q.empty()){
-        cout << q.top() << " " ;
-        q.pop() ;
+    // while ( !q.empty()){
+    //     cout << q.top() << " " ;
+    //     q.pop() ;
+    // }
+
+    ///         Vectors
+    // acts like dynamic array 
+    vector <int> v ;
+    int size = 10 ; 
+    for(int i = 1 ; i < size ; i++){
+        v.push_back(i);
     }
+    // for(int i = 0 ; i < size - 1; i++){
+    //     cout << v[i] << " " ;
+    // }
+    // cout << "size : " << v.size() << endl ;
+    // cout <<"capacity : " << v.capacity() <<endl ;
+    // cout << "Max size  : " << v.max_size() << endl;
+
+    // if(v.empty()){
+    //     cout << "empty";
+    // }else{
+    //     cout << "not empty";
+    // }
+
+    cout << "first : " << v.front() << endl;
+    cout << "last : " << v.back() << endl;
+    cout << "at n  : " << v.at(3) << endl;
 
     return 0 ; 
 }
