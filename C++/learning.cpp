@@ -5,6 +5,9 @@
 using namespace std;
 #include <vector>
 
+// for heap
+#include <bits/stdc++.h>
+
 int main(){
 
     // cout << "hello"  << endl;
@@ -196,11 +199,11 @@ int main(){
 
     ///         Vectors
     // acts like dynamic array 
-    vector <int> v ;
-    int size = 10 ; 
-    for(int i = 1 ; i < size ; i++){
-        v.push_back(i);
-    }
+    // vector <int> v ;
+    // int size = 10 ; 
+    // for(int i = 1 ; i < size ; i++){
+    //     v.push_back(i);
+    // }
     // for(int i = 0 ; i < size - 1; i++){
     //     cout << v[i] << " " ;
     // }
@@ -214,9 +217,103 @@ int main(){
     //     cout << "not empty";
     // }
 
-    cout << "first : " << v.front() << endl;
-    cout << "last : " << v.back() << endl;
-    cout << "at n  : " << v.at(3) << endl;
+    // cout << "first : " << v.front() << endl;
+    // cout << "last : " << v.back() << endl;
+    // cout << "at n  : " << v.at(3) << endl;
 
-    return 0 ; 
+    /// ITERATORS
+
+    // vector <int> ar ;
+    // for(int i = 1 ; i <=5 ;i++){
+    //     ar.push_back(i);
+    // }
+
+    // // vector <int>::iterator ptr ;
+
+    // // cout << "the elems are : " ; 
+    // // for(ptr = ar.begin() ; ptr < ar.end() ; ptr++){
+    // //     cout << *ptr << " " ;
+    // // }
+
+    // vector<int>::iterator ptr = ar.begin();
+    // advance(ptr,3);
+    // cout << *ptr << endl ; 
+
+    //HEAP IN C++
+
+    // vector <int> v1 = {12,30,25,35,45};
+
+    // make_heap(v1.begin() ,  v1.end());
+
+    // cout << "the max elem of heap is : " ;
+    // cout << v1.front() <<endl ;
+    // cout << "heap : " ;
+    // for(int i = 0 ; i < v1.size() ; i++){
+    //     cout << v1[i] << " " ;
+    // }
+    // cout <<endl ;
+
+    // v1.push_back(79);
+    // push_heap(v1.begin() , v1.end());
+    // sort_heap(v1.begin(), v1.end());
+    // cout << "After pushing :  " ;
+    // for(int i = 0 ; i < v1.size() ; i++){
+    //     cout << v1[i] << " " ;
+    // }
+
+    // cout << "\nafter popping : " ;
+    // pop_heap(v1.begin() , v1.end());
+    // sort_heap(v1.begin(), v1.end());
+
+    // for(int i = 0 ; i < v1.size() ; i++){
+    //     cout << v1[i] << " " ;
+    // }
+
+
+    //     /// SET
+
+    //     set <int> s ;
+    //     s.insert(10);
+    //     s.insert(40);
+    //     s.insert(40);
+    //     s.insert(20);
+    //     s.insert(34);
+    //     s.insert(10);
+    //     s.insert(15);
+
+    // set <int>:: iterator it = s.begin();
+
+    // for(;it != s.end() ; it++ ){
+    //     cout << *it << " " ;
+    // }
+    // cout << "\nsize : " << s.size() << endl ;
+    // cout << "max size : " << s.max_size() << endl;
+    // it = s.begin();
+    // s.erase(s.begin() , s.find(20));
+    // for(;it != s.end() ; it++ ){
+    //     cout << *it << " " ;
+    // }
+
+ // LIST
+ // PAIR
+
+//  pair < int , char > PAIR1 ;
+
+//  PAIR1.first = 1604 ;
+//  PAIR1.second = 'A' ;
+ 
+//  cout << PAIR1.first << " " << PAIR1.second << endl ;
+
+//  pair <int , char> PAIR2(0202,'R');
+//  pair <int , char> PAIR3;
+//  PAIR3 = make_pair(0202,'R');
+
+//  swap(PAIR1 , PAIR2) ;
+
+//  cout << PAIR2.first << " " << PAIR2.second << endl;
+
+
+
+
+ return 0; 
 }
