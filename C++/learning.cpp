@@ -8,6 +8,21 @@ using namespace std;
 // for heap
 #include <bits/stdc++.h>
 
+class book{
+    public :
+    string title ;
+    string author ;
+    int pages ;
+    int sales;
+
+    book(string aTitle , string aAuthon , int aPages){
+        title = aTitle ;
+        author = aAuthon ;
+        pages = aPages ;
+    }
+
+} ;
+
 int main(){
 
     // cout << "hello"  << endl;
@@ -313,7 +328,11 @@ int main(){
 //  cout << PAIR2.first << " " << PAIR2.second << endl;
 
 
+    book book1("The Book" , "raghav" , 890);
+
+    cout << book1.title << " has " << book1.pages << " pages";
 
 
- return 0; 
+
+ return 0;
 }
