@@ -1,19 +1,22 @@
 #include <iostream>
 using namespace std ;
-
+void print(int *arr , int len, string method){
+    int *ptr = arr ;
+    cout << method << " : " ;
+    for(int i = 0 ; i < len ; i++){
+        cout << *ptr++ << " " ;
+    }
+    cout <<endl;
+}
 int *bubble_sort(int *arr , int len){
     // complexity O(N);
     int *ptr = arr ;
     int count = 0 ; 
     for(int i = 0 ; i < len ; i++ ){
         ptr = arr ;
+        // cout << arr[i] << " " ;
         for(int j = 0 ; j < len - i - 1 ; j++){
             count ++ ; 
-            // if(arr[j] > arr[j+1]){
-            //     int temp = arr[j];
-            //     arr[j] = arr[j+1];
-            //     arr[j+1] = temp ;
-            // }
             if(*ptr > *(ptr + 1)){
                 int temp = *ptr ;
                 *ptr = *(ptr + 1);
@@ -56,26 +59,19 @@ int *insertion_sort(int *arr, int len){
 }
 
 
-void print(int *arr , int len, string method){
-    int *ptr = arr ;
-    cout << method << " : " ;
-    for(int i = 0 ; i < len ; i++){
-        cout << *ptr++ << " " ;
-    }
-    cout <<endl;
-}
+
 int main(){
 
-    int array[]= {5,1,6,3,6,8,12,15,17,18,19,9,2,4,5,7,11,3,45,23,45,78,98,54,13,1,56,45,2,3,6,4,8,6,5,8,11,10,9,14};
-    // int array[] = {6,5,4,3,2,1};
+    // int array[]= {5,1,6,3,6,8,12,15,17,18,19,9,2,4,5,7,11,3,45,23,45,78,98,54,13,1,56,45,2,3,6,4,8,6,5,8,11,10,9,14};
+    int array[] = {6,5,4,3,2,1};
     int *ptr ;
     ptr = array;
     int len = sizeof(array) / sizeof(array[0]);
 
-    // bubble_sort(ptr,len);
-    // print(ptr,len,"bubble_sort");
-    // selection_sort(ptr,len);
-    // print(ptr, len,"selection_sort");
+    bubble_sort(ptr,len);
+    print(ptr,len,"bubble_sort");
+    selection_sort(ptr,len);
+    print(ptr, len,"selection_sort");
 
     insertion_sort(ptr,len);
     print(ptr,len,"insertion_sort");
