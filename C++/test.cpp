@@ -1,39 +1,55 @@
 #include <iostream>
-using namespace std ;
-#include <map>
+using namespace std;
 #include <vector>
 
+void merge(vector <int> &arr, int low , int middle , int high){
+    vector <int> temp ;
+    int left = low ; 
+    int right = middle + 1 ;
+
+    while(left <= middle && right <= high){
+        if(arr[left] <= arr[right]){
+            temp.push_back(arr[left]);
+            left++ ;
+        }else{
+            temp.push_back(arr[right]);
+            right++;
+        }
+    }
+    while(left <= middle){
+        temp.push_back(arr[left]);
+        left++;
+    }
+    while(right <= high){
+        temp.push_back(arr[right]);
+        right++;
+    }
+    for(int i = low ;  i <= high ; i++){
+        arr[i] = temp[i - low];
+    }
+}
+
+void merge_sort(vector <int> &arr , int low , int high){
+    if(low == high){
+        return ; 
+    }
+
+    int middle = (low + high) / 2 ;
+
+    merge_sort(arr , low , middle);
+    merge_sort(arr , middle + 1 , high);
+    merge(arr,low , middle , high);
+    return ;
+}
 
 int main(){
+    vector <int> arr = {2,4,2,5,1,1,5,12,6,7,8,9};
+    int len = arr.size() ;
+    merge_sort(arr , 0 , len - 1 );
 
-    int arr[] = {2,2,3,4,4,2};
-
-    map <int,int> m ;
-    int len = sizeof(arr) / sizeof(arr[0]);
-    int max_freq = 0 , max_val = 0 ; 
-    int min_freq = 999 , min_val = 999;
-    
     for(int i = 0 ; i < len ; i++){
-        m[arr[i]] += 1;
+        cout << arr[i] << " " ;
     }
 
-    for(auto it : m){
-        if(it.second  > max_freq || (it.second == max_freq && it.first > max_val)){
-            max_freq = it.second ;
-            max_val = it.first ;
-        }
-
-        if(it.second   < min_freq || (it.second == min_freq && it.first < min_val)){
-            min_freq = it.second ;
-            min_val = it.first ;
-        }
-
-
-    }
-    
-
-    cout << "max appeared value : " << max_val << endl;
-    cout << "min appeared value : " << min_val << endl;
-
-    return 0 ;
+return 0 ;
 }
