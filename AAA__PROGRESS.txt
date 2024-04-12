@@ -5,3 +5,5 @@ Stated DSA on 7 april 2024
 9 April : Hashing ;
 10 April : did some more que on Recurssion + revised hashing ;
 11 April : Merge Sort ; 
+12 April : 1 Lc and 2 Coding ninja , quick sort ;
+13 april : 
