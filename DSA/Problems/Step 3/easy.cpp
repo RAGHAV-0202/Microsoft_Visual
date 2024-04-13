@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <set>
 using namespace std;
 
 bool check_array_sorted(int arr[] , int len){
@@ -107,6 +108,21 @@ void moveZeroToEnd(int arr[] , int len){
     }
 }
 
+void find_union(int arr1[] , int arr2[] , int len1 , int len2){
+    set <int> st;
+    for(int i = 0 ; i < len1 ; i++){
+        st.insert(arr1[i]);
+    }
+    for(int i = 0 ; i < len2 ; i++){
+        st.insert(arr2[i]);
+    }
+    auto it = st.begin();
+    while(it!=st.end()){
+        cout << *it << " " ;
+        it++ ;
+    }
+}
+
 void printFN(int arr[], int len){
     for(int i = 0 ; i < len ; i++){
         cout << arr[i] << " ";
@@ -116,7 +132,8 @@ void printFN(int arr[], int len){
 
 int main(){
     // int arr[] = {1,2,3,4,4,5,5,5,6,7,8,9,10,10,10,11,12};
-    int arr[] = {1,2,0,3,4,0,0,9,5,6};
+    // int arr[] = {1,2,0,3,4,0,0,9,5,6};
+    int arr[] = {1,2,3,4,5,6,7};
     int len = sizeof(arr)/sizeof(arr[0]);
     // cout << check_array_sorted(arr,len) << endl;
 
@@ -138,8 +155,9 @@ int main(){
     // rotateLeftBy_n_optimal(arr,len,3);
     // printFN(arr,len);
 
-    moveZeroToEnd(arr,len);
-    printFN(arr,len);
-
-
+    // moveZeroToEnd(arr,len);
+    // printFN(arr,len);
+    int arr1[] = {1,2,3,4,5};
+    int arr2[] = {1, 5, 2, 2, 6, 3, 6, 8, 0} ;
+    find_union(arr1, arr2, sizeof(arr1) / sizeof(arr1[0]), sizeof(arr2) / sizeof(arr2[0]));
 }
