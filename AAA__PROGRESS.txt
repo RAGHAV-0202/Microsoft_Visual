@@ -7,3 +7,4 @@ Stated DSA on 7 april 2024
 11 April : Merge Sort ; 
 12 April : 1 Lc and 2 Coding ninja , quick sort ;
 13 april : questions on array , 3 LC , 3 coding ninjas
+14 april : more question , 4 LC , started medium questions

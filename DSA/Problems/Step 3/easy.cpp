@@ -123,13 +123,60 @@ void find_union(int arr1[] , int arr2[] , int len1 , int len2){
     }
 }
 
+int missingNumber (vector <int> &a , int N){
+    int xor1 = 0 , xor2= 0 ; 
+    int n = N-1 ; 
+    for(int i = 0 ; i < N ; i++){
+        xor2 = xor2 ^ a[i];
+        xor1  = xor1 ^ (i+1);
+    }
+    xor1 = xor1 ^ N;
+    return xor1 ^ xor2;
+ // we can use hashing
+}
+int missingNumber_2(std::vector<int>& nums) {
+    int n = nums.size() ;
+    int S1 = (n*(n+1) ) / 2 ;
+    int s2 = 0 ;
+    for(int i = 0 ; i < n ; i++){
+        s2 = s2+ nums[i];
+    }
+    return S1 - s2;
+}
+
+int consecutive_ones(int arr[] , int len){
+    int counter = 0 ;
+    int res = 0 ; 
+    for(int i = 0 ; i < len  ; i++){
+        if(arr[i] == 1){
+            counter += 1  ;
+            if(counter >= res){
+                res = counter ;
+            }
+        }else{
+            counter = 0 ; 
+        }
+    }
+    return res;
+}
+
+// void subarrays(vector <int> arr , int len){
+//     for(int i = 0 ; i < len ; i++){
+//         for(int j = i ; j < len ; j++){
+            
+//         }
+//         cout << endl ;
+//     }
+// }
+
+
+
 void printFN(int arr[], int len){
     for(int i = 0 ; i < len ; i++){
         cout << arr[i] << " ";
     }
     cout << endl;
 }
-
 int main(){
     // int arr[] = {1,2,3,4,4,5,5,5,6,7,8,9,10,10,10,11,12};
     // int arr[] = {1,2,0,3,4,0,0,9,5,6};
@@ -157,7 +204,27 @@ int main(){
 
     // moveZeroToEnd(arr,len);
     // printFN(arr,len);
-    int arr1[] = {1,2,3,4,5};
-    int arr2[] = {1, 5, 2, 2, 6, 3, 6, 8, 0} ;
-    find_union(arr1, arr2, sizeof(arr1) / sizeof(arr1[0]), sizeof(arr2) / sizeof(arr2[0]));
+
+    // int arr1[] = {1,2,3,4,5};
+    // int arr2[] = {1, 5, 2, 2, 6, 3, 6, 8, 0} ;
+    // find_union(arr1, arr2, sizeof(arr1) / sizeof(arr1[0]), sizeof(arr2) / sizeof(arr2[0]));
+
+    // int consecutive[] = {1,2,1,1,1,1,1,1,1,3,4,1,1,1,1,1,1,2,4,5,6,6};
+    // int consecutive[] = {1,1,0,1,1,1};
+    // int conse_len = sizeof(consecutive) / sizeof(consecutive[0]);
+    // cout << consecutive_ones(consecutive,conse_len)<< endl;
+
+
+    // vector <int> sub = {1,2,3,4,5,6};
+    // subarrays(sub ,  sub.size());
+ 
+
+
+
+
+
+
+
+
+    return 0 ;
 }
