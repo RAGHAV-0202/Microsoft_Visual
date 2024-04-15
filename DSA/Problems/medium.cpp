@@ -69,6 +69,7 @@ int majorityElement(vector<int> v) {
 }
 
 int majorityElement_optimal(vector <int> &v){
+    // if count is negative ignore piche wale numbers
     int count = 0 ; 
     int el ;
     for(int i = 0 ; i < v.size() ; i++){
@@ -131,10 +132,10 @@ int subArrSum_optimal(vector <int> &arr){
     int max = INT32_MIN;
     int sum = 0 ;
     for(int i = 0 ; i < arr.size() ; i++){
-        sum = sum + arr[i];
         if(sum < 0){
             sum = 0;
         }
+        sum = sum + arr[i];
         if(sum > max){
             max = sum ;
         }
@@ -142,6 +143,28 @@ int subArrSum_optimal(vector <int> &arr){
     return max;
 }
 
+void print_Sub_max(vector <int> &arr){
+    int max = INT32_MIN;
+    int sum = 0 ;
+    int initial = 0 ; 
+    int final = 0 ; 
+    for(int i = 0 ; i < arr.size() ; i++){
+        if(sum < 0){
+            sum = 0;
+            initial = i;
+        }
+        sum = sum + arr[i];
+        if(sum > max){
+            max = sum ;
+            final = i ;
+        }
+    }
+    cout << "[";
+    for(int i = initial ; i <= final ; i++){
+        cout << arr[i] << ",";
+    } 
+    cout << "]";
+}
 
 
 int main(){
@@ -163,6 +186,7 @@ int main(){
     cout << "Brute : " <<subArrSum(m) << endl;
     cout << "Better : " << subArrSum_better(m) << endl;
     cout << "Optimal : " << subArrSum_optimal(m) << endl;
+    print_Sub_max(m);
 
     return 0;
 }
