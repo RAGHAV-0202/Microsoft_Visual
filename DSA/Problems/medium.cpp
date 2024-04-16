@@ -70,6 +70,7 @@ int majorityElement(vector<int> v) {
 
 int majorityElement_optimal(vector <int> &v){
     // if count is negative ignore piche wale numbers
+    // mooore
     int count = 0 ; 
     int el ;
     for(int i = 0 ; i < v.size() ; i++){
@@ -166,6 +167,30 @@ void print_Sub_max(vector <int> &arr){
     cout << "]";
 }
 
+int maxProfit(vector <int> &prices){
+    int profit = 0 ; 
+
+    for(int i = 0 ; i < prices.size() ; i++){
+        for (int j = i; j < prices.size() ; j++){
+            if(prices[j] - prices[i] > profit){
+                profit = prices[j] - prices[i] ;
+            }
+        }
+    }
+    return profit;
+}
+
+int maxProfit_better(vector <int> &prices){
+    int profit = 0 ; 
+    int minP = prices[0];
+    for(int i = 1 ; i < prices.size() ; i++){
+        int diff = prices[i] - minP ;
+        profit = max(profit,diff);
+        minP = min(minP,prices[i]);
+    }
+    return profit;
+}
+
 
 int main(){
 
@@ -183,10 +208,15 @@ int main(){
     // cout << majorityElement(majority_elem) << endl; 
     // cout << majorityElement_optimal(majority_elem) << endl;
 
-    cout << "Brute : " <<subArrSum(m) << endl;
-    cout << "Better : " << subArrSum_better(m) << endl;
-    cout << "Optimal : " << subArrSum_optimal(m) << endl;
-    print_Sub_max(m);
+    // cout << "Brute : " <<subArrSum(m) << endl;
+    // cout << "Better : " << subArrSum_better(m) << endl;
+    // cout << "Optimal : " << subArrSum_optimal(m) << endl;
+    // print_Sub_max(m);
 
-    return 0;
+
+    vector <int> prices = {7,1,5,3,6,4};
+    cout << maxProfit(prices) << endl;
+    cout << maxProfit_better(prices) << endl;
+
+        return 0;
 }

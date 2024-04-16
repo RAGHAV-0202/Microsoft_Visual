@@ -1,13 +1,14 @@
 #include <Stdio.h>
+#include <string.h>
 
 int main(){
-    int a  = 8 ; 
-    int b = 3 ; 
-    
-    if(a % 2 == 0 || b % 2 == 0 ){
-        printf("One or both numbers are divisible by 2");
-    }else{
-        printf("None of the above are divisble by 2");
-    }
+
+    char string1[] = "Hello ";
+    char string2[] = "world";
+
+    strcat(string1,string2);
+
+    printf("%s" , string1);
+
     return 0 ;
 }
