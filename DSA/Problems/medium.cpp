@@ -191,6 +191,52 @@ int maxProfit_better(vector <int> &prices){
     return profit;
 }
 
+// Buy and sell stocks II 
+// here allowed to buy and sell as many times as we want
+
+void rearrange_elem(vector <int> &arr){
+    vector <int> neg;
+    vector<int> pos;
+    for(int i = 0 ; i < arr.size() ; i++){
+        if(arr[i] < 0){
+            neg.push_back(arr[i]);
+        }else{
+            pos.push_back(arr[i]);
+        }
+    }
+    arr[0] = pos[0];
+    arr[1] = neg[0];
+
+    for(int i = 2 ; i < arr.size() ; i++){
+        if(i % 2 !=0){
+            arr[i] = neg[((i - 1) / 2)];
+        }else{
+            arr[i] = pos[i/2];
+        }
+    }
+}
+
+void rearrange_elem_better(vector <int> &arr){
+    int temp[arr.size()] ;
+    int posi_count = 0 ;
+    int negi_count = 1;
+    for(int i = 0 ; i < arr.size() ; i++ ){
+        if(arr[i] < 0){
+            temp[negi_count] = arr[i];
+            negi_count = negi_count + 2 ;
+        }else{
+            temp[posi_count] = arr[i];
+            posi_count = posi_count + 2 ;
+        }
+    }
+    for(int i = 0 ; i < arr.size() ; i++){
+        arr[i] = temp[i];
+    }
+}
+
+
+
+
 
 int main(){
 
@@ -214,9 +260,16 @@ int main(){
     // print_Sub_max(m);
 
 
-    vector <int> prices = {7,1,5,3,6,4};
-    cout << maxProfit(prices) << endl;
-    cout << maxProfit_better(prices) << endl;
+    // vector <int> prices = {7,1,5,3,6,4};
+    // cout << maxProfit(prices) << endl;
+    // cout << maxProfit_better(prices) << endl;
 
-        return 0;
+    vector <int> rearr = {1,2,3,4,-5,-6,-7,-8};
+    // rearrange_elem(rearr);
+    rearrange_elem_better(rearr);
+    for(int i = 0 ; i < rearr.size() ; i++){
+        cout << rearr[i] << " " ;
+    }
+
+    return 0;
 }

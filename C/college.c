@@ -1,14 +1,20 @@
-#include <Stdio.h>
-#include <string.h>
-
+#include <stdio.h>
 int main(){
-
-    char string1[] = "Hello ";
-    char string2[] = "world";
-
-    strcat(string1,string2);
-
-    printf("%s" , string1);
-
-    return 0 ;
+    int num;
+    printf("prime numbers between 1 and : ");
+    scanf("%d" , &num);
+    for (int i = 2; i < num; i++){
+        int flag = 0;
+        for (int j = 2; j < i; j++){
+            if (i % j == 0){
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+        {
+            printf(" %d ", i);
+        }
+    }
+    return 0;
 }
