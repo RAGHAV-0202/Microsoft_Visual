@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <set>
+#include <unordered_set>
 #include <map>
 using namespace std;
 
@@ -204,14 +205,27 @@ void rearrange_elem(vector <int> &arr){
             pos.push_back(arr[i]);
         }
     }
-    arr[0] = pos[0];
-    arr[1] = neg[0];
 
-    for(int i = 2 ; i < arr.size() ; i++){
-        if(i % 2 !=0){
-            arr[i] = neg[((i - 1) / 2)];
-        }else{
-            arr[i] = pos[i/2];
+
+    if(pos.size() > neg.size()){
+        for(int i = 0 ; i < neg.size() ; i++){
+            arr[2*i] = pos[i];
+            arr[2*i+1] = neg[i];
+        }
+        int index = neg.size() *2 ;
+        for(int i = neg.size() ; i < pos.size() ; i++){
+            arr[index] = pos[i];
+            index++ ;
+        }
+    }else{
+        for(int i = 0 ; i < pos.size() ; i++){
+            arr[2*i] = pos[i];
+            arr[2*i+1] = neg[i];
+        }
+        int index = pos.size() *2 ;
+        for(int i = pos.size() ; i < neg.size() ; i++){
+            arr[index] = neg[i];
+            index++ ;
         }
     }
 }
@@ -234,9 +248,177 @@ void rearrange_elem_better(vector <int> &arr){
     }
 }
 
+vector<int> superiorElements(vector<int>&a) {
+    vector <int> res;
+    int n = a.size();
+    int maxElem = a[n-1];
+    res.push_back(maxElem);
 
+    for(int i = n - 2 ; i >= 0  ; i--){
+        if(a[i] > maxElem){
+            maxElem = a[i];
+            res.push_back(maxElem);
+        }
+    }
 
+    return res;
+}
 
+int find(vector <int> &arr , int x){
+    for(int i = 0 ; i < arr.size() ; i++){
+        if(arr[i] == x ){
+            return 1 ;
+        }
+    }
+    return 0 ;
+}
+
+void longest_consecutive_brute(vector <int> &arr){
+    int res = 0 ; 
+    int count = 0 ;
+    int n = arr.size() ;
+    for(int i = 0 ; i < n ; i++){
+        int x = arr[i];
+        count = 1 ;
+        int search = find(arr,x+1);
+        while(search == 1){
+            x = x + 1 ;
+            count ++ ;
+            search = find(arr , x+1);
+        }
+        if(count > res){
+            res = count ;
+        }
+    }
+    cout <<"max consecutive numbers : " << res << endl;
+}
+/// @brief sort for better max conse
+/// @param arr 
+/// @param low 
+/// @param middle 
+/// @param high 
+void merge(vector <int> &arr , int low , int middle , int high){
+    vector <int> temp;
+    int left = low ;
+    int right = middle + 1;
+    while(left <= middle && right <= high){
+        if(arr[left] < arr[right]){
+            temp.push_back(arr[left]);
+            left ++ ;
+        }else{
+            temp.push_back(arr[right]);
+            right++;
+        }
+    }
+    while(left <= middle){
+        temp.push_back(arr[left]);
+        left++;
+    }
+    while(right <= high){
+        temp.push_back(arr[right]);
+        right++;
+    }
+    for(int i = low ; i <= high ; i++){
+        arr[i] = temp[i - low];
+    }
+}
+
+void mergesort(vector <int> &arr , int low , int high){
+    if(low == high){
+        return;
+    }
+    int middle = (low + high) / 2 ;
+
+    mergesort(arr,low , middle);
+    mergesort(arr,middle+ 1 , high);
+    merge(arr,low,middle,high);
+    
+    return;
+}
+
+void longest_consecutive_better(vector <int> &arr){
+    // first sort......
+    int n = arr.size();
+    int res = 1 ;
+    if(n == 0){
+        res = 0;
+    }else if (n == 1){
+        res =  1;
+    }
+    mergesort(arr,0,n-1);
+    int x = arr[0];
+    int count = 1 ;
+    for(int i = 1 ; i < n ;i++){
+        cout << arr[i] << " " ;
+        if(arr[i] == x){
+            if(count >= res){
+            res = count;
+            }
+            continue;
+        }
+        if(arr[i] == x+1){
+            x++ ;
+            count ++ ;
+        }else{
+            if(count > res){
+                res = count;
+            }
+            x = arr[i];
+            count = 1;
+        }
+        if(count > res){
+            res = count;
+        }
+    }
+    cout << "Max consecutive numbers : "<< res << endl;
+}
+
+int longest_consecutive_better_2(vector <int> &nums){
+    int n = nums.size();
+    mergesort(nums, 0, n - 1);
+    int longest = 1 , count = 1 , lastSmall = INT32_MIN; 
+    for(int i = 0  ;  i< n ; i++){
+        if(nums[i] - 1 == lastSmall){
+            count ++;
+            lastSmall = nums[i];
+        }else if (nums[i] == lastSmall){
+            continue;
+        }else if (nums[i] != lastSmall){
+            count = 1 ;
+            lastSmall = nums[i];
+        }
+        longest = max(longest , count);
+    }
+    cout << "Max consecutive numbers : " << longest << endl;
+};
+
+int longest_consecutive_optimal(vector <int> &nums){
+    int n = nums.size();
+    if(n ==0){
+        return 0;
+    }else if(n == 1){
+        return 1 ; 
+    }
+    int longest = 1 ;
+
+    unordered_set <int> st;
+    for(int i = 0 ; i < n ; i++){
+        st.insert(nums[i]);
+    }
+    for(auto it : st){
+        if(st.find(it - 1) == st.end()){
+            int count = 1 ;
+            int x = it;
+            while(st.find(x+1) != st.end()){
+                x = x+ 1 ;
+                count = count + 1 ;
+            }
+            longest = max(longest , count);
+        }
+    }
+    return longest;
+
+}
 
 int main(){
 
@@ -264,12 +446,26 @@ int main(){
     // cout << maxProfit(prices) << endl;
     // cout << maxProfit_better(prices) << endl;
 
-    vector <int> rearr = {1,2,3,4,-5,-6,-7,-8};
-    // rearrange_elem(rearr);
-    rearrange_elem_better(rearr);
-    for(int i = 0 ; i < rearr.size() ; i++){
-        cout << rearr[i] << " " ;
-    }
+    // vector <int> rearr = {1,2,3,4,-5,-6,-7,-8,-6,-6,-5};
+    // // rearrange_elem(rearr);
+    // // // rearrange_elem_better(rearr);
+    // // for(int i = 0 ; i < rearr.size() ; i++){
+    // //     cout << rearr[i] << " " ;
+    // // }
 
-    return 0;
+
+    // vector <int> arr = {1,2,2,1};
+    // vector <int> res ;
+    // res = superiorElements(arr);
+    // for(int i = 0 ; i < res.size() ; i++){
+    //     cout << res[i] << " " ;
+    // }
+
+    vector<int> longConse = {0,0};
+    longest_consecutive_brute(longConse);
+    longest_consecutive_better(longConse);
+    longest_consecutive_better_2(longConse);
+    cout << "Max consecutive numbers : " << longest_consecutive_optimal(longConse) << endl;
+
+        return 0;
 }
