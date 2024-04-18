@@ -417,7 +417,41 @@ int longest_consecutive_optimal(vector <int> &nums){
         }
     }
     return longest;
+}
+void markRow(vector<vector<int>> &matrix , int n, int m , int i ){
+	for(int j = 0 ; j < m ; j++){
+		if(matrix[i][j] != 0){
+			matrix[i][j] = - 1;
+		}
+	}
+}
 
+void markCol(vector<vector<int>> &matrix , int n, int m , int j ){
+	for(int i = 0 ; i < n ; i++){
+		if(matrix[i][j] != 0){
+			matrix[i][j] = - 1;
+		}
+	}
+}
+
+vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
+	for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix[i][j] == 0) {
+                markRow(matrix, n, m,i);
+                markCol(matrix, n, m,j);
+            }
+        }
+    }
+
+	for(int i = 0 ; i < n ; i++){
+		for(int j = 0 ; j < m ; j++){
+			if(matrix[i][j] == -1){
+				matrix[i][j] = 0 ;
+			}
+		}
+	}
+return matrix;
 }
 
 int main(){
@@ -426,7 +460,7 @@ int main(){
     // int target = 9;
     // TwoSum(nums,target);
 
-    vector<int> m = {1, 1, -2,2, 0 ,-5, 0, 0, 1,5, 2, 1, 0};
+    // vector<int> m = {1, 1, -2,2, 0 ,-5, 0, 0, 1,5, 2, 1, 0};
     // sort_Zero_One_Two(m);
     // for(int i = 0 ; i < m.size() ; i++){
     //     cout << m[i] << " " ;
@@ -461,11 +495,23 @@ int main(){
     //     cout << res[i] << " " ;
     // }
 
-    vector<int> longConse = {0,0};
-    longest_consecutive_brute(longConse);
-    longest_consecutive_better(longConse);
-    longest_consecutive_better_2(longConse);
-    cout << "Max consecutive numbers : " << longest_consecutive_optimal(longConse) << endl;
+    // vector<int> longConse = {0,0};
+    // longest_consecutive_brute(longConse);
+    // longest_consecutive_better(longConse);
+    // longest_consecutive_better_2(longConse);
+    // cout << "Max consecutive numbers : " << longest_consecutive_optimal(longConse) << endl;
 
-        return 0;
+    vector <vector <int>> matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+    int n = matrix.size();
+    int m = matrix[0].size();
+    vector<vector<int>> answer = zeroMatrix(matrix, m, n);
+
+    for(int i = 0 ; i < m ; i ++){
+        for(int j = 0 ; j < n ; j++){
+            cout << answer[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
