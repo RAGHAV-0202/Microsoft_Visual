@@ -454,6 +454,30 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 return matrix;
 }
 
+vector<vector<int>> zeroMatrix_brute_better(vector<vector<int>> &matrix, int n, int m) {
+    int arr_i[n] = {0};
+    int arr_j[m] = {0};
+    for(int i = 0 ; i < n ; i++){
+        for(int j = 0 ; j < m ; j++){
+            if(matrix[i][j] == 0){
+                arr_i[i] = 1 ;
+                arr_j[j] = 1 ;
+            }
+        }
+    }
+    for(int i = 0 ; i < n ; i++){
+        for(int j = 0 ; j < m ; j++){
+            if(arr_i[i] == 1 || arr_j[j] == 1){
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    return matrix;
+}
+
+
+
+
 int main(){
 
     // vector <int> nums = {2,7,11,15};
@@ -504,7 +528,8 @@ int main(){
     vector <vector <int>> matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
     int n = matrix.size();
     int m = matrix[0].size();
-    vector<vector<int>> answer = zeroMatrix(matrix, m, n);
+    // vector<vector<int>> answer = zeroMatrix(matrix, m, n);
+    vector<vector<int>> answer = zeroMatrix_brute_better(matrix, m, n);
 
     for(int i = 0 ; i < m ; i ++){
         for(int j = 0 ; j < n ; j++){
