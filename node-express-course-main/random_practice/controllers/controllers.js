@@ -4,7 +4,7 @@ const schema = require("../models/sign_up")
 
 const login = async(req,res)=>{
     const data = req.body;
-    const user = await schema.create(res.body);
+    const user = await schema.create(data);
     // const {username , password} = data;
 
     // res.status(200).send(`Username : ${username} , password : ${password}`);
