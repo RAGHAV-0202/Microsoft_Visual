@@ -1,18 +1,24 @@
 require('dotenv').config();
+const connectDB  = require('./db/connect');
+
 const express = require("express");
 const app = express();
-require("./middlewares/not_found");
+
 const routes = require("./routes/routes");
+
+
+require("./middlewares/not_found");
 const notFound = require("./middlewares/not_found");
-const connectDB  = require('./db/connect');
-const port = 5000;
+
 
 app.use(express.json())
 
 app.use("/main" , routes);
+
 app.get("/" , (req,res)=>{
     res.send("Homepage");
 })
+
 app.use(notFound);
 
 const start = async()=>{
@@ -23,4 +29,5 @@ const start = async()=>{
         console.log("error");
     }
 }
+
 start();

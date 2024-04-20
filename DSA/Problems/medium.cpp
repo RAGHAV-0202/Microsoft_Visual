@@ -475,6 +475,23 @@ vector<vector<int>> zeroMatrix_brute_better(vector<vector<int>> &matrix, int n, 
     return matrix;
 }
 
+int maxArea(vector<int>& height) {
+    int n =  height.size() ;
+    int left = 0 ; 
+    int right = n - 1 ;
+    int area = 0 ; 
+    
+    while(right >= left){
+        int temp_area = (right - left) * min(height[left] , height[right]) ;
+        if(height[left] >= height[right]){
+            right -- ;
+        }else if (height[left] <= height[right]){
+            left ++ ;
+        }
+        area = max(temp_area,area);
+    }
+    return area ;
+}
 
 
 
