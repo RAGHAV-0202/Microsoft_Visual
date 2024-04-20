@@ -493,6 +493,83 @@ int maxArea(vector<int>& height) {
     return area ;
 }
 
+int value(char Val){
+    switch(Val){
+        case 'I' : return 1 ; break;
+        case 'V' : return 5 ; break;
+        case 'X' : return 10 ; break;
+        case 'L' : return 50 ; break;
+        case 'C' : return 100 ; break;
+        case 'D' : return 500 ; break;
+        case 'M' : return 1000 ; break;
+    }
+    return 0 ;
+};
+
+int romanToInt(string s) {
+    int answer = 0 ;
+    for(int i = 0 ; i < s.length() ; i++){
+        char var = s[i];
+        char var2 = s[i+1];
+        
+        if(var == 'I' && var2== 'V'){
+            answer += 4 ;
+            i++;
+        }else if(var == 'X' && var2 == 'L'){
+            answer += 40 ;
+            i++;
+        }else if (var == 'X' && var2 == 'C'){
+            answer += 90 ;
+            i++;
+        }else if(var == 'C' && var2 == 'D'){
+            answer += 400 ;
+            i++;
+        }else if(var == 'C' && var2 == 'M'){
+            answer += 900 ;
+            i++;
+        }else if (var == 'I' && var2== 'X'){
+            answer += 9 ;
+            i++;
+        }else{
+            answer = answer + value(s[i]);
+        }
+    }
+    return answer ;
+}
+
+char findTheDifference(string s, string t) {
+
+    int sum_s = 0 ;
+    int sum_t = 0 ;
+
+    for(int i = 0 ; i < s.length() ; i++){
+        sum_s += int(s[i]);
+    }
+
+    for(int i = 0 ; i < t.length() ; i++){
+        sum_t += int(t[i]);
+    }
+
+    int diff = sum_t - sum_s;
+    return char(diff);
+
+}
+
+int arraySign(vector<int>& nums) {
+    int count = 0;
+    for(int i = 0 ; i < nums.size() ; i++){
+        if(nums[i] < 0 ){
+            count ++ ;
+        }if(nums[i] == 0){
+            return 0 ; 
+        }
+    }
+    if(count % 2 == 0){
+        return 1 ;
+    }
+    return -1 ;
+}
+
 
 
 int main(){
