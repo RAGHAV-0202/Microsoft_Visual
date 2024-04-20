@@ -10,7 +10,7 @@ const routes = require("./routes/routes");
 require("./middlewares/not_found");
 const notFound = require("./middlewares/not_found");
 
-
+app.use(express.static('./public'));
 app.use(express.json())
 
 app.use("/main" , routes);

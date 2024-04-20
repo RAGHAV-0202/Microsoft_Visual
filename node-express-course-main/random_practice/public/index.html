@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: lightblue;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+    .login_form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: lightgreen;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 50px;
+        height: 250px;
+    }
+    .data{
+        padding: 20px;
+        background-color: lightpink;
+        margin: 30px;
+        height: 150px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+</style>
+<body>
+
+        <form class="login_form">
+            <input class="username_inp" type="email" placeholder="Enter email ...">
+            <input class="password_inp" type="password" placeholder="Enter password ...">
+            <button type="submit" class="submit" onclick="submitFN(event)" >SUBMIT</button>
+        </form>
+
+
+        <div class="data">
+            <button type="button" class="get_data" onclick="get_data()">get_Data</button>
+            <p> Data : <span class="space_for_Data"></span></p>
+        </div>
+    <script src="./index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

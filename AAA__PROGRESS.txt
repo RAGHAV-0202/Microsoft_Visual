@@ -13,4 +13,4 @@ Stated DSA on 7 april 2024
 17 april : step 3 lect 2 ,  questions + 2 LC
 18 april : step 3 lect 2 , more question medium level + 2 LC
 19 april : REVISED NODE AND EXPRESS JS AND PRACTICED A BASIC REST APi
-20 april : API + 1 LC
+20 april : Successfully created a login / signup / redirecting Api + 1 LC

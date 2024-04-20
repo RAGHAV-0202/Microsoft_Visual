@@ -8,6 +8,7 @@ let token ;
 
 const login = async(req,res)=>{
     const data = req.body;
+    console.log(data);
     const {username , password} = data ;
     if(!username || !password){
         console.log("Please Provide email or password.");
@@ -19,5 +20,11 @@ const login = async(req,res)=>{
         res.status(200).json(dict);
     }
 }
+const dashboard = async(req,res)=>{
+    const number = 1234;
+    res.status(200).json({msg : `Hello guys , otp is 1234`});
+}
 
-module.exports = login ;
+
+
+module.exports = {login,dashboard} ;
