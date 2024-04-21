@@ -570,6 +570,69 @@ int arraySign(vector<int>& nums) {
     return -1 ;
 }
 
+int strStr(string haystack, string needle) {
+    int needle_p = 0 ;
+    int needle_len = needle.length() ;
+    for(int i = 0 ; i < haystack.length() ; i++){
+
+        if(haystack[i] == needle[needle_p]){
+            needle_p ++ ;
+        }else{
+            i -= needle_p;
+            needle_p = 0 ;
+        }
+        if(needle_p == needle_len){
+            return ++i - needle_p  ;
+        }
+
+    }
+    return -1;
+}
+
+
+void rotateMatrix_brute(vector<vector<int>> &mat){
+	int m = mat.size() ;
+	int n = mat[0].size() ; 
+	vector<vector<int>> temp(m, vector<int>(n));
+
+    for(int i = 0 ; i < m ; i++){
+        for(int j = 0 ; j < n ; j++){
+            temp[j][n -1 - i] = mat[i][j];
+        }
+    }
+
+	for(int i = 0 ; i < m ; i++){
+		for(int j = 0 ; j < n ; j++){
+			mat[i][j] = temp[i][j];
+		}
+	}
+
+	
+}
+
+
+void ninety_deg(int arr[3][3], int m , int n){
+
+    int temp[m][n] = {0};
+    for(int i = 0 ; i < m-1 ; i++){
+        for(int j = i+1 ; j < n ; j++){
+            swap(arr[i][j] , arr[j][i]);
+        }
+    }
+
+    for(int i = 0 ; i < n ; i++){
+        reverse(arr[i] ,arr[i] + n );
+    }
+
+    for(int i = 0 ; i < m ; i++ ){
+        for(int j = 0 ; j < n ; j++){
+            cout << arr[i][j] << " " ;
+        }
+        cout << endl;
+    }
+}
+
+
 
 
 int main(){
@@ -619,18 +682,29 @@ int main(){
     // longest_consecutive_better_2(longConse);
     // cout << "Max consecutive numbers : " << longest_consecutive_optimal(longConse) << endl;
 
-    vector <vector <int>> matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-    int n = matrix.size();
-    int m = matrix[0].size();
-    // vector<vector<int>> answer = zeroMatrix(matrix, m, n);
-    vector<vector<int>> answer = zeroMatrix_brute_better(matrix, m, n);
+    // vector <vector <int>> matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+    // int n = matrix.size();
+    // int m = matrix[0].size();
+    // // vector<vector<int>> answer = zeroMatrix(matrix, m, n);
+    // vector<vector<int>> answer = zeroMatrix_brute_better(matrix, m, n);
 
-    for(int i = 0 ; i < m ; i ++){
-        for(int j = 0 ; j < n ; j++){
-            cout << answer[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for(int i = 0 ; i < m ; i ++){
+    //     for(int j = 0 ; j < n ; j++){
+    //         cout << answer[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    int arr[3][3] = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}};
+
+    int m = sizeof(arr)/sizeof(arr[0]);
+    int n = sizeof(arr[0]) / sizeof(arr[0][0]);
+
+
+    ninety_deg(arr,m,n);
 
     return 0;
 }

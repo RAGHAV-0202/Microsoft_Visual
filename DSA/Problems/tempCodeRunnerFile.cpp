@@ -1,3 +1,3 @@
-    for(int i = 0 ; i < rearr.size() ; i++){
-        cout << rearr[i] << " " ;
-    }
+            // int temp = arr[i][j];
+            // arr[i][j] = arr[j][i];
+            // arr[j][i] = temp;
