@@ -632,6 +632,43 @@ void ninety_deg(int arr[3][3], int m , int n){
     }
 }
 
+void spiral(vector<vector<int>> &mat){
+    int m = mat.size();
+    int n = mat[0].size();
+    int left = 0 , right = n - 1 ; 
+    int top = 0 , bottom = m - 1 ;
+    vector <int> ans;
+
+    while(top <= bottom && left <= right){    
+        for(int i  = left ; i <= right ; i++){
+            ans.push_back(mat[top][i]);
+        }
+        top++ ;
+        for(int j = top ; j <= bottom ; j++ ){
+            ans.push_back(mat[j][right]);
+        }
+        right --;
+
+        if(top <= bottom){
+            for(int j = right ; j >= left ; j-- ){
+                ans.push_back(mat[bottom][j]);
+            }
+            bottom--;
+        }
+        if(left <= right){
+            for(int j = bottom ; j >= top ; j-- ){
+                ans.push_back(mat[j][left]);
+            }   
+            left ++ ; 
+        }
+    }
+
+
+    for(int i  = 0 ; i < ans.size() ; i++){
+        cout << ans[i] << " ";
+    }
+
+}
 
 
 
@@ -695,16 +732,28 @@ int main(){
     //     cout << endl;
     // }
 
-    int arr[3][3] = {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}};
+    // int arr[3][3] = {
+    //     {1,2,3},
+    //     {4,5,6},
+    //     {7,8,9}};
 
-    int m = sizeof(arr)/sizeof(arr[0]);
-    int n = sizeof(arr[0]) / sizeof(arr[0][0]);
+    // int m = sizeof(arr)/sizeof(arr[0]);
+    // int n = sizeof(arr[0]) / sizeof(arr[0][0]);
+
+    // ninety_deg(arr,m,n);
 
 
-    ninety_deg(arr,m,n);
+    vector<vector<int>> mat = {
+        {1,2,3,4} , 
+        {5,6,7,8} , 
+        {9,10,11,12},
+        {13,14,15,16}
+    };
+    spiral(mat);
+    vector <int> anss ;
+    for(int i = 0 ; i < anss.size() ; i++){
+        cout << anss[i] << " ";
+    }
 
     return 0;
 }
