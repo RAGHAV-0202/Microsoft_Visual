@@ -204,6 +204,55 @@ vector<vector<int>> threeSum_optimal(vector<int> &num){
 
 // day 17 below
 
+vector<vector<int>> fourSum_optimal(vector<int> &num , int target){
+
+    int n = num.size();
+    sort(num.begin() , num.end());
+    vector<vector<int>> answer;
+
+
+    for(int i = 0 ; i < n ; i++){
+        if(i > 0 && num[i] == num[i-1]){continue;}
+        for(int j = i + 1 ; j < n ; j++){
+            if(j!=i+1 && num[j] == num[j-1]) {continue;}
+            int k = j + 1;
+            int l = n - 1;
+            while(k < l){
+                int sum = num[i] + num[j] ;
+                sum += num[k] + num[l];
+                if(sum < target){
+                    k++;
+                    // while(k < l && num[k] == num[k - 1 ]){
+                    //     k++;
+                    // }
+                }else if (sum > target){
+                    l--;
+                    // while(k < l && num[l] == num[l+1]){
+                    //     l-- ;
+                    // }
+                }else{
+                    vector<int> temp = { num[i], num[j] , num[k] ,num[l] };
+                    answer.push_back(temp);
+                    k++;
+                    l--;
+                    while(k < l && num[l] == num[l+1]){
+                        l-- ;
+                    }
+                    while(k < l && num[k] == num[k - 1 ]){
+                        k++;
+                    }
+                }
+            }
+        }
+    }
+
+    return answer;
+
+}
+
+// day 18 below
+
+
 
 
 
@@ -220,10 +269,11 @@ int main(){
     // vector<int> res = majorityElement(majority);
     // vector<int> res = majorityElement_optimal(majority);
 
-    vector<int> nums = {-1, 0, 1, 2, -1, -4};
+    vector<int> nums = {1, 0, -1, 0, -2, 2};
     // vector<vector <int>> res = threeSum_brute(nums);
     // vector<vector <int>> res  = threeSum_better(nums);
-    vector<vector<int>> res = threeSum_optimal(nums);
+    // vector<vector<int>> res = threeSum_optimal(nums);
+    vector<vector<int>> res = fourSum_optimal(nums , 0);
     for(int i = 0 ; i < res.size() ; i++){
         for(int j = 0 ; j < res[0].size() ; j++){
             cout << res[i][j] << " " ;
