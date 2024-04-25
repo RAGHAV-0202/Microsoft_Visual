@@ -18,3 +18,4 @@ Stated DSA on 7 april 2024
 22 april : completed step 3 lect 2 on striver's a2z dsa sheet and started lect 3 (hard problems on array) + 4 LC
 23 april : 1 LC 3sum
 24 april : 1 LC 4sum
+25 april : striver video
