@@ -251,10 +251,83 @@ vector<vector<int>> fourSum_optimal(vector<int> &num , int target){
 }
 
 // day 18 below
+// #1492
+int kthFactor(int n, int k) {
+    int count = 0 ; 
+    for(int i = 1 ; i <= n ; i++){
+        if(n % i == 0){
+            count = count + 1   ;
+            if(count == k){
+                return i ; 
+            }
+        }
+    }
+    return -1 ;
+}
+// # 383
+bool canConstruct(string ransomNote, string magazine) {
+    map <char,int> mp;
+    for(int i = 0; i < magazine.size() ; i++){
+        mp[magazine[i]] ++ ;
+    }
 
+    for(int i  = 0 ; i < ransomNote.size() ; i++){
+        auto it = mp.find(ransomNote[i]) ;
+        if(it == mp.end() || mp[ransomNote[i]] == 0){
+            return false;
+        }else{
+            mp[ransomNote[i]] -- ;
+        }
+    }
+    return true;
+}
+//#1672
+int maximumWealth(vector<vector<int>>& accounts) {
+    int res = 0 ;
+    for(int i = 0 ; i < accounts.size() ; i++ ){
+        int temp = 0 ; 
+        for(int j = 0 ; j < accounts[0].size() ; j++){
+            temp+=accounts[i][j];
+        }
+        res = max(res,temp);
+    }
+return res;
+}
+// #242
+bool isAnagram(string s, string t) {
+    // map <char, int> mp ;
+    // if(s.size() != t.size() ) return false ;
+    // for(int i = 0 ; i < s.size() ; i++){
+    //     mp[s[i]]++ ;
+    // }
 
+    // for(int i = 0 ; i < t.size() ; i++){
+    //     auto it = mp.find(t[i]);
+    //     if(it == mp.end()){
+    //         return false;
+    //     }else if(it->second > 0){ 
+    //         it->second -- ;
+    //     }else{
+    //         return false ;
+    //     }
+    // }
+    // return true;
+    int arr[26] = {0};
+    if (s.size() != t.size())
+        return false;
+    for(int i = 0; i < s.size(); i++){
+        arr[s[i]-'a']++;
+    }
+    for(int j = 0; j<t.size(); j++){
+        arr[t[j]-'a']--;
+        if (arr[t[j]-'a']<0)
+            return false;
+    }
+    return true;
 
+}
 
+// day 19 below
 
 
 int main(){
@@ -273,13 +346,16 @@ int main(){
     // vector<vector <int>> res = threeSum_brute(nums);
     // vector<vector <int>> res  = threeSum_better(nums);
     // vector<vector<int>> res = threeSum_optimal(nums);
-    vector<vector<int>> res = fourSum_optimal(nums , 0);
-    for(int i = 0 ; i < res.size() ; i++){
-        for(int j = 0 ; j < res[0].size() ; j++){
-            cout << res[i][j] << " " ;
-        }
-        cout << endl;
-    }
+    // vector<vector<int>> res = fourSum_optimal(nums , 0);
+
+    // for(int i = 0 ; i < res.size() ; i++){
+    //     for(int j = 0 ; j < res[0].size() ; j++){
+    //         cout << res[i][j] << " " ;
+    //     }
+    //     cout << endl;
+    // }
+
+    cout << kthFactor(7,2);
 
         return 0;
 }
