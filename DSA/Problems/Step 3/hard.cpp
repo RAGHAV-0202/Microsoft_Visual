@@ -347,6 +347,17 @@ bool isSubsequence(string s, string t) {
     }
     return true;
 }
+// day 20 below
+
+
+
+
+
+
+
+
+
+
 
 
 int main(){

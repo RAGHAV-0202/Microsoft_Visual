@@ -19,4 +19,5 @@ Stated DSA on 7 april 2024
 23 april : 1 LC 3sum
 24 april : 1 LC 4sum
 25 april : striver video + 4 LC
-26 april : just 1 easy LC cuz of IIT'M endterm exam on 28 april
+26 april : completed 60 questions on leetcode (just 1 easy LC cuz of IIT'M endterm exam on 28 april)
+27 april : 
