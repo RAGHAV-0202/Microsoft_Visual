@@ -671,6 +671,48 @@ void spiral(vector<vector<int>> &mat){
 }
 
 
+void returnMax(map<char,int> &mp , char &ch , int &num){
+    int ans = 0 ;
+    for(auto it = mp.begin() ; it!= mp.end() ; it++){
+        if(it->second > ans){
+            ans = it->second;
+            ch = it->first;
+            // cout << "ch : " << it->first << " count : " << it->second << endl;
+        }
+    }
+    auto j = mp.find(ch);
+    j->second = 0 ; 
+    num = ans;
+}
+string frequencySort(string s) {
+    map<char , int> mp;
+    for(int i = 0 ; i < s.length() ; i++){
+        mp[s[i]]++;
+    }
+    // for(auto it = mp.begin() ; it!= mp.end() ; it++){
+    //     cout << it->first << "->" << it->second << endl;
+    // }
+    int max = INT32_MIN ; 
+    vector <char>ans;
+    while(max!=0){
+        char ch ='\0';
+        int num = 0; 
+        returnMax(mp ,ch,num );
+        // cout << ch << endl ;
+        max = num;
+        for(int i = 0 ; i < num ; i++){
+            ans.push_back(ch);
+        }
+    }
+    string  a;
+    for(int i = 0 ; i < ans.size() ; i++){
+        a+= ans[i];
+    }
+    return a;
+}
+
+
+
 
 int main(){
 
