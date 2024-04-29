@@ -215,7 +215,46 @@ string frequencySort(string s) {
     return a;
 }
 
+int subarray_brute(vector<int>arr , int k){
+    int n = arr.size() ;
+    int longest = 0 ;
+    for(int i = 0 ; i < n ; i++){
+        for(int j = i ; j < n ; j++){
+            int sum = 0 ;
+            for(int k = i ; k <= j ; k++){
+                sum+=arr[k];
+            }
+            if(sum == k && j - i > longest ){
+                longest = j - i + 1 ;
+            }
+        }
+    } 
+    return longest;
+}
 
+int subarray_brute_2(vector<int> arr , int k){
+    int n = arr.size() ;
+    int longest = 0 ;
+    for(int i = 0 ; i < n ; i++){
+        int sum = 0 ; 
+        for(int j = i ; j < n ; j++){
+            sum = sum + arr[j];
+            if(sum == k && j - i > longest ){
+                longest = j - i + 1 ;
+            }
+        }
+    } 
+    return longest; 
+}
+
+
+
+int subarray_better(vector<int> arr , int k){
+    int n = arr.size() ;
+    int longest = 0 ;
+        
+    return longest; 
+}
 
 
 
@@ -263,11 +302,19 @@ int main(){
     // cout << consecutive_ones(consecutive,conse_len)<< endl;
 
 
-    // vector <int> sub = {1,2,3,4,5,6};
-    // subarrays(sub ,  sub.size());
+    vector <int> sub = {1,2,3,4,5,6};
+    int target = 11 ; 
+    cout << subarray_brute(sub , target) << endl;
+    cout << subarray_brute_2(sub, target) << endl;
+    // vector<int> res = subarray_brute(sub , target);
+    // for(int i = 0 ; i < res.size() ; i++){
+    //     cout << res[i] << " ";
+    // }
 
-    string s = "Aabb";
-    cout << frequencySort(s);
+    // string s = "Aabb";
+    // cout << frequencySort(s);
+
+
 
         return 0;
 }

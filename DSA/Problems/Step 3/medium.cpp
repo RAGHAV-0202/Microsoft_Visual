@@ -711,6 +711,55 @@ string frequencySort(string s) {
     return a;
 }
 
+vector<int> twoSum(vector<int>& numbers, int target) {
+    vector <int> answer;
+    int left = 0 ; 
+    int right = numbers.size() - 1 ;
+
+    while(left < right){
+        int sum = numbers[left] + numbers[right];
+        if(sum == target){
+            answer.push_back(left + 1 );
+            answer.push_back(right + 1);
+            return answer;                       
+        }else if (sum > target){
+            right -- ;
+        }else{
+            left ++;
+        }
+    }
+
+    return answer;
+}
+string reverseWords(string s) {
+    vector<string> temp;
+    string a;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] != ' ') {
+            a += s[i];
+        } else {
+            if (!a.empty()) {
+                temp.push_back(a);
+                a.clear();
+            }
+        }
+    }
+    if (!a.empty()) {
+        temp.push_back(a);
+        a.clear();
+    }
+
+    string res;
+    for (int i = temp.size() - 1; i >= 0; i--) {
+        res += temp[i];
+        if (i != 0) {
+            res += ' ';
+        }
+    }
+
+    return res;
+}
+
 
 
 
