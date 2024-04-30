@@ -247,6 +247,21 @@ int subarray_brute_2(vector<int> arr , int k){
     return longest; 
 }
 
+int lengthOfLastWord(string s) {
+    int res = 0  ;
+    for(int i = s.length() - 1 ; i >=0 ; i--){
+        if(res == 0 && s[i] == ' '){
+            continue;
+        }else if (res == 0 && isalpha(s[i])){
+            res++;
+        }else if(res!= 0 && isalpha(s[i])){
+            res++;
+        }else{
+            return res;
+        }
+    }
+    return res;
+}
 
 
 int subarray_better(vector<int> arr , int k){
@@ -255,6 +270,7 @@ int subarray_better(vector<int> arr , int k){
         
     return longest; 
 }
+
 
 
 
