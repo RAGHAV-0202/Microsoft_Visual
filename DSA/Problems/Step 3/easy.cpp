@@ -267,12 +267,80 @@ int lengthOfLastWord(string s) {
 int subarray_better(vector<int> arr , int k){
     int n = arr.size() ;
     int longest = 0 ;
-        
+    int sum = arr[0];
+    int left = 0 , right = 0 ; 
+    while(right < n ){
+        while(sum > k && left <= right){
+            sum-=arr[left];
+            left++;
+        }
+        if(sum == k){
+            longest = max(longest , right - left + 1 );
+        }
+        right++;
+        if(right < n )sum += arr[right];
+    }
     return longest; 
+}
+int getLongestSubarray(vector<int>& a, int k) {
+    int n = a.size(); // size of the array.
+
+    map<int, int> preSumMap;
+    int sum = 0;
+    int maxLen = 0;
+    for (int i = 0; i < n; i++) {
+        //calculate the prefix sum till index i:
+        sum += a[i];
+
+        // if the sum = k, update the maxLen:
+        if (sum == k) {
+            maxLen = max(maxLen, i + 1);
+        }
+
+        // calculate the sum of remaining part i.e. x-k:
+        int rem = sum - k;
+
+        //Calculate the length and update maxLen:
+        if (preSumMap.find(rem) != preSumMap.end()) {
+            int len = i - preSumMap[rem];
+            maxLen = max(maxLen, len);
+        }
+
+        //Finally, update the map checking the conditions:
+        if (preSumMap.find(sum) == preSumMap.end()) {
+            preSumMap[sum] = i;
+        }
+    }
+
+    return maxLen;
 }
 
 
 
+
+
+
+string reversePrefix(string word, char ch) {
+    int ending = 9999;
+    for(int i = 0 ; i < word.length() ; i++){
+        if(word[i] == ch){
+            ending = i ;
+            break;
+        }
+    } 
+    if(ending == 9999){
+        return word;
+    } 
+    int left = 0 ;
+    while(left <= ending){
+        char temp = word[left];
+        word[left] = word[ending];
+        word[ending] = temp ;
+        left++ ; 
+        ending --;
+    }   
+    return word;
+}
 
 void printFN(int arr[], int len){
     for(int i = 0 ; i < len ; i++){
@@ -322,6 +390,7 @@ int main(){
     int target = 11 ; 
     cout << subarray_brute(sub , target) << endl;
     cout << subarray_brute_2(sub, target) << endl;
+    cout << subarray_better(sub,target) << endl;
     // vector<int> res = subarray_brute(sub , target);
     // for(int i = 0 ; i < res.size() ; i++){
     //     cout << res[i] << " ";
