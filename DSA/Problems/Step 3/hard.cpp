@@ -351,6 +351,27 @@ bool isSubsequence(string s, string t) {
 
 // day 21
 
+int subarray_0(vector<int>arr){
+    int maxi = 0 ;
+    int sum = 0 ;
+    map <int,int> mp ; 
+    for(int i = 0 ; i < arr.size() ; i++ ){     
+        sum+=arr[i];
+        if(sum == 0){
+            maxi = i + 1 ;
+        }else{
+            if(mp.find(sum) != mp.end()){
+                maxi = max(maxi , i - mp.find(sum)->second);
+            }else{
+                mp[sum] = i ;
+            }
+        }
+    }
+
+    return maxi;
+}
+
+// day 22
 
 
 
@@ -387,7 +408,10 @@ int main(){
     //     cout << endl;
     // }
 
-    cout << kthFactor(7,2);
+    // cout << kthFactor(7,2);
+
+
+    cout << subarray_0(nums);
 
         return 0;
 }
