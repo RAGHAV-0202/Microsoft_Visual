@@ -315,7 +315,19 @@ int getLongestSubarray(vector<int>& a, int k) {
     return maxLen;
 }
 
-
+    int findMaxK(vector<int>& nums) {
+      set<int> st;
+      for(int i = 0 ; i < nums.size() ; i++){
+        st.insert(nums[i]);
+      }  
+      int res = - 1;
+      for(auto it : st){
+        if(st.find(-it) != st.end()){
+            res = max(res,it);
+        }
+      }
+      return res;
+    }
 
 
 
