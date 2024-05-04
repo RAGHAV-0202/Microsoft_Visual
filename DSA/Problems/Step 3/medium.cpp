@@ -761,6 +761,23 @@ string reverseWords(string s) {
     return res;
 }
 
+int numRescueBoats(vector<int>& people, int limit) {
+    int n = people.size();
+    int left = 0 ; 
+    int right = n - 1 ; 
+    int ans = 0 ;
+    sort(people.begin() , people.end());
+    while(left <= right){
+        if(people[left] + people[right] <= limit){
+            left ++ ;
+            // ans++;
+        }
+        right -- ;
+        ans++;
+    }
+    return ans;
+}
+
 
 
 
