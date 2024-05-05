@@ -28,5 +28,6 @@ Stated DSA on 7 april 2024
 2 may : subarray with sum 0 ,  exams from 6/5 , will start react later on , 1 LC
 3 may : sessionals on 6 , 8 , 9 , 13 may
 4 may : just 1 LC
+5 may : exam tomorrow 
 
 
