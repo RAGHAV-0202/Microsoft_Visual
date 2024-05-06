@@ -329,8 +329,40 @@ int getLongestSubarray(vector<int>& a, int k) {
       return res;
     }
 
-
-
+    int diagonalSum(vector<vector<int>> &mat)
+    {
+        int res = 0;
+        int m = mat.size();
+        int n = mat[0].size();
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (m % 2 != 0 && n % 2 != 0)
+                {
+                    if (i == m / 2 && j == n / 2)
+                    {
+                        continue;
+                    }
+                }
+                if (i == j)
+                {
+                    res += mat[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (j == n - i - 1)
+                {
+                    res += mat[i][j];
+                }
+            }
+        }
+        return res;
+    }
 
 string reversePrefix(string word, char ch) {
     int ending = 9999;
