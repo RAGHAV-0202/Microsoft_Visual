@@ -778,8 +778,44 @@ int numRescueBoats(vector<int>& people, int limit) {
     return ans;
 }
 
-
-
+int calPoints(vector<string>& operations) {
+    list <int> temp;
+    int count = 0  ;
+    for(int i = 0 ; i < operations.size() ; i++){
+        if(isalpha(operations[i][0]) || operations[i][0] == '+'){
+            if((operations[i][0]) == 'C'){
+                auto it = find(temp.begin(), temp.end(), stoi(operations[i - 1]));
+                if(it!= temp.end()){
+                temp.erase(it);
+                count--;
+                }
+            }else if(operations[i][0] == 'D'){
+                if (!temp.empty()) {
+                    int last = temp.back();
+                    int a = last * 2;
+                    temp.push_back(a);
+                    count++;
+                }
+            }else if(operations[i][0] == '+'){
+                auto it = prev(temp.end());
+                int last = *it;
+                it--;
+                int secondLast = *it;
+                temp.push_back(last + secondLast);
+            }
+        }else{
+            int a = stoi(operations[i]);
+            temp.push_back(a);
+            count++;
+        }
+    }
+    int res = 0 ; 
+    for(auto it = temp.begin() ; it!=temp.end() ; it++){
+        res+= *it;
+    }
+    return res;
+}
+// not submitted 682
 
 // day 26
 
