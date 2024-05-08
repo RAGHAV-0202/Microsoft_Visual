@@ -815,6 +815,27 @@ int calPoints(vector<string>& operations) {
     }
     return res;
 }
+int calPoints(vector<string> &operations){
+    std::vector<int> stack;
+
+    for (std::string& op : operations){
+        if (op == "+")
+            stack.push_back(stack[stack.size() - 1] + stack[stack.size() - 2]);
+        else if (op == "D")
+            stack.push_back(stack[stack.size() - 1] * 2);
+        else if (op == "C")
+            stack.pop_back();
+        else
+            stack.push_back(std::stoi(op));
+    }
+
+    int sum{0};
+    for (int& v : stack) {
+        sum += v;
+    }
+
+    return sum;
+}
 // not submitted 682
 
 // day 26
