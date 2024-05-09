@@ -442,37 +442,45 @@ vector <int> merge_brute(vector<int>arr1 , vector<int> arr2){
     cout << endl;
     return res;
 }
-vector <int>  merge_optimal(vector<int>arr1 , vector<int> arr2){
-    // // int right = arr1.size() - 1 ;
-    // // int left = 0 ; 
-    // // while(arr1[right] >= arr2[left]){
-    // //     if(arr1[right] == 0){
-    // //         continue;
-    // //         right -- ;
-    // //     }else{
-    // //         swap(arr1[right--] , arr2[left++]);
-    // //     }
-    // // }
-    // int count = 0 ; 
-    // while(arr1[count] != 0){
-    //     count++;
-    // }
-    // for(int i = count ; i < arr1.size() ; i++){
-    //     arr1[i] = arr2[i - arr2.size()];
-    // }
-    // sort(arr1.begin() , arr1.end());
-    // return arr1;
-
-
-    int left = arr1.size() - 1 ;
+vector <int>  merge_optimal(vector<int>arr1 , vector<int> arr2 , int n , int m){
+    int left = n - 1 ;
     int right = 0 ; 
-    while(left >= 0 & right < arr2.size()){
+    while(left >= 0 & right <m){
         if(arr1[left] > arr2[right]){
-            swap[arr1[left], arr2[right]];
+            swap(arr1[left], arr2[right]);
             left--, right++;
+        }else{
+            break;
         }
     }
+    sort(arr1.begin(), arr1.end());
+    sort(arr2.begin() , arr2.end() );
+    return arr1;
+}
+void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+    for(int i = m ; i < m + n ; i++){
+        nums1[i] = nums2[i - m ];
+    }
+    sort(nums1.begin() , nums1.end());
+}
 
+vector<int> findTwoElement(vector<int> arr, int n) {
+    map<int,int> mp;
+    long long sum = 0 ;
+    int repeat = 0 ;
+    for(int i = 0 ; i < n ; i++){
+        mp[arr[i]]++;
+        sum+=arr[i];
+        if(mp[arr[i]] == 2){
+            repeat = arr[i];
+        }
+    }
+    vector<int> res;
+    long long real_Sum = (n*(n+1) ) / 2 ;
+    long long missing = real_Sum - sum + repeat;
+    res.push_back(repeat);
+    res.push_back(missing);
+    return res;
 }
 
 int main(){
@@ -516,7 +524,8 @@ int main(){
 
     vector<int> arr1 = {1, 2, 3, 0, 0, 0};
     vector<int> arr2 = {2,5,6};
-    vector<int> res = merge_optimal(arr1, arr2);
+    // vector<int> res = merge_brute(arr1, arr2);
+    vector<int> res = merge_optimal(arr1, arr2 , 3 ,3);
     for(int  i = 0 ; i < res.size() ; i++){
         cout << res[i] << " " ;
     } 
