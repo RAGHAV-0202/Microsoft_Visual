@@ -375,14 +375,105 @@ int subarray_0(vector<int>arr){
 // day 27
 
 
+// day 33
 
 
 
+vector<vector<int>> merge(vector<vector<int>> intervals){
+    sort(intervals.begin() , intervals.end());
+    int n = intervals.size() ;
+    vector<vector<int>> ans;
+    for(int i = 0 ; i < n ; i++){
+        int start = intervals[i][0];
+        int end = intervals[i][1];
+        if(!ans.empty() && end <= ans.back()[1]){
+            continue;
+        }
+        for(int j = i + 1 ; j <  n ; j ++){
+            if(intervals[j][0] <= end ){
+                end = max(end , intervals[j][1]);
+            }else{
+                break;
+            }
+        }  
+        ans.push_back({start,end});
+    }
+    
+    return ans;
+}
+
+long long maximumHappinessSum(vector<int>& happiness, int k) {
+    long long res = 0 ;
+    int count = 0 ; 
+    int right = happiness.size() - 1 ;
+    sort(happiness.begin() , happiness.end());
+    while(count < k && happiness[right] - count >= 0 &&  right >= 0){
+        res += happiness[right] - count ;
+        right--;
+        count ++;
+    }
+    return res;
+}
+
+vector <int> merge_brute(vector<int>arr1 , vector<int> arr2){
+    int l1 = 0 ; 
+    int l2 = 0 ; 
+    vector<int>res;
+    int len = arr1.size()  + arr2.size();
+    for(int i = 0 ; i < len ; i++){
+        if(l1 == arr1.size()){
+            cout << "1" << " ";
+            res.push_back(arr2[l2]);
+            l2++;
+        }else if(l2 == arr2.size()){
+            cout << "2" << " ";
+            res.push_back(arr1[l1]);
+            l1++;
+        }else if(arr1[l1] <= arr2[l2]){
+            cout << "3" << " ";
+            res.push_back(arr1[l1]);
+            l1++;
+        }else{
+            cout << "4" << " ";
+            res.push_back(arr2[l2]);
+            l2++;
+        }
+    }
+    cout << endl;
+    return res;
+}
+vector <int>  merge_optimal(vector<int>arr1 , vector<int> arr2){
+    // // int right = arr1.size() - 1 ;
+    // // int left = 0 ; 
+    // // while(arr1[right] >= arr2[left]){
+    // //     if(arr1[right] == 0){
+    // //         continue;
+    // //         right -- ;
+    // //     }else{
+    // //         swap(arr1[right--] , arr2[left++]);
+    // //     }
+    // // }
+    // int count = 0 ; 
+    // while(arr1[count] != 0){
+    //     count++;
+    // }
+    // for(int i = count ; i < arr1.size() ; i++){
+    //     arr1[i] = arr2[i - arr2.size()];
+    // }
+    // sort(arr1.begin() , arr1.end());
+    // return arr1;
 
 
+    int left = arr1.size() - 1 ;
+    int right = 0 ; 
+    while(left >= 0 & right < arr2.size()){
+        if(arr1[left] > arr2[right]){
+            swap[arr1[left], arr2[right]];
+            left--, right++;
+        }
+    }
 
-
-
+}
 
 int main(){
     // int x = particular_Pascal_at_r_c(5,3);
@@ -412,7 +503,23 @@ int main(){
     // cout << kthFactor(7,2);
 
 
-    cout << subarray_0(nums);
+    // cout << subarray_0(nums);
+    // vector<vector<int>> subintervals = {{1,3} , {2,6} , {8,9}, {9,11} , {9,10} , {2,4} , {15,18} , {16,17}};
 
-        return 0;
+    // vector<vector<int>> res = merge(subintervals);
+    // for(int i = 0 ; i < res.size() ; i++){
+    //     for(int j = 0 ; j < res[0].size() ; j++){
+    //         std::cout << res[i][j] << " ";
+    //     }
+    //     std::cout << endl;
+    // }
+
+    vector<int> arr1 = {1, 2, 3, 0, 0, 0};
+    vector<int> arr2 = {2,5,6};
+    vector<int> res = merge_optimal(arr1, arr2);
+    for(int  i = 0 ; i < res.size() ; i++){
+        cout << res[i] << " " ;
+    } 
+
+    return 0;
 }
