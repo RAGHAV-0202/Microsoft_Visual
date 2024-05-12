@@ -41,7 +41,7 @@ function Content(){
 function Footer(){
     return (
         <footer>
-            <p>2024 Raghav Development. All right reserved</p>
+            <p>Footer Footer. </p>
         </footer>
     )
 }
