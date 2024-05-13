@@ -1,19 +1,26 @@
 #include <stdio.h>
-#include <string.h>
+// standard input and output
+
 int main(){
 
-    char string[] = "This is a sample string ...";
-    int n = 10 ; // number of characters to be copied
-    int m = 3 ; // starting position
+    printf("hello ");
 
-    char result[n+1];
 
-    for(int i = 0 ; i < n ; i++){
-        result[i] = string[m+i];
-    }
-    result[n] = '\0'; // null character at the last index
+    // int  : integer ( 0 , 1, 2 ,3 ,4  ,5 .... );
+    // char : character (a , b  , c , d ,e .. )
+    // float point (1.2 , 2.3);
 
-    printf("%s" , result);
-    
-    return 0;
+    // int a = 70;   // %d
+    // char ch = 't' ;  // %c
+    // float kk = 7.8 ; // %f
+
+
+    // printf("number is %d  %f %c %d" , a , kk , ch ,a) ;
+
+
+
+
+
+
+    return 0 ;
 }
