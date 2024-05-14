@@ -837,8 +837,46 @@ int calPoints(vector<string> &operations){
     return sum;
 }
 // not submitted 682
-
+ 
 // day 26
+bool isVowel(char a){
+    if(a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' || a =='A' || a == 'E' ||a == 'I' ||a == 'U' ||a == 'O'){
+        return true;
+    }
+    return false;
+}
+string reverseVowels(string s) {
+    vector<char> vec;
+    // for(int i = 0 ; i < s.length() ; i++){
+    //     if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] =='A' || s[i] == 'E' ||s[i] == 'I' ||s[i] == 'U' ||s[i] == 'O' ){
+    //         vec.push_back(s[i]);
+    //     }
+    // }
+    // int count = vec.size() ; 
+    // int j  = 0 ;
+    // for(int i = 0 ; i < s.length() ; i++){
+    //     if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'||s[i] =='A' || s[i] == 'E' ||s[i] == 'I' ||s[i] == 'U' ||s[i] == 'O' ){
+    //        s[i] = vec[count - 1 - j];
+    //        j ++;
+    //     }            
+    // }
+int left = 0 ;
+int right = s.length() - 1 ;
+while(left <= right && left != right){
+    if(isVowel(s[left]) && !isVowel(s[right])){
+        right --;
+    }else if(isVowel(s[right]) && !isVowel(s[left])){
+        left++;
+    }else if(isVowel(s[right]) && isVowel(s[left])){
+        swap(s[left] , s[right]);
+        left++;
+        right--;
+    }else{
+        left++;
+    }
+}
+    return s;
+}
 
 int main(){
 
