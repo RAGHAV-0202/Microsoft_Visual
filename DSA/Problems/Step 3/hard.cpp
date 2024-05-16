@@ -482,6 +482,77 @@ vector<int> findTwoElement(vector<int> arr, int n) {
     res.push_back(missing);
     return res;
 }
+int inversionCount(vector <int> &arr, long long N){
+    int left = 0 ; 
+    int right = N -1  ;
+    int count = 0 ; 
+    
+    while(left <= right){
+        for(int i = right ; i > left ; i--){
+            cout << arr[left] << " " << arr[i] << endl;
+            if(arr[left] > arr[i]){
+                count++;
+            }
+        }
+        left++;
+    }
+    return count;
+}
+int cnt = 0 ; 
+void merge2(vector <int> &arr , int low , int mid , int high){
+    vector<int> temp;
+    int left = low ;
+    int right = mid+ 1 ;
+    while(left <= mid && right <= high){
+        if(arr[left] <= arr[right]){
+            temp.push_back(arr[left]);
+            left++ ;
+        }else{
+            temp.push_back(arr[right]);
+            cnt+= (mid - left +1);
+            right ++ ; 
+        }
+    }
+    while(left <=mid){
+        temp.push_back(arr[left]);
+        left++ ; 
+    }
+    while(right <=high){
+        temp.push_back(arr[right]);
+        right++ ; 
+    }
+
+    for(int i = low ; i <= high ; i++){
+        arr[i] = temp[i - low];
+    }
+}
+
+void merge_sort2(vector<int> &arr , int low , int high){
+    if (low == high){
+        return ;
+    }
+
+    int middle = (low + high) / 2 ;
+
+    merge_sort2(arr , low , middle);
+    merge_sort2(arr , middle + 1 , high);
+    merge2(arr , low , middle , high);
+
+
+    return ;
+}
+
+int inversionCount_better(vector<int> arr , int N){
+    merge_sort2(arr,0,N-1);
+    return cnt;
+
+}
+
+int countOdds(int low, int high) {
+    if(low % 2 == 0 && high % 2 == 0) return (high - low)/2;
+    return ((high - low)/2)+1;
+}
+
 
 int main(){
     // int x = particular_Pascal_at_r_c(5,3);
@@ -522,13 +593,17 @@ int main(){
     //     std::cout << endl;
     // }
 
-    vector<int> arr1 = {1, 2, 3, 0, 0, 0};
-    vector<int> arr2 = {2,5,6};
-    // vector<int> res = merge_brute(arr1, arr2);
-    vector<int> res = merge_optimal(arr1, arr2 , 3 ,3);
-    for(int  i = 0 ; i < res.size() ; i++){
-        cout << res[i] << " " ;
-    } 
+    // vector<int> arr1 = {1, 2, 3, 0, 0, 0};
+    // vector<int> arr2 = {2,5,6};
+    // // vector<int> res = merge_brute(arr1, arr2);
 
-    return 0;
+    // vector<int> res = merge_optimal(arr1, arr2 , 3 ,3);
+    // for(int  i = 0 ; i < res.size() ; i++){
+    //     cout << res[i] << " " ;
+    // }
+    vector <int> arr = {2, 4, 1, 3, 5} ;
+    int N = 5 ; 
+    cout << inversionCount_better(arr,5);
+
+        return 0;
 }
