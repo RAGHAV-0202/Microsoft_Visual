@@ -878,6 +878,34 @@ while(left <= right && left != right){
     return s;
 }
 
+bool isRobotBounded(string instructions) {
+    int counter = 0 ;  // 0 = north , +1 = east , +2 = south , +3 = west , -1 = west , -2 = south , -3 westp
+    int vertical = 0 ;
+    int horizontal = 0 ;  
+    int k = 0 ; 
+    for(int i = 0 ; i < instructions.length() ; i++){
+        if(instructions[i] == 'L'){
+            counter = (counter + 3) % 4; ;
+        }else if (instructions[i] == 'R'){
+            counter = (counter + 1) % 4;
+        }else if(instructions[i] == 'G'){
+            if(counter == 0){
+                vertical++;
+            }else if (counter == 1){
+                horizontal++;
+            }else if (counter == 2){
+                vertical--;
+            }else {
+                horizontal --;
+            }
+        }
+    }
+    if(counter != 0 || (vertical == 0 && horizontal == 0)){
+        return true;
+    }
+    return false;
+}
+
 int main(){
 
     // vector <int> nums = {2,7,11,15};
