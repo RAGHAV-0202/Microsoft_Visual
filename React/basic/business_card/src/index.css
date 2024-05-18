@@ -11,3 +11,109 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #32292F;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 225px;
+  height: 500px;
+  background-color: #037171;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.img_div{
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.image{
+  width: 90%;
+  overflow: hidden;
+  transform: scale(0.8);
+}
+.details{
+  width: 100%;
+  height: 50px;
+  /* background-color: lightcoral; */
+  padding: 0;
+  text-align: center;
+}
+.details h4{
+  font-size: 14px;
+}
+.details h5{
+  font-size: 11px;
+  font-weight: 500;
+}
+.details h6{
+  font-size: 10px;
+  font-weight: 500;
+}
+.socials{
+  width: 100%;
+  height: 35px;
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.social_div{
+  width: 48%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+.white{
+  background-color: white;
+}
+.blue{
+  background-color: lightgreen;
+}
+
+.about{
+  /* background-color: red; */
+  font-size: 14px;
+  padding-top: 5px;
+}
+.about h6{
+  font-size: 16px;
+}
+.footer{
+  /* background-color: red; */
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-top: 15px;
+}
+
+.icons{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: lightgreen;
+}
