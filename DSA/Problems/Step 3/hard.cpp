@@ -553,6 +553,29 @@ int countOdds(int low, int high) {
     return ((high - low)/2)+1;
 }
 
+int reversePairs(vector<int>& nums) {
+    int count = 0 ; 
+    for(int i = 0 ; i < nums.size() ; i++){
+        for(int j = i+1 ; j < nums.size() ; j++ ){
+            double x = nums[i];
+            double y = nums[j] * 2.00;
+            if(x> y){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+// 0 <= i < j < nums.length and nums[i] > 2 * nums[j].
+int reversePairs(vector<int>&nums){
+    int count = 0;
+
+
+    
+    return count;
+}
+
+
 
 int main(){
     // int x = particular_Pascal_at_r_c(5,3);

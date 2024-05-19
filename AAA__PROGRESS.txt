@@ -42,5 +42,5 @@ Stated DSA on 7 april 2024
 16 may : react 
 17 may : 1 LC 
 18 may : react
-19 may : react props , use data
+19 may : react props , use data , Binary search  day 43
 
