@@ -39,6 +39,23 @@ int binary_search_recursive(vector<int> &arr, int low , int high , int target){
     }
 }
 
+int searchInsert(vector<int>& nums, int target) {
+    int low = 0 , high = nums.size() - 1 ;
+    while(low <= high){
+        int mid = (low+high) / 2 ;
+        if(nums[mid] == target){
+            return mid ;
+        }
+
+        if(nums[mid] > target){
+            high = mid - 1 ;
+        }else{
+            low = mid + 1 ;
+        }
+    }
+    return low;
+}
+
 int main(){
 
     vector<int> arr = {1,2,3,4,5,6,7,8,12,13,15,17};

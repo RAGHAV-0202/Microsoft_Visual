@@ -1,5 +1,5 @@
-Stated DSA on 7 april 2024
-
+Stated DSA on 7 april 2024                    
+                            // SLOW PROGRESS IS BETTER THAN NO PROGRESS // THE FEAR YOU DONT FACE BECOMES YOUR LIMIT //
 7 April : Patterns , STL , basic maths;
 8 April : Recurssion ; 
 9 April : Hashing ;
@@ -43,4 +43,5 @@ Stated DSA on 7 april 2024
 17 may : 1 LC 
 18 may : react
 19 may : react props , use data , Binary search  day 43
+20 may : FIRST SEM RESULT GOT DECLARED TODAY GOT 8.14 SGPA.
 
