@@ -575,7 +575,21 @@ int reversePairs(vector<int>&nums){
     return count;
 }
 
-
+//hard #41
+int firstMissingPositive(vector<int>& nums) {
+    sort(nums.begin() , nums.end());
+    int small = 1;
+    for(int i = 0 ; i < nums.size() ; i++){
+        if(nums[i] < 1 || (i >= 1 && nums[i] == nums[i-1])){
+            continue;
+        }else if (nums[i] == small){
+            small++;
+        }else {
+            return small;
+        }
+    }
+    return small;
+}
 
 int main(){
     // int x = particular_Pascal_at_r_c(5,3);
