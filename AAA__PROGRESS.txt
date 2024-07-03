@@ -53,3 +53,8 @@ Stated DSA on 7 april 2024
 26 may : 1 LC
 27 may : 1 LC
 28 may : 3 LC COMPLETED 100 questions on leetcode
+
+ Second Semester Exams
+
+2 July : Permutations , Next Permutation , react
+3 July : React , completed Static react, watched till 5:10:00

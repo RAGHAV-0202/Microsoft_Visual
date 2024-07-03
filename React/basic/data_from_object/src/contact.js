@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function  Contact(props){
-    console.log(props)
+    // console.log(props)
   return(
     <div className='contact'>
       <div className='top'>
@@ -14,4 +14,6 @@ export default function  Contact(props){
       </div>
     </div>
   )
+
+
 }
