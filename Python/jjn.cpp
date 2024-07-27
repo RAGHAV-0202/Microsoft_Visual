@@ -1,18 +1,18 @@
  #include<iostream>
+ #include <bits/stdc++.h>
  using namespace std;
 
- int main() {
-    int n; 
-    cin >> n ;
-
-    for (int i = 1 ; i <= n ; i++){
-        for (int j = 1 ; j <=n-i ; j++){
-            cout << " " ;
-        }
-        for (int j = 1 ; j <= i ; j++){
-            cout << "*"
-        }
-        cout << endl ; 
+string reverse(string a){
+    int len = a.length() ;
+    for(int i = 0 ; i < len / 2 ; i++){
+        swap(a[i] , a[len - i - 1]);
     }
-    return 0;
- }
+    return a;
+}
+
+int main(){
+    string a = "my name is raghav" ;
+    sort(a.begin() , a.end()) ;
+    cout << a << endl;
+    
+}

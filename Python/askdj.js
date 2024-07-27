@@ -261,19 +261,29 @@
 
 
 
-a = prompt()
+// a = prompt()
 
-gcd = (num1,num2)=>{
-    max = 0
-    for(i = 0 ; i <= num1 ; i++){
-        if(num1 % i == 0 && num2 % i == 0 ){
-            if(i > max){
-                max = i 
-            }
-        }
-    }
-    return max
-}
+// gcd = (num1,num2)=>{
+//     max = 0
+//     for(i = 0 ; i <= num1 ; i++){
+//         if(num1 % i == 0 && num2 % i == 0 ){
+//             if(i > max){
+//                 max = i 
+//             }
+//         }
+//     }
+//     return max
+// }
 
-lcm = (a * b) / gcd(a,b)
-console.log(lcm)
+// lcm = (a * b) / gcd(a,b)
+// console.log(lcm)
+
+// let x = 52 ;
+
+// y = x < 10 ? 2 : 4 ;
+
+// console.log(y);
+
+const isGoingOut = false;
+let answer = isGoingOut ? "Yes" : "No" ;
+console.log(answer);

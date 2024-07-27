@@ -1,0 +1,10 @@
+.App{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form input{
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+

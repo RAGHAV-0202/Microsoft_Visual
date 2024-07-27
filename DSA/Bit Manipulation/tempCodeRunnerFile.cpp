@@ -1,0 +1,2 @@
+
+int binaryToDecimal(string binary){

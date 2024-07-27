@@ -58,3 +58,18 @@ Stated DSA on 7 april 2024
 
 2 July : Permutations , Next Permutation , react
 3 July : React , completed Static react, watched till 5:10:00
+
+.. had iit exam , went to college for some events , learned how to drive bike etc
+
+15 july : 9:37:42
+16 july : completed tutorial
+17 july : bulit 2 project Tenzies , FAQ
+18 july : built tab functionality using react  , slider , 
+19 july : linked list
+20 july : paragraph generator , to do list , color generator
+21 july : linked list doubly linked
+22 july : stack 
+23 july : react project
+24 july : hooks , useRef , useContext , useReducer 
+25 july : landing page for codsoft internship (took 3 hrs) . ML 1 hr video , ContextAPI reactJS , started parallax website
+26 july : parallax completed
