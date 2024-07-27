@@ -15,13 +15,13 @@ body{
 ::selection{
     background-color: #0b372dbb;
 }
-
-.logo{
+.logo {
     width: 100px;
 }
-header{
+
+header {
     width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     /* margin: 0 auto; 
     display: flex;
     justify-content: center; */
@@ -29,22 +29,24 @@ header{
     position: absolute;
     z-index: 100;
     padding: 0;
-    top : 0 ;
+    top: 0;
     left: 0;
 }
-header .navbar{ 
+
+header .navbar {
     /* background-color: red; */
     width: 100%;
     height: 100%;
     max-width: 1400px;
-    margin:  0 auto;
-    padding:  0 2rem;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
 }
-.navbar ul{
+
+.navbar ul {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -52,6 +54,7 @@ header .navbar{
     align-items: center;
     transition: 0.3s linear all;
 }
+
 .navbar ul li a {
     text-decoration: none;
     /* color: white; */
@@ -59,8 +62,8 @@ header .navbar{
     padding: 0 1.5 rem;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 0.83rem ;
-    
+    font-size: 0.83rem;
+
     padding: 2px 4px;
     display: flex;
     align-content: center;
@@ -69,35 +72,40 @@ header .navbar{
     transition: 0.3s linear all;
 }
 
-.navbar ul a:hover , .navbar ul li:hover{
+.navbar ul a:hover,
+.navbar ul li:hover {
     color: blue;
 
 }
 
-.search a{
+.search a {
     font-size: 1.05rem;
-    padding:  0 3rem;
+    padding: 0 3rem;
 }
-.burger a{
+
+.burger a {
     padding: 0;
     display: flex;
     width: 37px;
     height: 37px;
     border-radius: 50%;
-    background-color: rgba(115,115,115,0.7);
+    background-color: rgba(115, 115, 115, 0.7);
     backdrop-filter: blur(10px);
 
     align-items: center;
     justify-content: center;
 }
-.bar{
+
+.bar {
     width: 52%;
     height: 1.3px;
     background-color: white;
     border-radius: 2px;
     position: relative;
 }
-.bar::before , .bar::after{
+
+.bar::before,
+.bar::after {
     content: "";
     width: 50%;
     height: 100%;
@@ -107,14 +115,16 @@ header .navbar{
     left: 50%;
     transform: translateX(-50%);
 }
-.bar::before{
+
+.bar::before {
     top: -4.5px;
 }
-.bar::after{
+
+.bar::after {
     top: 4.5px;
 }
 
-main{
+main {
     position: relative;
     background-color: darkslategray;
     height: 100vh;
@@ -123,20 +133,20 @@ main{
     /* background-color: red; */
     /* max-width: 1700px; */
     /* max-height: 950px; */
-    
+
 }
 
-.bg-img{
+.bg-img {
     position: absolute;
     width: 2800px;
     top: calc(50% - 340px);
     left: calc(50% + 10px);
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
 
 
- /* top me x + 90
+/* top me x + 90
     left me y - 40 */
 .mountain-10 {
     position: absolute;
@@ -148,7 +158,7 @@ main{
     /* background-color: aqua; */
 }
 
-.mountain-9{
+.mountain-9 {
     position: absolute;
 
     z-index: 5;
@@ -186,7 +196,7 @@ main{
     transform: translate(-50%, -50%);
 }
 
-.text{
+.text {
     position: absolute;
     z-index: 13;
     left: 50%;
@@ -195,15 +205,17 @@ main{
     text-align: center;
     /* text-transform: uppercase; */
     color: white;
-    /* pointer-events: auto; */
+    pointer-events: auto;
     /* line-height: 0.9; */
 }
-.text h2{
+
+.text h2 {
     font-weight: 400;
     font-size: 6.5rem;
 
 }
-.text h1{
+
+.text h1 {
     font-weight: 800;
     font-size: 8rem;
     line-height: 0.88;
@@ -228,7 +240,7 @@ main{
 
     z-index: 12;
     top: calc(50% + 269px);
-    left: calc(50% + 130px);     
+    left: calc(50% + 130px);
     /* left is diff */
     width: 583px;
     /* background-color: rebeccapurple; */
@@ -247,6 +259,7 @@ main{
 
     transform: translate(-50%, -50%);
 }
+
 .mountain-3 {
     position: absolute;
 
@@ -272,6 +285,7 @@ main{
 
     transform: translate(-50%, -50%);
 }
+
 .mountain-1 {
     position: absolute;
 
@@ -304,13 +318,13 @@ main{
 
 .fog-1 {
     position: absolute;
-    z-index: 15;
+    z-index: 21;
     top: calc(100% - 355px);
     left: 50%;
     width: 1600px;
     transform: translate(-50%, -50%);
-    margin-top: 80px;
 }
+
 .fog-2 {
     position: absolute;
     z-index: 4;
@@ -319,6 +333,7 @@ main{
     left: calc(50% + 7px);
     transform: translate(-50%, -50%);
 }
+
 .fog-3 {
     position: absolute;
 
@@ -330,6 +345,7 @@ main{
 
     transform: translate(-50%, -50%);
 }
+
 .fog-4 {
     position: absolute;
 
@@ -341,18 +357,20 @@ main{
 
     transform: translate(-50%, -50%);
 }
+
 .fog-5 {
     position: absolute;
 
-    z-index: 13;
+    z-index: 12;
     top: calc(50% + 149px);
     left: calc(50% - 28px);
     width: 1435px;
     /* background-color: rebeccapurple; */
-    
+
 
     transform: translate(-50%, -50%);
 }
+
 .fog-6 {
     position: absolute;
 
@@ -364,6 +382,7 @@ main{
 
     transform: translate(-50%, -50%);
 }
+
 .fog-7 {
     position: absolute;
     z-index: 2;
@@ -372,20 +391,23 @@ main{
     left: calc(50% + 340px);
     transform: translate(-50%, -50%);
 }
-.changer{
-    position: absolute;
-    z-index: 150;
-}
-.vignette{
+
+.vignette {
     /* display: flex; */
     position: absolute;
-    z-index: 98;
+    z-index: 100;
     width: 100%;
     height: 100%;
-    top: 50px;
+    top: 0;
     left: 0;
-    background-color: radial-gradient(ellipse at center , 
-    rgba(0,0,0,0) 65% ,
-    rgba(0,0,0,0.7));
-    /* pointer-events: none; */
+    background-color: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0) 65%,
+            rgba(0, 0, 0, 0.7));
+    pointer-events: none;
+}
+
+.parallax {
+    transition: 0.45s all cubic-bezier(0.2, 0.49, 0.32, 0.99);
+    /* background-color: red; */
+    /* display: none; */
 }
