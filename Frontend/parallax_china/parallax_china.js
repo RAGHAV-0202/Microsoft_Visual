@@ -31,3 +31,46 @@ window.addEventListener("mousemove", (e) => {
         `;
     });
 });
+
+
+
+
+// window.addEventListener('resize', () => {
+//    const main = document.querySelector(".main")
+//     if(window.innerWidth >= 725){
+//         main.style.maxHeight = `${window.innerWidth * 0.6}px`
+//     }else{
+//         main.style.maxHeight = `${window.innerWidth * 1.6}px`
+//         //  main.style.maxHeight = "100vh"
+//     }
+// });
+
+
+
+let timeline = gsap.timeline();
+let el = document.querySelector(".bg-img");
+
+// let array = Array.from(parallax_el).filter((el)=>!el.classList.contains("text"))
+
+timeline.from(el, {
+    top: `${el.offsetHeight / 2 + parseFloat(el.dataset.distance)}px`,
+    duration: 3.5
+});
+
+
+
+// let timeline = gsap.timeline()
+
+// Array.from(parallax_el)
+//     .filter((el)=> !el.classList.contains("text"))
+//     .forEach((el)=>{
+//     timeline.from(
+//         el, 
+//         {
+//             top : `${el.offsetHeight/2 + +el.dataset.distance}px`,
+//             duration : 2.5 ,
+//         },
+//         "1"
+//     )
+// })
+
