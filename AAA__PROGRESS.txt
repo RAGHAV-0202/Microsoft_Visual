@@ -72,4 +72,7 @@ Stated DSA on 7 april 2024
 23 july : react project
 24 july : hooks , useRef , useContext , useReducer 
 25 july : landing page for codsoft internship (took 3 hrs) . ML 1 hr video , ContextAPI reactJS , started parallax website
-26 july : parallax completed
+26 july : parallax completed , 
+27 july : added transtions in parallax  , started Binary Tree (just intro) 
+28 july : started new react project (H&M E-commerce clone)
+29 july : H&M Clone
