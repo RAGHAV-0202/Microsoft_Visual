@@ -4,6 +4,8 @@ import "../css/navbar.css"
 
 
 function Navbar(){
+    const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem("cart")) || []);
+    const len = cart.length
     return(
         <div className="navbar">
 
@@ -27,20 +29,20 @@ function Navbar(){
                     </a>
                     <a href="/cart">
                         <i class="fa-light fa-bag-shopping"></i>
-                        <p>Shopping bag</p>
+                        <p>Shopping bag ({len})</p>
                     </a>
                 </div>
             </div>
             <div className="nav_bottom">
 
-                <a href="ladies">Ladies</a>
-                <a href="men">Men</a>
-                <a href="baby">Baby</a>
-                <a href="kids">Kids</a>
-                <a href="home">H&M HOME</a>
-                <a href="sport">Sport</a>
-                <a href="sale">Sale</a>
-                <a href="sustainability">Sustainability</a>
+                <a href="/ladies">Ladies</a>
+                <a href="/men">Men</a>
+                <a href="/baby">Baby</a>
+                <a href="/kids">Kids</a>
+                <a href="/home">H&M HOME</a>
+                <a href="/sport">Sport</a>
+                <a href="/sale">Sale</a>
+                <a href="/sustainability">Sustainability</a>
 
             </div>
 

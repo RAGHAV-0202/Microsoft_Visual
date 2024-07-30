@@ -6,6 +6,11 @@
     flex-direction: column;
     justify-content: space-around;
     padding-bottom: 25px;
+    text-decoration: none;
+    color: black;
+}
+.product_div p {
+    font-size: 14px;
 }
 
 .image_area {
@@ -24,8 +29,8 @@
     padding: 2px 0;
 }
 .smol {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .item span {

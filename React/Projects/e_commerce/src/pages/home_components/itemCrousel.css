@@ -61,6 +61,7 @@
     flex-direction: row;
     gap: 10px;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     /* background-color: rebeccapurple; */
 }
@@ -78,6 +79,8 @@
     flex-direction: column;
     min-width: 148px;
     transition: 1s all linear;
+    color: black;
+    text-decoration: none;
 }
 
 .item img {
@@ -124,5 +127,9 @@
 
     .cloth_area .right {
         transform: none
+    }
+    .cloth_area{
+        overflow-x: scroll;
+        /* background-color: saddlebrown; */
     }
 }

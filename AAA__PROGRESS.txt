@@ -74,5 +74,6 @@ Stated DSA on 7 april 2024
 25 july : landing page for codsoft internship (took 3 hrs) . ML 1 hr video , ContextAPI reactJS , started parallax website
 26 july : parallax completed , 
 27 july : added transtions in parallax  , started Binary Tree (just intro) 
-28 july : started new react project (H&M E-commerce clone)
-29 july : H&M Clone
+28 july : started new react project (H&M E-commerce clone) , homepage
+29 july : H&M Clone , all categories , extra pages
+30 july : H&M Clone product page , completed 90%

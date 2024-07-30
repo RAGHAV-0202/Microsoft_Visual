@@ -23,7 +23,7 @@ function HomePageContent(){
                 support_text = {"New arrivals"}
                 position = {"center"}
                 src="https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws40b/WS40B-3x2.jpg?imwidth=1536"
-                link={"view_all"}
+                link={"ladies"}
                 color = {"white"}
                 className = {"red_banner"}
             />

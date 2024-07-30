@@ -3,38 +3,72 @@ import "../css/footer.css"
 
 function Footer(){
     const arrow = "->"
+
+
+    const [isExtendedCol1 , setExtendedCol1] = react.useState(true)
+    const [isExtendedCol2 , setExtendedCol2] = react.useState(true)
+    const [isExtendedCol3 , setExtendedCol3] = react.useState(true)
+
+    function handleClick1(){
+        setExtendedCol1(prev=>!prev)
+    }
+    function handleClick2(){
+        setExtendedCol2(prev=>!prev)
+    }
+
+    function handleClick3(){
+         setExtendedCol3(prev=>!prev)
+    }
+
+
+
+
     return(
         <div className="Footer">
                 <div className="max_width_footer">
                     <div className="row row1">
                         <div className="col1 col">
-                            <h4>SHOP</h4>
-                            <a href="ladies">Ladies</a>
-                            <a href="men">Men</a>
-                            <a href="baby">Baby</a>
-                            <a href="kids">Kids</a>
-                            <a href="home">H&M HOME</a>
-                            <a href="sport">Sport</a>
-                            <a href="magazine">Magazine</a>
+                            <h4 onClick={handleClick1}>SHOP</h4>
+
+                            {isExtendedCol1 && 
+                            <span>
+                                <a href="/ladies">Ladies</a>
+                                <a href="/men">Men</a>
+                                <a href="/baby">Baby</a>
+                                <a href="/kids">Kids</a>
+                                <a href="/home">H&M HOME</a>
+                                <a href="/sport">Sport</a>
+                                <a href="/magazine">Magazine</a>
+                            </span>}
+
                         </div>
                         <div className="col2 col">
-                            <h4>CORPORATE INFO</h4>
-                            <a href="ladies">Career at H&M</a>
-                            <a href="https://hmgroup.com/about-us/">About H&M group</a>
-                            <a href="bahttps://hmgroup.com/sustainability/by">Sustainability H&M Group</a>
-                            <a href="https://about.hm.com/">Press</a>
-                            <a href="https://hmgroup.com/investors/">Investor relations</a>
-                            <a href="https://hmgroup.com/about-us/corporate-governance/">Corporate governance</a>
+                            <h4  onClick={handleClick2}>CORPORATE INFO</h4>
+                            {   isExtendedCol2 &&                       
+                             <span>
+
+                                <a href="ladies">Career at H&M</a>
+                                <a href="https://hmgroup.com/about-us/">About H&M group</a>
+                                <a href="bahttps://hmgroup.com/sustainability/by">Sustainability H&M Group</a>
+                                <a href="https://about.hm.com/">Press</a>
+                                <a href="https://hmgroup.com/investors/">Investor relations</a>
+                                <a href="https://hmgroup.com/about-us/corporate-governance/">Corporate governance</a>
+
+                            </span>}
+
                         </div>
                         <div className="col3 col">
-                            <h4>HELP</h4>
+                            <h4  onClick={handleClick3}>HELP</h4>
+{ isExtendedCol3 &&                            <span>
                             <a href="ladies">Customer Service</a>
-                            <a href="men">My H&M</a>
-                            <a href="findstore">Find a store</a>
-                            <a href="kids">Legal & Privacy</a>
-                            <a href="home">Contact</a>
-                            <a href="sport">Report a scam</a>
-                            <a href="magazine">Cookie Notice</a>
+                                <a href="men">My H&M</a>
+                                <a href="findstore">Find a store</a>
+                                <a href="kids">Legal & Privacy</a>
+                                <a href="home">Contact</a>
+                                <a href="sport">Report a scam</a>
+                                <a href="magazine">Cookie Notice</a>                                
+                            </span>}
+  
                             {/* <a className="smol" href="magazine">Cookie Settings</a> */}
                         </div>
                         <div className="col4 col">

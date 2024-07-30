@@ -51,6 +51,10 @@ body{
     padding: 10px 2px;
     gap: 6px;
 }
+.col span{
+    display: flex;
+    flex-direction: column;
+}
 .col h4{
     padding: 0 0 10px 0 ;
 }
@@ -108,4 +112,47 @@ body{
 }
 .row3 img{
     width: 40px;
+}
+
+@media (width <=768px) {
+    .Footer{
+        height: max-content;
+    }
+    .row1{
+        display: flex;
+        /* background-color: rebeccapurple; */
+        flex-direction: column;
+        height: max-content;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        transition: 0.3s all ease;
+    }
+    .row1 h4{
+        /* background-color: gold; */
+        padding: 5px 0 0 0;
+    }
+
+
+    .col a {
+        display: block;
+        padding-bottom: 10px;
+        
+    }
+    .col{
+        /* background-color: aqua; */
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .col4{
+        text-align: center;
+        height: max-content;
+    }
+
+    .row1 p {
+        /* display: none; */
+    }
+    
 }

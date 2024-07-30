@@ -14,6 +14,10 @@ import Sale from "./pages/sale"
 import Sport from "./pages/sports"
 import Home from "./pages/home"
 import Baby from "./pages/baby";
+import Sustainability from "./pages/sustainability";
+import Product from "./pages/Product_Page";
+import Checkout from "./pages/checkout";
+import Ordered from "./pages/orderd";
 
 
 const ReactRouterSetup = ()=>{
@@ -33,6 +37,10 @@ const ReactRouterSetup = ()=>{
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/sport" element={<Sport/>}/>
                 <Route path="/sale" element={<Sale/>}/>
+                <Route path="/sustainability" element={<Sustainability/>}/>
+                <Route path="/productpage/:num" element={<Product/>}/>
+                <Route path="/checkout/:price" element={<Checkout/>}/>
+                <Route path="/ordered_successfully" element={<Ordered/>}/>
                 <Route path="*" element = {<Error/>}/>
             </Routes>
         </Router>

@@ -73,6 +73,7 @@
     width: 65px;
 }
 .nav_bottom{
+    /* background-color: rebeccapurple; */
     display: flex;
     align-content: center;
     justify-content: center;
@@ -89,6 +90,7 @@
     font-size: 15px;
     transition: 0.3s all ease;
     border-bottom: 1px solid transparent;
+    cursor: pointer;
     
 }
 .nav_bottom a:hover{

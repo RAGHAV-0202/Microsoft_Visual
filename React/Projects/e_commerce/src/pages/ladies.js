@@ -11,8 +11,9 @@ import "../css/category_products.css"
 
 import ladies_products from "../data/ladies_products"
 
-function MainContentBanner(){
+import "../css/top_banner.css"
 
+function MainContentBanner(props) {
     const styles = {
         width: "100%",
         minWidth: "100%",
@@ -20,17 +21,17 @@ function MainContentBanner(){
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // backgroundColor: "rgb(38, 255, 0)",
         fontSize: "12px",
-        fontWeight: 500,    
+        fontWeight: 500,
     }
 
-    return(
+    return (
         <div style={styles} className="MainContentBanner">
-            <p>HM.com / Ladies / View All</p>
+            <p>HM.com / View All / <span style={{ color: "red", fontSize: "15px", paddingLeft: "5px", fontWeight: "600" }} className="red">Ladies</span> </p>
         </div>
     )
 }
+
 
 function MainContentLeft({passedFN , originalData}){
     return(
@@ -102,6 +103,7 @@ function MainContentRight({data , setData}){
                             catrgory = {item.category}
                             price = {item.price}
                             swatches = {item.swatches}
+                            code = {item.articleCode}
                         />
                     ))}
                 </div>

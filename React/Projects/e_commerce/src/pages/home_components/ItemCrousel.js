@@ -23,7 +23,7 @@ function ItemCrousel(props){
     let div_styles, img_styles, item_styles, cloth_area_styles , left;
 
     if (props.size === "smaller") {
-        div_styles = { height: "270px" };
+        div_styles = { height: "288px"};
         img_styles = { height: "184px" };
         item_styles = { width: "148px" };
         cloth_area_styles = {};
@@ -40,7 +40,14 @@ function ItemCrousel(props){
         cloth_area_styles = { height: "390px" };
         left = 700
     }else if(props.size === "largest"){
-        div_styles = { height: "max-content" };
+        div_styles = { 
+            height: "max-content" ,
+            // backgroundColor : "red" , 
+            maxWidth : "100%",
+            padding : "30px 40px",
+            // paddingBottom : "20px",
+            width : "100%"
+        };
         img_styles = { height: "417px" };
         item_styles = {
             height: "461px",
@@ -48,7 +55,7 @@ function ItemCrousel(props){
             minWidth: "302px"
         };
         cloth_area_styles = { height: "470px" };
-        left = 700
+        left = 500
     }
     
     // const id = nanoid();
@@ -70,7 +77,7 @@ function ItemCrousel(props){
                 
                  <div id={id} className="items_area">
 
-                    {data.slice(0, 25).map((item)=>(
+                    {data.slice(0, 30).map((item)=>(
                         <Item
                             src = {item.image[0].src}
                             styles = {img_styles}
@@ -79,6 +86,7 @@ function ItemCrousel(props){
                             catrgory = {item.category}
                             price = {item.price}
                             swatches = {item.swatches}
+                            code = {item.articleCode}
                         />
                     ))}
 
@@ -92,9 +100,9 @@ function ItemCrousel(props){
 
 function Item(props){
     return (
-        <div style={props.item_styles} className="item">
+        <a href={`/productpage/${props.code}`} style={props.item_styles} className="item">
             <img style={props.styles} src={props.src} alt=""></img>
-            <p>Long-sleeved shirt</p>
+            <p>{props.name}</p>
             <p className="smol">{props.price}</p>
             <span className="colors">
                 {props.swatches.map((swatch)=>(
@@ -103,7 +111,7 @@ function Item(props){
                     />
                 ))}
             </span>
-        </div>
+        </a>
     )
 }
 
