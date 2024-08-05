@@ -18,6 +18,7 @@ import Sustainability from "./pages/sustainability";
 import Product from "./pages/Product_Page";
 import Checkout from "./pages/checkout";
 import Ordered from "./pages/orderd";
+import CommonCategory from "./pages/common_category_page"
 
 
 const ReactRouterSetup = ()=>{
@@ -37,6 +38,7 @@ const ReactRouterSetup = ()=>{
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/sport" element={<Sport/>}/>
                 <Route path="/sale" element={<Sale/>}/>
+                <Route path="/store/:id" element={<CommonCategory/>}/>
                 <Route path="/sustainability" element={<Sustainability/>}/>
                 <Route path="/productpage/:num" element={<Product/>}/>
                 <Route path="/checkout/:price" element={<Checkout/>}/>
