@@ -1,0 +1,60 @@
+1) npm init 
+2) install packages
+3) create folder and files 
+    folders : src , conrollers , db , middlewares , models , routes  , utils
+4) create .env file 
+5) add git ignore and add important files (can get .gitignore config from a generator)
+6) index.js , import packages , run a simple server
+7) in db , create an async function to connect to the DataBase
+8) import connectDB in index and listen to the server conditionally
+9) create app.js , shift app to the app.js and use all the middlewares in that file
+10) api errors , async handlers , api response
+11) user and video models , bcrypt and jwt
+12) cloudinary and multer (utils) , upload on cloudinary
+13) user controller algo
+14) user controller REgister user
+15) user controller login user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INFO 
+GET : to retrieve
+HEAD : only headers
+OPTIONS : available Operations
+TRACE : loopback test
+DELETE : deletes a resource
+PUT : replaces a resource
+POST : interact / add a resource
+PATCH : edits a resource
+
+1xx : INformational
+2xx : Success
+3xx : redirection 
+4xx : client error 
+5xx : server error 
+
+100 : continue
+102 : processing
+200 : ok 
+201 : created
+202 : accepted
+307 : redirecting
+308 : permanent redirecting
+400 : bad request
+401 : unauthorized
+402 : payment
+404 : not found
+500 : internal server error
+504 : gateway timeout 
