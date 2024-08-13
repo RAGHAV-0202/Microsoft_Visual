@@ -77,12 +77,16 @@ function CardPage(){
     const [content, setContent] = React.useState([{question : "what is the powerhouse of the cell" , answer : "mitochondria"}]); 
 
     React.useEffect(() => {
-        fetch("/api/cards")
+        fetch("https://flashcards-gqs1.onrender.com/api/cards")
         .then(response => response.json())
         // .then(data=>console.log(data))
         .then(data => setContent(data.data)) 
-
         .catch(error => console.error("Error fetching data:", error)); 
+
+        fetch("https://flashcards-gqs1.onrender.com").then(res=>res.json()).then(data=>console.log(data)).catch("error while loading server status")
+            
+
+
     }, []); 
     
 

@@ -1,6 +1,12 @@
 import React from "react"
 import "../CSS/admin.css"
 import axios from "axios"
+import { createContext, useContext } from 'react';
+
+const StepContext = createContext();
+const useStep = () => useContext(StepContext);
+
+
 
 
 function LoginPage({setStep}){
@@ -17,7 +23,7 @@ function LoginPage({setStep}){
 
        try {
         alert("please wait, process may take 4-5 seconds")
-         const response = await axios.post("/api/admin/login", { email, password }, { withCredentials: true })
+         const response = await axios.post("https://flashcards-gqs1.onrender.com/api/admin/login", { email, password }, { withCredentials: true })
 
             if(response.status === 200){
                 setStep((prev)=>prev+1)
@@ -33,6 +39,8 @@ function LoginPage({setStep}){
        } catch (error) {
             console.log(`error : ${error}`)
             setMsg( "Invalid Email or Password")
+            alert(error)
+            console.log(error.stack)
        }
     }
 
@@ -92,7 +100,7 @@ function AddCard(){
         }else{
             try {
                 alert("please wait, process may take 4-5 seconds")
-                const response = await axios.post("/api/admin/add-card" , { question, answer }, { withCredentials: true })
+                const response = await axios.post("https://flashcards-gqs1.onrender.com/api/admin/add-card" , { question, answer }, { withCredentials: true })
     
                 console.log(response.data)
     
@@ -150,7 +158,7 @@ function EditCard(){
         }else{
             try {
                 alert("please wait, process may take 4-5 seconds")
-                const response = await axios.post("/api/admin/edit-card" , {findMethod, newQue, newAns }, { withCredentials: true })
+                const response = await axios.post("https://flashcards-gqs1.onrender.com/api/admin/edit-card" , {findMethod, newQue, newAns }, { withCredentials: true })
     
                 console.log(response.data)
     
@@ -209,7 +217,7 @@ function DeleteCard(){
         }else{
             try {
                 alert("please wait, process may take 4-5 seconds")
-                const response = await axios.post("/api/admin/delete-card" , { id}, { withCredentials: true })
+                const response = await axios.post("https://flashcards-gqs1.onrender.com/api/admin/delete-card" , { id}, { withCredentials: true })
     
                 console.log(response.data)
     
@@ -236,6 +244,37 @@ function DeleteCard(){
                 </div>
                 <div className="entry ent3">
                     <button onClick={handleSubmit} >Submit</button>
+                </div>
+            </div>
+        </div>
+    )
+}
+function Logout(){
+    const { setStep } = useStep();
+     
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            alert("please wait, process may take 4-5 seconds")
+            const response = await axios.post("https://flashcards-gqs1.onrender.com/api/admin/logout" , { withCredentials: true })
+            alert(response.data)
+            setStep(0)
+
+        } catch (error) {
+            console.log(error)
+            alert(error)
+        }
+    }
+
+    return(
+        <div className="admin_right_options">
+            <div className="left_header heading">
+                <p><span> Logout</span></p>
+            </div>
+            <div className="area_for_entries">
+                <div className="entry">
+                    <p>Confirm Logout </p>
+                    <button onClick={handleSubmit} > Logout </button>
                 </div>
             </div>
         </div>
@@ -273,17 +312,26 @@ function AdminPanelMain() {
         >
           Delete a Card
         </button>
+        <button
+          onClick={handleClickOnOptions}
+          value={3}
+          className={option === 2 ? 'active' : ''}
+        >
+          Logout
+        </button>
       </div>
       <div className="admin_right_panel">
         {option === 0 && <AddCard />}
         {option === 1 && <EditCard />}
         {option === 2 && <DeleteCard />}
+        {option === 3 && <Logout />}
       </div>
     </div>
   );
 }
 
 function AdminPanel(){
+
     return(
         <div className="admin_panel">
             <Header/>
@@ -295,20 +343,22 @@ function AdminPanel(){
 
 function AdminPage(){
 
+    React.useEffect(()=>{
+         fetch("https://flashcards-gqs1.onrender.com").then(res=>res.json()).then(data=>console.log(data)).catch("error while loading server status")
+    } , [])
+
     const [step , setStep] = React.useState(0)
 
 
     return(
+        <StepContext.Provider value={{ step, setStep }}>
         <div className="admin_page">
-
-             {step === 0 && <LoginPage
-                setStep = {setStep}
-             />}
+             {step === 0 && <LoginPage setStep = {setStep}/>}
 
 
              {step === 1 && <AdminPanel/>}
-
         </div>
+        </StepContext.Provider>
     )
 }
 
