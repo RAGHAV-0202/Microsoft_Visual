@@ -206,11 +206,11 @@ function Product() {
                 </div>
             </div>
 
-            <ItemCrousel
+            {/* <ItemCrousel
                 data={accessories}
                 label={"Style with"}
                 size={size}
-            />
+            /> */}
             
             <ItemCrousel
                 data={combined_data.slice(startingIndex, endingIndex)}

@@ -7,11 +7,11 @@ import Aside from "./category_components/left_panel";
 import SmolBanner from "./home_components/SmolBanner"
 import NextBTN from "./category_components/next_btn";
 import { useParams } from 'react-router-dom';
-import  kids_products from "../data/kids_products"
-import men_products from "../data/men_products";
-import ladies_products from "../data/ladies_products";
-import baby_products from "../data/baby_products";
-import sports_products from "../data/sports";
+// import  kids_products from "../data/kids_products"
+// import men_products from "../data/men_products";
+// import ladies_products from "../data/ladies_products";
+// import baby_products from "../data/baby_products";
+// import sports_products from "../data/sports";
 
 import "../css/category_products.css"
 import "../css/top_banner.css"
@@ -38,10 +38,37 @@ function MainContentBanner(props) {
 
 
 function MainContentLeft({passedFN , originalData}){
-    return(
-        <div className="main_content_left">
-            <Aside
-             buttons = {[
+
+    const { id } = useParams()
+
+    var button_els = [
+            {name : "View all" , value : "any"},  
+            {name : "Jeans" , value : "jeans"},
+            {name : "T-Shirts" , value : "tshirt"},
+            {name : "trousers" , value : "trouser"},
+            {name : "Hoodies" , value : "hood"},
+            {name : "Sweatshirts" , value : "sweat"},
+            {name : "Jackets" , value : "jacket"},
+            {name : "Shirts" , value : "shirts"},
+            {name : "" , value : ""},
+            ]
+
+    if (id === "ladies"){
+        button_els = [
+                {name : "View all" , value : "any"},
+                {name : "Jeans" , value : "jeans"},
+                {name : "Tops" , value : "tops"},
+                {name : "Shirts" , value : "shirts"},
+                {name : "trousers" , value : "trouser"},
+                {name : "Cardigans" , value : "cardigans" },
+                {name : "Hoodies & Sweatshirts" , value : "sweats"},
+                {name : "Night Wear" , value : "night"},
+                {name : "Night" , value : "linge"},
+                {name : "" , value : ""},
+
+             ]
+    }else if (id === "kids"){
+        button_els = [
                 {name : "View all" , value : "any"},
                 {name : "Jeans" , value : "jeans"},
                 {name : "T-Shirts" , value : "tshirt"},
@@ -54,10 +81,40 @@ function MainContentLeft({passedFN , originalData}){
                 {name : "" , value : ""},
                 {name : "" , value : ""},
 
-             ]}
-             
-             setData = {passedFN}
-             originalData = {originalData}
+             ]
+    }else if (id === "home"){
+        button_els = [
+                {name : "View all" , value : "any"},
+                {name : "Cooking" , value : "cooking"},
+                {name : "Nightwear" , value : "night"},
+                {name : "Decor" , value : "decor"},
+                {name : "Kitchen" , value : "kitchen"},
+                {name : "Accessories" , value : "accessories" },
+
+             ]
+    }else if (id === "baby"){
+        button_els = [
+                {name : "View all" , value : "any"},
+                {name : "Girls" , value : "girl"},
+                {name : "Boys" , value : "boy"},
+                {name : "Shirts" , value : "shirts"},
+                {name : "Sportswear" , value : "sports" },
+                // {name : "" , value : ""},
+                // {name : "" , value : ""},
+                // {name : "" , value : ""},
+
+             ]
+    }
+
+
+
+
+    return(
+        <div className="main_content_left">
+            <Aside
+                buttons = {button_els}
+                setData = {passedFN} 
+                originalData = {originalData}
             />
         </div>
     )
@@ -91,7 +148,7 @@ function MainContentRight({data , setData}){
                     heading = {"The T-shirt shop starting $399"}
                     support_text = {"From bold graphics to basics: new trending tees for a fashionable update"}
                     buttons = {
-                        [{href : "ladies" , text : "Ladies"} , {href : "kids" , text : "Kids"}  , {href : "kids" , text : "Kids & baby"}]
+                        [{href : "/store/ladies" , text : "Ladies"} , {href : "/store/kids" , text : "Kids"}  , {href : "/store/baby" , text : "Kids & baby"}]
                     }
                     maxWidth = {"100%"}
                 />
@@ -121,39 +178,66 @@ function MainContentRight({data , setData}){
             </div>
     )
 }
-function MainContent(){
+function MainContent() {
+    const { id } = useParams();
 
-    const { id } = useParams()
-    console.log(id)
+    //let assets = ""; 
+    
+    // assets = id === "men" ? men_products : assets
+    // assets = id === "ladies" ? ladies_products : assets
+    // assets = id === "sport" ? sports_products : assets
+    // assets = id === "kids" ? kids_products : assets
+    // assets = id === "baby" ? baby_products : assets
+    // assets = id === "home" ? home_products : assets
 
-    let assets = ""; 
+    // const [data , setData] = React.useState(assets)
 
-    assets = id === "men" ? men_products : assets
-    assets = id === "ladies" ? ladies_products : assets
-    assets = id === "sport" ? sports_products : assets
-    assets = id === "kids" ? kids_products : assets
-    assets = id === "baby" ? baby_products : assets
-    assets = id === "home" ? home_products : assets
+    let category = ""; 
 
+    category = id === "men" ? "men" : category;
+    category = id === "ladies" ? "ladies" : category;
+    category = id === "sport" ? "sports" : category;
+    category = id === "kids" ? "kids" : category;
+    category = id === "baby" ? "baby" : category;
+    category = id === "home" ? "home" : category;
 
+    const [assets, setAssets] = React.useState([]);
+    const [data, setData] = React.useState([]);
 
-    const [data , setData] = React.useState(assets)
-    return(
+    React.useEffect(() => {
+        fetch(`http://localhost:8000/api/products/data/${category}`)
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return res.json();
+            })
+            .then(res => {
+                setAssets(res.data || []);
+                setData(res.data || []);
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+                setAssets([]);
+            });
+    }, [category]);
+
+    return (
         <div className="page">
-            <MainContentBanner/>
+            <MainContentBanner />
 
-{  assets !== ""    &&  
-             <div className="main_content">
-                <MainContentLeft originalData = {assets} passedFN={setData}/>
-                <MainContentRight data = {data}/>
-            </div>}
-
-            { assets === "" && <p style={{ textAlign : "center" , padding : "100px"}}>Error 404 , Not found</p>}
-
-        
+            { assets.length > 0 ? 
+                <div className="main_content">
+                    <MainContentLeft originalData={assets} passedFN={setData} />
+                    <MainContentRight data={data} />
+                </div>
+            : 
+                <p style={{ textAlign: "center", padding: "100px" }}>Error 404, Not found</p>
+            }
         </div>
-    )
+    );
 }
+
 
 
 function CommonCategory(){

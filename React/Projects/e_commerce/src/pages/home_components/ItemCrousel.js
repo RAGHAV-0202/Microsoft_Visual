@@ -20,7 +20,7 @@ function ItemCrousel(props){
     }
   }
     
-    let div_styles, img_styles, item_styles, cloth_area_styles , left;
+    let div_styles, img_styles, item_styles, cloth_area_styles , left , labelStyle = {};
 
     if (props.size === "smaller") {
         div_styles = { height: "288px"};
@@ -54,6 +54,12 @@ function ItemCrousel(props){
         };
         cloth_area_styles = { height: "470px" };
         left = 500
+
+        labelStyle = {
+            fontSize : "14px" ,
+            fontWeight : "500",
+            padding : "0 0 30px 20px"
+        }
     }
     
     // const id = nanoid();
@@ -67,7 +73,7 @@ function ItemCrousel(props){
 
     return(
         <div style={div_styles} className="items_crousel">
-            <div className="label">
+            <div style={labelStyle} className="label">
                 <p>{props.label}</p>
             </div>
             <div style={cloth_area_styles} className="cloth_area">
