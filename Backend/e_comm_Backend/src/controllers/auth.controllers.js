@@ -162,7 +162,7 @@ const UserPasswordResetRequest = asyncHandler(async(req,res)=>{
     user.resetToken = Token ;
     user.save();
 
-    const link = `http://localhost:8000/api/auth/reset-password/${Token}`
+    const link = `${process.env.BASE_URL}/api/auth/reset-password/${Token}`
 
     nodeoutlook.sendEmail({
     auth: {

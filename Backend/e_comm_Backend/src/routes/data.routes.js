@@ -1,5 +1,5 @@
 import express from "express"
-import { MenProducts,LadiesProducts,SportsProducts,newArrivalProducts,KidsProducts,HomeProducts,BabyProducts  , AllProducts , getProduct} from "../controllers/products.controllers.js"
+import { MenProducts,LadiesProducts,SportsProducts,newArrivalProducts,KidsProducts,HomeProducts,BabyProducts  , AllProducts , getProduct ,searchProduct} from "../controllers/products.controllers.js"
 const router = express.Router()
 
 
@@ -12,6 +12,7 @@ router.route("/home").get(HomeProducts)
 router.route("/baby").get(BabyProducts)
 router.route("/all-products").get(AllProducts)
 router.route("/item/:id").get(getProduct)
+router.route("/search/:query").get(searchProduct)
 
 // router.route("/status").get(status)
 

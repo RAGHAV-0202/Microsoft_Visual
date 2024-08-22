@@ -22,7 +22,10 @@ const productSchema = new mongoose.Schema({
   price: { type: String, required: true },
   sellingAttribute: String,
   swatches: [swatchSchema],
-  brandName: String,
+  brandName: {
+    type : String , 
+    default : "H&M"
+  },
   broadCategory : {
     type : String ,
     // default : "Baby"

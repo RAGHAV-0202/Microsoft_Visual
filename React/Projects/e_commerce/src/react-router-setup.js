@@ -24,6 +24,7 @@ import CommonCategory from "./pages/common_category_page"
 const ReactRouterSetup = ()=>{
     return(
         <Router>
+            
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="./login" element={<LoginPage/>}/>

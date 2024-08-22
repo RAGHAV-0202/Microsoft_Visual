@@ -31,6 +31,13 @@ AdminSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
+AdminSchema.methods.generateAccessToken = function () {
+    return jwt.sign(
+        { _id: this._id, email: this.email, username: this.username, fullName: this.fullName },
+        process.env.ADMIN_ACCESS_TOKEN_SECRET,
+        { expiresIn: process.env.ADMIN_ACCESS_TOKEN_EXPIRY }
+    );
+};
 
 const Admin = mongoose.model("Admin" , AdminSchema)
 export default Admin

@@ -8,7 +8,7 @@ import dataRouter from "./routes/data.routes.js"
 import authRouter from "./routes/auth.routes.js"
 import userRouter from "./routes/userMgmt.routes.js"
 import asyncHandler from "./utils/asyncHandler.js";
-
+import adminRouter from "./routes/admin.routes.js"
 
 const app = express();
 
@@ -22,6 +22,16 @@ app.use(express.urlencoded({extended : true , limit : "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+
+const corsOptions = {
+    origin: ['https://flash-cards-mbum.vercel.app', 'http://localhost:3000' , "http://172.20.10.2:3000" , "http://192.168.29.76:3000"],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
+    credentials: true ,
+    sameSite: 'None'
+};
+
+app.use(cors(corsOptions));
 
 app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
   const startTime = Date.now();
@@ -44,6 +54,7 @@ app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
 app.use("/api/products/data" , dataRouter )
 app.use("/api/auth" , authRouter )
 app.use("/api/user" , userRouter)
+app.use("/api/admin" , adminRouter)
 
 
 
