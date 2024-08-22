@@ -5,6 +5,7 @@ import apiError from "../utils/apiError.js";
 import ApiResponse from "../utils/apiResponse.js"
 import jwt from  "jsonwebtoken"
 import dotenv from "dotenv"
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 dotenv.config()
 
 const UserProfile = asyncHandler(async(req,res)=>{
@@ -124,5 +125,32 @@ const UserUpdatePaymentMethods = asyncHandler(async (req, res) => {
     res.status(200).json(new ApiResponse(200, paymentMethods, "Payment methods updated successfully"));
 });
 
+const UserUpdateProfilePicture = asyncHandler(async(req,res)=>{
+    const user = req.user;
 
-export {UserProfile, UserUpdateFirstName, UserUpdateLastName, UserUpdatePhoneNumber, UserUpdateEmail, UserUpdateAddress, UserUpdateDOB, UserUpdatePaymentMethods}
+    if (!user) {
+        return res.status(401).json(new apiError(401, null, "User not authenticated"));
+    }
+
+    let avatarLocalPath = ""
+    const obj_avatar = (req.files?.avatar[0])
+    avatarLocalPath = obj_avatar.path
+
+    if(avatarLocalPath == ""){
+        throw new apiError(400 , "avatar local path is required")
+    }
+
+    const avatar = await uploadOnCloudinary(avatarLocalPath)
+    
+    if(!avatar){
+        throw new apiError(400 , "avatar cloudinary is required")
+    }
+
+    user.profilePicture = avatar.url 
+    await user.save()
+
+    res.status(200).json(new ApiResponse(200 , avatar.url , "profile picture updated successfuly"))
+
+})
+
+export {UserProfile, UserUpdateFirstName, UserUpdateLastName, UserUpdatePhoneNumber, UserUpdateEmail, UserUpdateAddress, UserUpdateDOB, UserUpdatePaymentMethods ,UserUpdateProfilePicture}

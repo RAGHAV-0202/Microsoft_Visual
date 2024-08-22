@@ -9,8 +9,8 @@
 2. User Management Routes
     GET /api/users/profile: Get the logged-in user's profile.   //
     PUT /api/users/profile: Update the logged-in user's profile.//
-    GET /api/users: Get all users (Admin).
-    GET /api/users/:id: Get a user by ID (Admin).
+    GET /api/users: Get all users (Admin).                      
+    GET /api/users/:id: Get a user by ID (Admin).               
     DELETE /api/users/:id: Delete a user by ID (Admin).
 
 3. Product Routes
