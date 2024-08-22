@@ -99,6 +99,6 @@ Stated DSA on 7 april 2024
 19 aug :
 20 aug : 
 21 aug : new project backend of ecomm
-22 aug :
+22 aug : backend
 23 aug :
 24 aug :

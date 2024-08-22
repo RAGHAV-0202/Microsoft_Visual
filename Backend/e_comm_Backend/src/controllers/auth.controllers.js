@@ -26,7 +26,7 @@ async function generateAccessAndRefreshToken(userId){
 
 const UserLogin = asyncHandler(async(req,res)=>{
     const {login , password} = req.body
-    if(!login.trim() || !password.trim()){
+    if(!login?.trim() || !password?.trim()){
         throw new apiError(400 , "Both Fields are required");
     }
 
@@ -138,7 +138,7 @@ const UserRefreshAccessToken = asyncHandler(async(req,res)=>{
     res.status(200)
         .cookie("accessToken" , accessToken , options )
         .cookie("refreshToken" , refreshToken , options)
-        .json(new ApiResponse(200 , decoded , "ok"))
+        .json(new ApiResponse(200 , {accessToken} , "refreshed token"))
 
 })
 

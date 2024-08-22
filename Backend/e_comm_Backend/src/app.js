@@ -1,14 +1,14 @@
 import express from "express"
+import mongoose from "mongoose";
 import cors from "cors"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser";
 dotenv.config()
 import dataRouter from "./routes/data.routes.js"
-import not_found from "./routes/404.routes.js"
-import os from "os"
-import userRouter from "./routes/user.routes.js"
+import authRouter from "./routes/auth.routes.js"
+import userRouter from "./routes/userMgmt.routes.js"
 import asyncHandler from "./utils/asyncHandler.js";
-import mongoose from "mongoose";
+
 
 const app = express();
 
@@ -42,7 +42,8 @@ app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
 
 
 app.use("/api/products/data" , dataRouter )
-app.use("/api/auth" , userRouter )
+app.use("/api/auth" , authRouter )
+app.use("/api/user" , userRouter)
 
 
 

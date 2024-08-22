@@ -7,8 +7,8 @@
     POST /api/auth/reset-password: Reset a user's password.     //
 
 2. User Management Routes
-    GET /api/users/profile: Get the logged-in user's profile.
-    PUT /api/users/profile: Update the logged-in user's profile.
+    GET /api/users/profile: Get the logged-in user's profile.   //
+    PUT /api/users/profile: Update the logged-in user's profile.//
     GET /api/users: Get all users (Admin).
     GET /api/users/:id: Get a user by ID (Admin).
     DELETE /api/users/:id: Delete a user by ID (Admin).
