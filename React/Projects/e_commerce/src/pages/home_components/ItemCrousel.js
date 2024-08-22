@@ -58,7 +58,7 @@ function ItemCrousel(props){
         labelStyle = {
             fontSize : "14px" ,
             fontWeight : "500",
-            padding : "0 0 30px 20px"
+            padding : "0 0 30px 25px"
         }
     }
     
@@ -74,7 +74,7 @@ function ItemCrousel(props){
     return(
         <div style={div_styles} className="items_crousel">
             <div style={labelStyle} className="label">
-                <p>{props.label}</p>
+                <p className="label_text">{props.label}</p>
             </div>
             <div style={cloth_area_styles} className="cloth_area">
                 <button onClick={()=>scrollLeft(id)} className="left arrow"><i class="fa-light fa-arrow-left"></i></button>

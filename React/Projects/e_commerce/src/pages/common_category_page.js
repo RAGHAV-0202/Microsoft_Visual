@@ -205,7 +205,7 @@ function MainContent() {
     const [data, setData] = React.useState([]);
 
     React.useEffect(() => {
-        fetch(`http://localhost:8000/api/products/data/${category}`)
+        fetch(`/api/products/data/${category}`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error("Network response was not ok");
