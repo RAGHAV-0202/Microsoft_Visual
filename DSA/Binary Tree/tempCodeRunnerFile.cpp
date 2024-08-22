@@ -1,0 +1,2 @@
+
+    inOrderTraversal(root);
