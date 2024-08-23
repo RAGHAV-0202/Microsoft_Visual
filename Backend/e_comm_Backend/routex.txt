@@ -23,11 +23,11 @@
     GET /api/products/search: Search products by name or category.   //
 
 4. Cart Routes
-    GET /api/cart: Get the user's cart.                         
-    POST /api/cart: Add items to the user's cart.
-    PUT /api/cart/:itemId: Update the quantity of an item in the cart.
-    DELETE /api/cart/:itemId: Remove an item from the cart.
-    DELETE /api/cart: Clear the user's cart.
+    GET /api/cart: Get the user's cart.                         //
+    POST /api/cart: Add items to the user's cart.               //
+    PUT /api/cart/:itemId: Update the quantity of an item in the cart.  //
+    DELETE /api/cart/:itemId: Remove an item from the cart.     //
+    DELETE /api/cart: Clear the user's cart.                    //
 
 5. Order Routes
     GET /api/orders: Get all orders (Admin) or user-specific orders (User).

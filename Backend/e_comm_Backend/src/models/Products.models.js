@@ -20,6 +20,9 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true }, // Store the category as it is
   image: [imageSchema],
   price: { type: String, required: true },
+  numericPrice : {
+    type : Number
+  },
   sellingAttribute: String,
   swatches: [swatchSchema],
   brandName: {
@@ -33,6 +36,14 @@ const productSchema = new mongoose.Schema({
   }
 } , {timestamps : true});
 
+productSchema.pre('save', function (next) {
+  const priceString = this.price;
+  if (priceString) {
+    const numericPrice = parseFloat(priceString.replace("Rs.", "").replace(/,/g, ""));
+    this.numericPrice = numericPrice;
+  }
+  next();
+});
 
 const Products = mongoose.model("Products" , productSchema)
 

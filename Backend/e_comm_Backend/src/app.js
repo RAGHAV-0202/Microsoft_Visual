@@ -10,7 +10,7 @@ import userRouter from "./routes/userMgmt.routes.js"
 import asyncHandler from "./utils/asyncHandler.js";
 import adminRouter from "./routes/admin.routes.js"
 import ApiResponse from "./utils/apiResponse.js";
-import serverless from "serverless-http"
+import cartRouter from "./routes/cart.routes.js"
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(cookieParser())
 
 
 const corsOptions = {
-    origin: ['https://h-m-clone.netlify.app/', 'http://localhost:3000' , "http://172.20.10.2:3000" , "http://192.168.29.76:3000"],
+    origin: ['https://h-m-clone.netlify.app', 'http://localhost:3000' , "http://172.20.10.2:3000" , "http://192.168.29.76:3000"],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
     credentials: true ,
@@ -62,6 +62,7 @@ app.use("/api/products/data" , dataRouter )
 app.use("/api/auth" , authRouter )
 app.use("/api/user" , userRouter)
 app.use("/api/admin" , adminRouter)
+app.use("/api/cart" , cartRouter)
 
 
 
@@ -73,7 +74,5 @@ app.get("*" , (req,res)=>{
     `)
 })
 
-app.use("/.netlify/src/app" , Router)
-export const handler = serverless(app);
 
 export {app}

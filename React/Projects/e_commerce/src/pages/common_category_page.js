@@ -15,6 +15,7 @@ import { useParams } from 'react-router-dom';
 
 import "../css/category_products.css"
 import "../css/top_banner.css"
+import Loader from "./home_components/loader";
 // import home_products from "../data/home_products";
 
 function MainContentBanner(props) {
@@ -206,7 +207,7 @@ function MainContent() {
     const [data, setData] = React.useState([]);
 
     React.useEffect(() => {
-        fetch(`/api/products/data/${category}`)
+        fetch(`https://e-commerce-backend-production-bffa.up.railway.app/api/products/data/${category}`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error("Network response was not ok");
@@ -233,7 +234,10 @@ function MainContent() {
                     <MainContentRight data={data} />
                 </div>
             : 
-                <p style={{ textAlign: "center", padding: "100px" }}>Error 404, Not found</p>
+                <>
+                    <Loader />
+                    <p style={{ textAlign: "center", padding: "100px" }}>Error 404, Not found</p>
+                </>
             }
         </div>
     );
