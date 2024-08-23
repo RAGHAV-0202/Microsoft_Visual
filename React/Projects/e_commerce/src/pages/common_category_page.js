@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom';
 
 import "../css/category_products.css"
 import "../css/top_banner.css"
-import home_products from "../data/home_products";
+// import home_products from "../data/home_products";
 
 function MainContentBanner(props) {
     const styles = {
@@ -160,6 +160,7 @@ function MainContentRight({data , setData}){
                 <div className="product_div_area">
                     {data.slice(0,number).map((item)=>(
                         <Product
+                            _id = {item._id}
                             src = {item.image[0].src}
                             name  = {item.title}
                             catrgory = {item.category}

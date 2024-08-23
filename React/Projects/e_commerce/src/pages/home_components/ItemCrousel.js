@@ -4,6 +4,7 @@ import "./itemCrousel.css"
 
 function ItemCrousel(props){
 
+    console.log(props)
    const [id, setId] = React.useState(nanoid(5, "abc12"));
 
   function scrollLeft() {
@@ -83,6 +84,7 @@ function ItemCrousel(props){
 
                     {data.slice(0, 30).map((item)=>(
                         <Item
+                            _id = {item._id}
                             src = {item.image[0].src}
                             styles = {img_styles}
                             name  = {item.title}
@@ -104,7 +106,7 @@ function ItemCrousel(props){
 
 function Item(props){
     return (
-        <a href={`/productpage/${props.code}`} style={props.item_styles} className="item">
+        <a href={`/productpage/${props._id}`} style={props.item_styles} className="item">
             <img style={props.styles} src={props.src} alt=""></img>
             <p>{props.name}</p>
             <p className="smol">{props.price}</p>

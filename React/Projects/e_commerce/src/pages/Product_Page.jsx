@@ -4,10 +4,10 @@ import Navbar from "./navbar";
 import '../index.css';
 import "../css/product_page.css"
 import { useParams } from 'react-router-dom';
-import combined_data from "../data/combined_data"
+// import combined_data from "../data/combined_data"
 import "../css/product_page.css"
 import ItemCrousel from "./home_components/ItemCrousel";
-import accessories from "../data/accessories";
+// import accessories from "../data/accessories";
 
 function MainContentBanner(props) {
     const styles = {
@@ -50,20 +50,36 @@ function Product() {
 
     // State for product fetched from API
     const [product, setProduct] = React.useState(null);
+    const [productForCrousel, setProductForCrousel] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(null);
+
+    console.log(product)
+    console.log(productForCrousel)
 
     // Fetch product data from API
     React.useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`/api/products/data/item/${num}`);
+                let response = await fetch(`/api/products/data/item/${num}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data = await response.json();
-                setProduct(data.data);
+                let item_Data = await response.json();
+                
+
+                response  = await fetch(`/api/products/data/new-arrival`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                let data = await response.json();
+                setProduct(item_Data.data);
+                setProductForCrousel(data.data);                
+
                 setLoading(false);
+
+
+
             } catch (err) {
                 setError(err);
                 setLoading(false);
@@ -72,6 +88,7 @@ function Product() {
 
         fetchProduct();
     }, [num]);
+    
 
     // const product = React.useMemo(() => combined_data.find(p => p.articleCode === num), [num]);
 
@@ -140,17 +157,17 @@ function Product() {
         setExtended(prev => !prev);
     }
 
-    const [startingIndex, setStartingIndex] = React.useState(900);
-    const [endingIndex, setEndingIndex] = React.useState(930);
+    // const [startingIndex, setStartingIndex] = React.useState(900);
+    // const [endingIndex, setEndingIndex] = React.useState(930);
 
-    React.useEffect(() => {
-        const randomNumber = Math.floor(Math.random() * 601);
-        setStartingIndex(randomNumber || 900);
-    }, []); // Empty dependency array means this effect runs once when the component mounts
+    // React.useEffect(() => {
+    //     const randomNumber = Math.floor(Math.random() * 601);
+    //     setStartingIndex(randomNumber || 900);
+    // }, []); 
 
-    React.useEffect(() => {
-        setEndingIndex(startingIndex + 30);
-    }, [startingIndex]); // Dependency array means this effect runs when startingIndex changes
+    // React.useEffect(() => {
+    //     setEndingIndex(startingIndex + 30);
+    // }, [startingIndex]); 
 
     const [size, setSize] = React.useState('largest');
 
@@ -262,7 +279,7 @@ function Product() {
             /> */}
             
             <ItemCrousel
-                data={combined_data.slice(startingIndex, endingIndex)}
+                data={productForCrousel}
                 label={"Others also bought"}
                 size={size}
             />

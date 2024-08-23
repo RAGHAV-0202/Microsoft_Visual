@@ -60,7 +60,7 @@ const AllProducts =  asyncHandler(async(req,res)=>{
 
 const getProduct =  asyncHandler(async(req ,res)=>{
     const {id} = req.params
-    const product = await Products.findOne({articleCode : id})
+    const product = await Products.findById(id)
 
     if(!product){
         throw new apiError(401 , "Product not found ; Invalid Id")

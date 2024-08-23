@@ -1,4 +1,4 @@
-import express from "express"
+import express, { Router } from "express"
 import mongoose from "mongoose";
 import cors from "cors"
 import dotenv from "dotenv"
@@ -9,6 +9,8 @@ import authRouter from "./routes/auth.routes.js"
 import userRouter from "./routes/userMgmt.routes.js"
 import asyncHandler from "./utils/asyncHandler.js";
 import adminRouter from "./routes/admin.routes.js"
+import ApiResponse from "./utils/apiResponse.js";
+import serverless from "serverless-http"
 
 const app = express();
 
@@ -20,7 +22,7 @@ app.use(cookieParser())
 
 
 const corsOptions = {
-    origin: ['https://flash-cards-mbum.vercel.app', 'http://localhost:3000' , "http://172.20.10.2:3000" , "http://192.168.29.76:3000"],
+    origin: ['https://h-m-clone.netlify.app/', 'http://localhost:3000' , "http://172.20.10.2:3000" , "http://192.168.29.76:3000"],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
     credentials: true ,
@@ -29,7 +31,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
+async function getStats(){
   const startTime = Date.now();
   const result = await mongoose.connection.db.command({ ping: 1 });
   const endTime = Date.now();
@@ -42,10 +44,19 @@ app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
     latency: latency + "ms",
     timestamp: new Date(),
   };
+  return statusInfo
+}
+
+app.get(/\/.*\/status$/, asyncHandler(async (req, res) => {
+  const statusInfo = await getStats()
   res.status(200).json(statusInfo);
 }));
 
 
+app.get("/" , async(req,res)=>{
+  const statusInfo = await getStats()
+  res.status(200).json(new ApiResponse(200 , statusInfo , "Server is live"))
+})
 
 app.use("/api/products/data" , dataRouter )
 app.use("/api/auth" , authRouter )
@@ -61,5 +72,8 @@ app.get("*" , (req,res)=>{
         </body>
     `)
 })
+
+app.use("/.netlify/src/app" , Router)
+export const handler = serverless(app);
 
 export {app}
