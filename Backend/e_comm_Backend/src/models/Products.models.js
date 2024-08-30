@@ -33,7 +33,23 @@ const productSchema = new mongoose.Schema({
     type : String ,
     // default : "Baby"
     required : [true  , "provide broad category"]
-  }
+  },reviews : [
+    {
+      title : {
+        type : String ,
+        required : [true , "Title for review is required"]
+      },
+      description : {
+        type : String , 
+        required : [true , "Title for review is required"],
+        minlength : [10 , "minimum 10 characters are required"]
+      },
+      owner : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "User"
+      }
+    }
+  ]
 } , {timestamps : true});
 
 productSchema.pre('save', function (next) {

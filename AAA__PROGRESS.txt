@@ -101,4 +101,6 @@ Stated DSA on 7 april 2024
 21 aug : new project backend of ecomm
 22 aug : backend
 23 aug : hosted backend and linked it with frontend , continuing backend
-24 aug :
+24 aug : backend
+25 aug : IITM
+26 aug : IITM

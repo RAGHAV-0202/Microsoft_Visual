@@ -5,6 +5,7 @@ import apiError from "../utils/apiError.js";
 import ApiResponse from "../utils/apiResponse.js"
 import jwt from  "jsonwebtoken"
 import dotenv from "dotenv"
+import Products from "../models/Products.models.js";
 dotenv.config()
 
 
@@ -15,8 +16,9 @@ const sendResponse = asyncHandler(async (req,res)=>{
 const CartGetCart = asyncHandler(async(req,res)=>{
     const user = req.user
     let cart = user.cart
+    let value = await user.calculateCartValue()
 
-    res.status(200).json(new ApiResponse(200 , cart , "User Cart fetched"))
+    res.status(200).json(new ApiResponse(200 , {cart , value}  , "User Cart fetched"))
 })
 
 const CartAddToCart = asyncHandler(async(req,res)=>{
@@ -27,10 +29,13 @@ const CartAddToCart = asyncHandler(async(req,res)=>{
     if(!id){
         throw new apiError(400 , "Invalid Product , couldn't get id")
     }
-
+    const product = await Products.findById(id)
+    if(!product){
+        throw new apiError(400 , "invalid id")
+    }
     let isPresent = false ;
-    
     let quantity = 1 ;
+    
 
     user.cart.forEach((item) => {
         if (item.productId == id) {
@@ -44,7 +49,8 @@ const CartAddToCart = asyncHandler(async(req,res)=>{
             item.productId == id ? { ...item, quantity: quantity + 1 } : item
         );
     } else {
-        user.cart.push({ productId: id, quantity: 1 });
+        // console.log(product.title)
+        user.cart.push({ productId: id, quantity: 1 , title : product.title , image : product.image[0].src , price : product.numericPrice});
     }
 
     await user.save();
@@ -113,5 +119,13 @@ const CartClearCart = asyncHandler(async(req,res)=>{
     return res.status(200).json(new ApiResponse(200 , [] , "Cart Cleared"))
 })
 
+const CartCalculateCartValue = asyncHandler(async(req,res)=>{
+    const user = req.user
+    // const value = await user.calculateCartValue ()
+    // console.log(value)
+    value = user.cart.cartValue
+    res.status(200).json(new ApiResponse(200 , value , "cart value fetched"))
+})
 
-export {sendResponse , CartGetCart , CartAddToCart , CartUpdateQuantity ,CartDeleteFromCart , CartClearCart}
+
+export {sendResponse , CartGetCart , CartAddToCart , CartUpdateQuantity ,CartDeleteFromCart , CartClearCart , CartCalculateCartValue}
