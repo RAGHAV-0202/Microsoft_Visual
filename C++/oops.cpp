@@ -59,6 +59,12 @@ class Teacher{
         void getInfo(){
             cout << "Name : " << name << "\nDept : " << dept << "\nSubject : " << subject ; 
         }
+
+
+
+        ~Teacher(){
+            cout << "destructor" << endl;
+        }
 };
 
 
@@ -98,7 +104,7 @@ class accound{
 
 // there are two types of copies , deep and shallow
 // shallow : copying values from one to another
-// deep : 
+// deep :  
 
 int main(){
 
@@ -111,7 +117,7 @@ int main(){
     // t1.salary = 1000000;
 
     Teacher t2(t1) ; // copy constructor
-    t2.getInfo();
+    // t2.getInfo();
 
     Teacher t3("Raghav" , "CSE" , "OOPS");
     // t3.getInfo();
