@@ -24,10 +24,10 @@
 
 
 import pandas as pd
-
+ 
 # Load the data from the two Excel files
-file1_df = pd.read_excel('Python\hemant\itemlist.xlsx', sheet_name='Sheet1')  # Adjust the sheet name if needed
-file2_df = pd.read_excel('Python\hemant\Inventory.xlsx', sheet_name='Sheet1')  # Adjust the sheet name if needed
+file1_df = pd.read_excel('D:\Microsoft Visual\Python\hemant\itemlist.xlsx', sheet_name='Sheet1')  # Adjust the sheet name if needed
+file2_df = pd.read_excel('D:\Microsoft Visual\Python\hemant\Inventory.xlsx', sheet_name='Sheet1')  # Adjust the sheet name if needed
 
 # Ensure column names are as expected (rename if necessary)
 file1_df.columns = ['SKU', 'ASIN', 'ASIN Type', 'Suggested Price']

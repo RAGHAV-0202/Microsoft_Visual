@@ -4,3 +4,15 @@ Frontend/multi-step-form-main
 
 # Local Netlify folder
 .netlify
+cnn_model.h5
+
+ML Disease Detection
+
+ML Disease Detection
+
+ML Disease Detection
+
+predict_disease.py
+label_transform.pkl
+
+Model
