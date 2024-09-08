@@ -779,7 +779,7 @@ int numRescueBoats(vector<int>& people, int limit) {
 }
 
 int calPoints(vector<string>& operations) {
-    list <int> temp;
+    vector <int> temp; // it was list
     int count = 0  ;
     for(int i = 0 ; i < operations.size() ; i++){
         if(isalpha(operations[i][0]) || operations[i][0] == '+'){
