@@ -37,6 +37,30 @@ using namespace std;
 int main(){
     cout << "GRAPH " << endl ;
 
+    int n , m ;
+    cout << "enter number of nodes and edges : " ;
+    cin >> n >> m ;
+    int adj[n+1][m+1];
+    for(int i = 0 ; i < m ; i++){
+        cout << "enter u and v : " ; 
+        int u , v ;
+        cin >>u >> v ;
+        adj[u][v] = 1 ;
+        adj[v][u] = 1 ;
+    }
+
+    // or
+
+    cout << "using vector" << endl; 
+
+    vector<int> adjencyList[n+1];
+    for(int i = 0 ; i < n ; i ++ ){
+        int u, v;
+        cin >> u >> v;
+        adjencyList[u].push_back(v);
+        adjencyList[v].push_back(u);
+    }
+
 
     return 0;
 }
