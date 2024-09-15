@@ -5,7 +5,7 @@ const app = express()
 import validateRoute from "./routes/validate.routes.js"
 
 const corsOptions = {
-    origin: ['http://localhost:3000'],
+    origin: "*",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
     credentials: true ,

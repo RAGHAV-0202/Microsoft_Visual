@@ -2,25 +2,38 @@ import React, { useState ,  useRef} from "react";
 import "../css/validation.css"
 import logo from "../logo.png"
 import axios from "axios";
-
+import exclamation from "../exclamation.png"
+import tick from "../check.png"
 const CertificateVerification = () => {
   const candidateNameRef = useRef(null);
   const certificationNumberRef = useRef(null);
   const [src , setSrc] = useState(null)
   const [present , setPresent] = useState(false)
 
+    let data = "No member found"
+    let img = exclamation
+
+  const [response , setResponse] = React.useState([data , img])
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     const name = candidateNameRef.current.value;
     const certificateNumber = certificationNumberRef.current.value;
 
+
+
     try{
         const imgSrc = await axios.post("http://localhost:4000/api/certificates/validate" , {name , certificateNumber})
         // console.log(imgSrc.data)
-        setSrc(imgSrc.data.cerificateSrc)
+        // setSrc(imgSrc.data.cerificateSrc)
+
+        console.log(imgSrc)
         setPresent(true)
+        setResponse([imgSrc.data , tick])
     }catch(error){
-      console.log("No member found")
+      console.log(error)
+      setPresent(true)
+      setResponse([error.response.data , exclamation])
     }
 
     console.log(src)
@@ -60,13 +73,22 @@ const CertificateVerification = () => {
       <main className="container">
         <h1>Verify Certificates</h1>
         <div className="content">
-          <div className="certificate-area">
-            {/* Placeholder for certificate display area */}
-            { present &&  <img src={src} alt ="certificate"></img>}
-{    present &&  <div className="download_area">
-              <button onClick={handleDownload} >Download</button>
-            </div>}
-          </div>
+
+          {/* <div className="certificate-area">
+
+
+            { present &&  
+              <img src={src} alt ="certificate"></img>
+            }
+
+            {    present &&  
+              <div className="download_area">
+                <button onClick={handleDownload} >Download</button>
+              </div>
+            }
+          </div> */}
+
+
           <div className="form-area">
             <form onSubmit={handleSubmit}>
               <div>
@@ -89,7 +111,22 @@ const CertificateVerification = () => {
                   required
                 />
               </div>
+          
               <button type="submit">Submit</button>
+
+
+              {      present &&   
+              <div className="result_area">
+                <div className="image_area">
+                  <img src={response[1]} alt="result_img"></img>
+                </div>
+                <div className="response_area">
+                  <p>{response[0]}</p>
+                </div>
+              </div>
+              }
+
+
             </form>
           </div>
         </div>

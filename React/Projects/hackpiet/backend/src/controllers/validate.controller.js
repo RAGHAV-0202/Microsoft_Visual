@@ -18,7 +18,7 @@ const validate = async(req,res)=>{
         if(user.certificateID != certificateNumber){
             res.status(400).json("Invalid Certificate Number")
         }
-
+        res.status(200).json("Certificate is Valid")
         res.status(200).json({cerificateSrc : user.certificateLink})
 
 
