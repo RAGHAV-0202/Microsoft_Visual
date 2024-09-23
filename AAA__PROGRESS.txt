@@ -124,3 +124,7 @@ Stated DSA on 7 april 2024
 13 sep : 
 14 sep : 
 15 sep : login , signup , reset password page or H&M , linked it to backend , debugged and hosted
+16 sep : H4CKP13T landing page
+
+
+23 sep : 8:30PM DSA (lower bound, upper bound, insert position , floor , ceil) , 

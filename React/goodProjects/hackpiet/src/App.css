@@ -1,0 +1,16 @@
+body{
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  max-width: 1920px;
+  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  overflow-x: hidden;
+  
+}
+
+
+

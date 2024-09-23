@@ -43,7 +43,7 @@ function LoginComponent(){
             }])
         }else{
             try {
-                const response = await axios.post(baseUrl+"api/auth/login" , {login , password})
+                const response = await axios.post(baseUrl+"api/auth/login" , {login , password} , { withCredentials: true })
                 setError([true , response.data.message , style])
                 navigate("/")
             } catch (error) {
@@ -51,10 +51,7 @@ function LoginComponent(){
                 console.log(error.response.data.message)
                 setError([true , error.response.data.message , style])
             }
-        }
-
-
-            
+        }            
     }
 
 
