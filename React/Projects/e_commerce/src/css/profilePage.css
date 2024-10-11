@@ -1,0 +1,123 @@
+
+.profilePageDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.profilePageCenterDiv{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    /* background-color: rebeccapurple; */
+    min-height: 100vh;
+    flex-direction: column;
+    height: auto;
+    padding: 40px 25px;
+}
+.SectionOne{
+    display: flex;
+    width: 100%;
+    height: 375px;
+    flex-direction: row;
+    /* background-color: orange; */
+    justify-content: space-between;
+    
+}
+
+.UserProfileArea{
+    width: 375px;
+    height: 375px;
+    /* background-color: lightcoral; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userProfile{
+    width: 375px;
+    height: 375px;
+    background-image: url("https://www2.hm.com/content/dam/member%20card%20NS%20DK.png");
+    background-position: center;
+    background-size: cover;
+    background-color: rebeccapurple;
+    background-repeat: no-repeat;       
+    position: relative;
+}
+.welcomeUser{
+    position: absolute;
+    width: 90%;
+    /* height: 165px; */
+    background-color: #dfd6c5;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    height: auto;
+    padding: 10px;
+}
+.welcomeUser p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.userName{
+    color: rgba(255, 0, 0, 0.704);
+}
+.smallerText{
+    font-size: 10px;
+}
+
+
+.UserOffers{
+    width: calc(100% - 420px);
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.UserOffers h4{
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+.offers_area{
+    width: 80%;
+    height: 250px;
+    /* background-color: pink; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+.offer{
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rebeccapurple; */
+    justify-content: space-between;
+}
+.offer_img{
+    width: 100%;
+    height: 45%;
+    /* background-color: salmon; */
+}
+.offer_details{
+    width: 100%;
+    height: 50%;
+    /* background-color: yellow; */
+    padding-top: 15px;
+    background-color: white;
+    padding-left: 7px;
+}
+.offer_details h5{
+    font-size: 13px;
+    font-size: 500;
+    padding-bottom: 5px;
+}
+
+.offer_details p {
+    font-size: 11px;
+    color:  #707070;
+}

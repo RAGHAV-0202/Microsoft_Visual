@@ -133,5 +133,5 @@ Stated DSA on 7 april 2024
 26 sep : 
 27 sep : IITM assignment
 28 sep : 
-29 sep : COLLEGE 
-30 sep : COLLEGE , DSA FILE
+29 sep : COLLEGE , Binary Search que
+30 sep : COLLEGE , DSA FILE , slight changes in H&M , loaders , delete from cart 
