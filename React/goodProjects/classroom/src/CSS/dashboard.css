@@ -1,0 +1,345 @@
+.navbar{
+    width: 100vw;
+    /* background-color: lightgreen; */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5%;
+}
+.navbar button{
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: 0.1s all linear;
+}
+.navbar button:hover{
+    border-bottom: 1px solid gainsboro;
+    transform: scale(1.05);
+}
+.dashboard{
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    padding: 0 2%;
+    /* background-color: rgba(245, 245, 220, 0.313); */
+}
+.dashboard_area{
+    height: calc(100vh - 48px);
+}
+.dashboard_options{
+    transform: translateY(-48px);
+    width: 100%;
+}
+
+
+.option{
+    width: 100px;
+    height: 100px;
+    outline: none;
+    border-radius: 35%;
+    border: none;
+    position: relative;
+}
+.option i {
+    font-size: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.option p {
+    position: absolute;
+    bottom: -25px;
+    font-weight: 600;
+}
+
+.orange{
+    transition: 0.1s all ease;
+    background-color: #F26D21;
+}
+.orange:hover{
+    background-color: #F26DED;
+}
+.newBlue{
+    background-color: #0E72ED;
+    transition: 0.1s all ease;
+}
+.newBlue:hover{
+    background-color: #3db73f;
+}
+.transparent{
+    background-color: transparent;
+}
+
+.rightHalf_info{
+    transform: translateY(-48px);
+    width: 350px;
+    height: 450px;
+    /* background-color: rebeccapurple; */
+    border-radius : 12px;
+}
+.dateAndTime{
+    border-top-left-radius:  12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    height: 130px;
+    background-image: url("https://marketplace.canva.com/EAFO2PmJF-A/1/0/1600w/canva-brown-cute-organic-minimalist-zoom-virtual-background-zl1VO0_k3_w.jpg");   
+    background-size: cover;
+    background-position: center; 
+}
+.dateAndTime h2{
+    font-weight: 500;
+    font-size: 35px;
+}
+.dateAndTime h4{
+    font-weight: 500;
+    font-size: 13px;
+}
+.available_rooms{
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.room{
+    width: 150px;
+    height: 80px;
+    /* background-color: yellow; */
+    border-radius: 9px;
+    border: 1px solid gainsboro;
+    justify-content: space-evenly;
+    pad: 2px;
+    background-image: url("https://img.freepik.com/premium-photo/classic-black-plant-wall-houseplant_53876-400408.jpg?semt=ais_hybrid");
+    background-size: cover;
+    color: white;
+    transition: 0.2s all ease;
+}
+.room:hover {
+    transform: scale(1.05);
+}
+
+.room > p{
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.room span{
+    justify-content: space-between;
+}
+.room span >p {
+    font-size: 10px;
+}
+.logo{
+    gap: 5px;
+}
+.logo i {
+    font-size: 25px;
+    font-family: 800;
+    padding-right: 5px;
+}
+.logo > .thin{
+    font-size: 22px;
+}
+
+.logo > .bold{
+    font-size: 22px;
+}
+
+.options_navbar p {
+    padding: 0 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.options_navbar i {
+    font-size: 8px;
+    padding:  0 4px;
+}
+.dashboard_options{
+    padding-left: 4%;
+}
+.dashboard_options h1{
+    font-size: 42px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    line-height: 130%;
+}
+.dashboard_options h4{
+    font-size: 22px;
+    font-weight: 400;
+    padding-bottom: 35px;
+}
+.buttons_for_rooms{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+.buttons_for_rooms button , .input {
+    outline:  none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    gap: 10px;
+    background-color: #106ee9;
+    color: white;
+    font-weight: 500;
+    height: 48px;
+    transition: 0.1s all ease;
+}
+.input{
+    padding: none;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+}
+.input button{
+    padding: 0;
+    background-color: transparent;
+    padding:  0 16px;
+    color: black;
+}
+
+.buttons_for_rooms > button:hover{
+    background-color: #0969e0;
+}
+.input button:hover{
+    transform: scale(1.05);
+}
+
+.input input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding-left: 5px;
+}
+
+.dashboard_options button p {
+    font-size: 16px;
+}
+.rightHalf_info img{
+    padding: 30px;
+    width: 90%;
+}
+.rightHalf_info h3{
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.rightHalf_info p {
+    text-align: center;
+    font-size: 13px;
+}
+
+.CreateNewRoom{
+    width: 480px;
+    height: 150px;
+    background-color: gainsboro;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /* transform: translate(-100% , 100%); */
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+
+}
+.CreateNewRoom p {
+    font-size: 18px;
+    font-weight: 600;
+    max-width: 170px;
+}
+.CreateNewRoom input{
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    max-width: 170px;
+}
+.CreateNewRoom button{
+    width: 100%;
+    max-width: 170px;
+}
+
+.CLoseCreateRoom{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+}
+.CLoseCreateRoom i {
+    font-size: 25px;
+}
+
+@media screen and (width < 960px) {
+    .options_navbar p{
+        display: none;
+    }
+    .dashboard_area{
+        flex-direction: column;
+    }
+    .rightHalf{
+
+    }
+    .LeftHalfDashboard{
+        width: 100%;
+        height: min-content;
+        /* background-color: rebeccapurple; */
+        padding-top: 80px;
+    }
+    .LeftHalfDashboard h1{
+        font-size: 44px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .LeftHalfDashboard h4 {
+        font-size: 22px;
+        text-align: center;
+    }   
+    .dashboard_options{
+        /* background-color: yellow; */
+        height: auto;
+    }
+    .buttons_for_rooms{
+        align-items: left;
+        flex-direction: column;
+    }
+    .buttons_for_rooms div{
+        /* background-color: rebeccapurple; */
+        max-width: 280px;
+        padding-left: 20px;
+    }
+    .buttons_for_rooms div input{
+        max-width: 150px;
+    }
+    .rightHalf{
+        width: 100%;
+        height: auto;
+        /* background-color: rebeccapurple; */
+    }
+    .rightHalf img{
+        height: 250px;
+        width: 250px;        
+    }
+    .dashboard {
+        max-height: 200vh !important;
+    }
+    .CreateNewRoom{
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+    .rightHalf_info{
+        margin-top: 50px;
+        /* background-color: rebeccapurple; */
+        height: auto;
+        /* gap: 0; */
+    }
+}   
+.dashboard{
+    height: 120vh;
+}

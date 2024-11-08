@@ -2,6 +2,7 @@
   "name": "hackpiet",
   "version": "0.1.0",
   "private": true,
+  "proxy" : "http://139.59.67.27:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

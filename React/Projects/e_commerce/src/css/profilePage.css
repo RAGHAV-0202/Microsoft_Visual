@@ -84,7 +84,7 @@
     padding-bottom: 50px;
 }
 .offers_area{
-    width: 80%;
+    width: 80%; 
     height: 250px;
     /* background-color: pink; */
     justify-content: space-evenly;
@@ -97,6 +97,8 @@
     flex-direction: column;
     /* background-color: rebeccapurple; */
     justify-content: space-between;
+    border: 1px solid gainsboro;
+    /* box-shadow: 4px 2px 5px -2px black; */
 }
 .offer_img{
     width: 100%;
@@ -120,4 +122,188 @@
 .offer_details p {
     font-size: 11px;
     color:  #707070;
+}
+
+.SectionTwo{
+    display: flex;
+    /* background-color: yellow; */
+    width: 100%;
+    min-height: 50vh;
+    padding-top: 40px;
+}
+.SettingsOptions{
+    width: 40%;
+    /* background-color: lightblue; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 374px;
+}
+.settingsSetting{
+    display: flex;
+    flex-direction: row;
+    width: 374px;
+    height: 56px;
+    padding: 16px;
+}
+
+.settingsSetting:nth-child(odd) {
+    background-color: white;
+    /* Light gray */
+}
+
+.settingsSetting p {
+    width: calc(100% - 80px);
+    font-weight: 500;
+}
+
+.settingsSetting i{
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.SettingsArea{
+    width: 100%;
+    display: flex;
+    /* background-color: rebeccapurple; */
+    height: 100%;
+    min-height: 100vh;
+    padding-left: 20px;
+}
+
+.SettingAreaDiv{
+    width: 100%;
+    min-height: 80vh;
+    height: 100%;
+    padding: 0 20px;
+    /* background-color: rebeccapurple; */
+}
+
+.OrdersDiv {
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 20px;
+}
+.OrdersDiv a , .OrdersDiv button {
+    width: calc(100% - 40px);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+.OrdersDiv i {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.AccountSettingsDiv{
+    /* background-color: lightgreen; */
+}
+
+.LogOutDiv {
+    background-color: lightblue;
+}
+
+@media screen and (width < 768px) {
+    .SectionOne{
+        flex-direction: column;
+        height: auto;
+        max-height: auto;
+    }
+    .UserOffers{
+        display: none;
+    }
+    .profilePageCenterDiv{
+        padding: 0;
+    }
+    .UserProfileArea{
+        min-width: 100%;
+    }
+    .userProfile{
+        background-size: cover;
+        width: 100%;
+        /* max-width: 100%; */
+        min-width: 100%;
+    }
+}
+
+@media screen and (width < 768px) {
+    .settingsSetting {
+        width: 250px !important;
+    }
+}
+
+@media screen and (width < 530px) {
+    .SectionTwo {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .SettingsArea {
+        padding-top: 50px;
+        min-height: auto;
+    }
+
+    .SettingAreaDiv {
+        min-height: auto;
+    }
+    .settingsSetting {
+        width: auto !important;
+        min-width: 300px;
+    }
+
+}
+
+
+.AccountSettingsDiv >p {
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.AccountSettingsDiv > h2 {
+    text-align: center;
+}
+
+.account_settings_user_info{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    min-height: 200px;
+    background-color: white;
+    padding: 10px 20px;
+    flex-direction: column;
+}
+.account_settings_user_info h4{
+    margin-bottom: 25px;
+}
+.account_settings_user_info span > p{
+    font-size: 11px;
+    font-weight: 500;
+}
+.account_settings_user_info span{
+    /* background-color: rebeccapurple; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.userData{
+    font-size: 14px !important;
+    color: #707070;
 }

@@ -9,6 +9,7 @@ import "../css/top_banner.css";
 import axios from "axios";
 import baseUrl from "../base_url";
 import Loader from "./home_components/loader";
+import { Link } from "react-router-dom";
 
 function MainContentBanner(props) {
     const styles = {
@@ -133,6 +134,7 @@ function CartRight({ totalPrice }) {
 function CenteredDiv() {
     const [cart, setCart] = React.useState([]);
     const [items, setItems] = React.useState([]);
+    const [loading , setLoading] = React.useState(true)
 
     React.useEffect(() => {
         async function fetchCart() {
@@ -141,6 +143,7 @@ function CenteredDiv() {
                 const cartData = response.data.data.cart;
                 setCart(cartData);
                 setItems(cartData);  // Items are directly set from the cart data
+                setLoading(false)
             } catch (error) {
                 console.error("Error fetching cart data:", error);
             }
@@ -155,11 +158,23 @@ function CenteredDiv() {
         <div className="cart_page">
             <div className="centedDivCart">
                 <h1>Shopping bag</h1>
-                <div className="Cart_info">
-                    {items.length >= 1 && <CartLeft items={items} setItem={setItems} setCart={setCart} cart={cart} />}
-                    {items.length >= 1 && <CartRight totalPrice={totalPrice} />}
-                    {items.length < 1 && <h1>Oops... Your cart is empty</h1>}
-                </div>
+                { ! loading && items.length >= 1 &&
+                    <div className="Cart_info">
+                        {items.length >= 1 && <CartLeft items={items} setItem={setItems} setCart={setCart} cart={cart} />}
+                        {items.length >= 1 && <CartRight totalPrice={totalPrice} />}
+                    </div>
+                }         
+                {
+                   ! loading && items.length === 0 &&
+                    <span className="No_Orders">
+                        <h3>
+                            <br></br>
+                        </h3>
+                        <p>When you add something to the cart you'll find it here.</p>
+                        <Link to="/">Continue Shopping</Link>               
+                    </span>
+
+                }  
             </div>
         </div>
     );
@@ -176,5 +191,5 @@ function CartPage() {
         </div>
     );
 }
+export {CartPage , ProductInCart};
 
-export default CartPage;

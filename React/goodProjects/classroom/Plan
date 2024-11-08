@@ -1,0 +1,63 @@
+TECH STACK REQUIRED 
+
+REACT
+NODE JS
+EXPRESS JS 
+MONGO DB
+SOCKET IO
+WEB RTC
+
+BACKEND ROUTES
+
+1) Auth Routes
+	/api/auth/register
+	/api/auth/login
+	/api/auth/logout
+2) User Routes
+	POST /api/classroom   : to create a classroom
+	GET /api/classrooms  : to get all classrooms
+	GET /api/classrooms  : to get a specific classroom
+	DELETE /api/classrooms : to delete a specific classroom
+3) Chat Routes
+	Get /api/classrooms/chat : get messages
+	Post /api/classrooms/chat : send a message
+
+
+Frontend Routes
+
+/login
+/register
+/dashboard : all available classrooms and option to create and join class
+/classrooms/:id : to join a specific class
+
+
+
+o i am thinking to do it like
+login / register
+dashboard where you can see classrooms , and option to create
+
+in a classroom , you will have a board on the 90% of the screen , tabs on the bottom and users on the righ 
+chat , mic , users button the the tab bar
+
+we can speak , chat and draw on the board
+and invite others to the class
+
+
+auth done
+
+
+Classroom Creation:
+
+Implement the functionality for users to create classrooms. Ensure that the classroom model includes fields like createdBy to store the user's ID.
+Classroom Listing:
+
+Create an endpoint to fetch all classrooms and differentiate between "available classrooms" and "my classrooms."
+Real-Time Communication:
+
+Integrate Socket.IO for real-time features like chat and notifications when users join or leave classrooms.
+Interactive Whiteboard:
+
+Start building the interactive whiteboard feature. You could use libraries like fabric.js or paper.js for canvas manipulation.
+User Interface:
+
+Begin designing the frontend UI for your application, focusing on a clean layout for the dashboard, classroom view, and chat interface.

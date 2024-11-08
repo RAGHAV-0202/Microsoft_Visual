@@ -1,0 +1,133 @@
+
+.login_page{
+    padding-left: 20px;
+}
+
+.img_area_login_page{
+    padding: 20px;
+}
+
+.login_form{
+    width: 50%;
+    min-width: 407px;
+    min-height: 70%;
+    /* max-height: 530px; */
+    /* background-color: salmon; */
+    gap: auto;
+    display: flex;
+        
+}
+
+.divider {
+    display: flex;
+}
+.divider span{
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider span::before,
+.divider span::after {
+    content: "";
+    flex: 1; /* Take up equal space on both sides */
+    height: 1px; /* Thickness of the line */
+    background: #000; /* Color of the line */
+    margin: 0 10px; /* Space between the line and the text */
+}
+
+.divider span {
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
+.login_form h1{
+    width: auto;
+    height: auto;
+    /* background-color: rebeccapurple; */
+    font-weight: 500;
+    font-size: 34px;
+}
+.login_form > p{
+    width: 372px;
+    height: 20.55px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.login_form span{
+    height: 56.64px;
+    width: 404px;
+    /* background-color: rebeccapurple; */
+    margin-bottom: 10px;
+}
+.login_form span p {
+    font-size: 12px;
+    font-weight: 600;
+}
+.login_form input{
+    padding: 7px 10px;
+    outline: none;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    font-size: 11px;
+    font-weight: 500;
+}
+.login_form button{
+    width: 404px;
+    height: 35px;
+    color: white;
+    font-weight: 600;
+    margin-top: 40px;
+    outline: none;
+    border-radius: 8px;
+    background-color: #3A5B22;
+    border: none;
+    transition:  0.1s all linear;
+    margin-bottom: 20px;
+}
+.login_form button:hover{
+    background-color: #3a5b22f2;
+}
+
+.login_form span a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(0, 119, 255);
+    padding-left: 10px;
+}
+
+.submit_result{
+    /* background-color: salmon; */
+    height: auto !important; 
+    text-align: center;
+    margin-bottom: 0 !important;
+    font-size: 11px;
+}
+
+@media screen and (width < 768px) {
+    .img_area_login_page{
+        display: none;
+    }
+    .left50{
+        width: 100%;
+        padding: 0 50px !important;
+    }
+    .login_form{
+        /* background-color: yellow; */
+        padding: 0 30px;
+        /* overflow: hidden; */
+    }
+    .login_form span {
+        /* background-color: rebeccapurple; */
+        max-width: 100%;
+    }
+    .login_form > button {
+        max-width: 100%;
+    }
+
+}

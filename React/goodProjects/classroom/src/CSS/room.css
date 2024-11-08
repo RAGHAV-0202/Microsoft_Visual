@@ -1,0 +1,225 @@
+
+
+.RoomPage{
+    background-color: #202124;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.Room{
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.Options_div{
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    height: 80px;
+    /* background-color: rebeccapurple; */
+}
+
+.room_options_div1 {
+    gap: 8px;
+}
+.room_options_div1 p {
+    color:  white;
+    font-weight: 600;
+}
+
+.options{
+    height: 100% ;
+}
+
+.room_options_div2 {
+    gap : 20px;
+}
+.room_options_div2 button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: #2D2F31;
+}
+.room_options_div2 button:hover {
+    background-color: #414345;
+}
+.room_options_div2 i {
+    color: white;
+    font-size: 16px;
+}
+.room_options_div2 .hang {
+    background-color: #DC362E;
+}
+.room_options_div2 .hang:hover {
+    background-color: #e44d45;
+}
+.room_options_div3 button {
+    background-color: transparent !important;
+}
+.RoomLeft{
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 0;
+}
+.RoomRight {
+    width: 25%;
+    min-width: 300px ;
+    height: 100%;
+    gap: 10px;
+    background-color: #414345;
+    border-bottom-left-radius: 12px;
+    animation: slideInFromLeft 0.3s ease forwards;
+}
+
+  @keyframes slideInFromLeft {
+      0% {
+          transform: translateX(100%);
+          opacity: 0;
+      }
+
+      100% {
+          transform: translateX(0);
+          opacity: 1;
+      }
+  }
+
+.UserBox{
+    width: 30%;
+    height: 200px;
+    border-radius: 12px;
+    position: relative;
+    background-color: #2D2F31;
+    min-height: 200px;
+    max-width: 350px;
+    min-width: 250px;
+    overflow: hidden;
+}
+
+.UserBox video{
+    /* background-color: rebeccapurple; */
+    width: 90%;
+}
+
+.UserBox:Hover{
+    background-color: #414345;
+}
+.userLogo{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+.userLogo p {
+    font-size: 28px;
+    font-weight: 500;
+}
+.userName{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+}
+
+.RoomRightMembersNameArea{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+}
+.RoomRightMembersNameArea > span{
+    justify-content: space-between;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 20px;
+}
+.RoomRightMembersNameArea > span button{
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.userNameForRight{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    align-items: center;
+}
+
+.userNameAREA{
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.userNameRightLogo{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: yellow;
+    font-size: 14px;
+    font-weight: 700;
+}
+.userNameForRight p {
+    padding-left: 12px;
+    font-weight: 500;
+}
+
+.board_area{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (width < 760px) {
+    .room_options_div1 {
+        display: none;
+    }
+
+    .features button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        /* outline: none;
+        border: none;
+        background-color: #2D2F31 !important; */
+    }
+
+    .room_options_div3{
+        padding-left: 10px;
+        margin-right: 10px;
+    }
+    .RoomRight {
+        z-index: 10;
+        min-width: 400px !important;
+    }
+    .UserBox{
+        width: 350px;
+        
+    }
+}
+
+
+@media screen and (width < 500px) {
+    .UserBox{
+        width: 100%;
+        max-width: none;
+    }
+    .Room{
+        position: relative;
+    }
+    .RoomRight{
+        /* background-color: red; */
+        width: 100vw;
+        min-width: 100vw;
+        position: absolute;
+        padding: 5px;
+    }
+    .RoomRightMembersNameArea{
+        width: 100%;
+    }
+}

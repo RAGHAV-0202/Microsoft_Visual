@@ -1,9 +1,9 @@
-import express from "express";
 import User from "../models/users.models.js"
 import asyncHandler from "../utils/asyncHandler.js";
 import apiError from "../utils/apiError.js";
 import ApiResponse from "../utils/apiResponse.js"
-import nodeoutlook from "nodejs-nodemailer-outlook"
+import nodemailer from 'nodemailer';
+import fetch from 'node-fetch';
 import jwt from  "jsonwebtoken"
 import dotenv from "dotenv"
 dotenv.config()
@@ -51,7 +51,9 @@ const UserLogin = asyncHandler(async(req,res)=>{
     const options = {
         httpOnly : true ,
         secure : true,
-        sameSite: 'None'
+        sameSite: 'None',
+        maxAge: 30 * 24 * 60 * 60 * 1000 ,// 30 days
+        path: '/'
     }
 
     return res.status(200)
@@ -107,13 +109,29 @@ const UserRegister = asyncHandler(async(req,res)=>{
 
 })
 
-const UserLogout = asyncHandler(async(req,res)=>{
-    const options = {
-        httpOnly : true , 
-        secure : true
-    }
-    return res.status(200).clearCookie("accessToken").clearCookie("refreshToken").json(new ApiResponse(200 , "user logged out"))
-})
+// const UserLogout = asyncHandler(async(req,res)=>{
+//     const options = {
+//         httpOnly : true , 
+//         secure : true
+//     }
+//     return res.status(200).clearCookie("accessToken").clearCookie("refreshToken").json(new ApiResponse(200 , "user logged out"))
+// })
+
+const UserLogout = asyncHandler(async (req, res) => {
+    const cookieOptions = {
+        httpOnly: true,
+        secure: true, // ensure it's set to true if you're using HTTPS in production
+        sameSite: 'None', // should match how it was set
+        path: '/' // ensure the path matches how the cookie was set
+    };
+
+    // Clear both accessToken and refreshToken cookies
+    res.clearCookie('accessToken', cookieOptions);
+    res.clearCookie('refreshToken', cookieOptions);
+
+    // Return the response after clearing the cookies
+    return res.status(200).json(new ApiResponse(200, "user logged out"));
+});
 
 const UserRefreshAccessToken = asyncHandler(async(req,res)=>{
     const oldRefreshToken = req.cookies.refreshToken
@@ -147,57 +165,91 @@ const UserRefreshAccessToken = asyncHandler(async(req,res)=>{
 
 })
 
-const UserPasswordResetRequest = asyncHandler(async(req,res)=>{
 
-    const {email} = req.body
-    if(!email){
-        throw new apiError("400" , "Enter Email")
+const UserPasswordResetRequest = asyncHandler(async (req, res) => {
+    const { email } = req.body;
+    if (!email) {
+        throw new apiError("400", "Enter Email");
     }
-    const user = await User.findOne({email : email})
-    
-    if(!user){
-        throw new apiError(400 , "user not registered")
+
+    const user = await User.findOne({ email: email });
+    if (!user) {
+        throw new apiError(400, "User not registered");
     }
 
     const Token = jwt.sign(
-        {_id : user._id},
-        process.env.RESET_PASSWORD_SECRET , 
-        {expiresIn : process.env.RESET_PASSWORD_EXPIRY}
-    )
-    user.resetToken = Token ;
-    user.save();
+        { _id: user._id },
+        process.env.RESET_PASSWORD_SECRET,
+        { expiresIn: process.env.RESET_PASSWORD_EXPIRY }
+    );
 
-    const link = `${process.env.BASE_URL}/${Token}`
+    user.resetToken = Token;
+    await user.save();
 
-    nodeoutlook.sendEmail({
-    auth: {
-        user: process.env.OUTLOOK_MAIL,
-        pass: process.env.OUTLOOK_PASSWORD ,
-    },
-    from: process.env.OUTLOOK_MAIL,
-    to: email,
-    subject: 'Here is your Password Reset Link',
-    html: `
-        <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center;">
-            <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <h1 style="color: #007bff;">Password Reset Request</h1>
-                <p style="font-size: 16px; color: #333;">We received a request to reset your password. Click the button below to reset your password.</p>
-                <a href="${link}" style="display: inline-block; background-color: #007bff; color: #ffffff; padding: 15px 25px; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: bold; margin-top: 20px;">Reset Password</a>
-                <p style="font-size: 14px; color: #555; margin-top: 20px;">If you did not request this password reset, please ignore this email.</p>
-                <p style="font-size: 12px; color: #aaa; margin-top: 20px;">Don't share this link with anyone else. This link will expire in 15 minutes.</p>
-            </div>
-        </div>
-    `,
+    const link = `${process.env.BASE_URL}/${Token}`;
 
-    text: 'Expires in 15 minutes',
-    replyTo: 'raghavkapoor16947@gmail.com',
+    // Gmail SMTP configuration
 
-    onError: (e) => console.log(e) ,
-    onSuccess: (i) => res.status(200).json(new ApiResponse(200 , i.messageId ,"reset link sent successfully"))
+
+    console.log(process.env.GMAIL_USER ,  process.env.GMAIL_PASSWORD )
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.GMAIL_USER,        // Your Gmail email
+            pass: process.env.GMAIL_PASSWORD     // Your Gmail password or App Password
+        }
+    });
+
+    const mailOptions = {
+        from: process.env.GMAIL_USER,
+        to: email,
+        subject: 'Password Reset Request',
+        html: `
+            <p>Password Reset Request</p>
+            <p>Click the link below to reset your password:</p>
+            <a href="${link}">Reset Password</a>
+            <p>This link will expire in 15 minutes.</p>
+            <p>If you didn't request this password reset, please ignore this email.</p>
+        `
+    };
+
+    try {
+        await transporter.verify();
+        
+        const info = await transporter.sendMail(mailOptions);
+        return res.status(200).json(
+            new ApiResponse(200, info.messageId, "Reset link sent successfully")
+        );
+    } catch (error) {
+        console.error("Email sending error:", error);
+        throw new apiError(500, "Failed to send reset email");
+    }
+});
+
+
+// Function to get access token
+async function getAccessToken() {
+    const tokenEndpoint = `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/v2.0/token`;
+    
+    const formData = new URLSearchParams({
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
+        scope: 'https://graph.microsoft.com/.default',
+        grant_type: 'client_credentials'
+    });
+
+    const response = await fetch(tokenEndpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    });
+
+    const data = await response.json();
+    return data.access_token;
 }
-);
-
-})
 
 const UserPasswordResetPage = asyncHandler(async(req,res)=>{
     const {token} = req.params

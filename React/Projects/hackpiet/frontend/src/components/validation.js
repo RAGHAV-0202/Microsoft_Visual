@@ -23,7 +23,7 @@ const CertificateVerification = () => {
 
 
     try{
-        const imgSrc = await axios.post("http://localhost:4000/api/certificates/validate" , {name , certificateNumber})
+        const imgSrc = await axios.post("https://hackpietbackend-8267t8xm.b4a.run/api/certificates/validate" , {name , certificateNumber})
         // console.log(imgSrc.data)
         // setSrc(imgSrc.data.cerificateSrc)
 

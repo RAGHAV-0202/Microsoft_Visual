@@ -135,3 +135,34 @@ Stated DSA on 7 april 2024
 28 sep : 
 29 sep : COLLEGE , Binary Search que
 30 sep : COLLEGE , DSA FILE , slight changes in H&M , loaders , delete from cart 
+
+10 oct : h&m 
+11 oct : h&m + hack piet hosting on digital ocean using SSH and FileZilla
+12 oct : COLD
+13 oct : IITM Assignments , DSA started from FCC 9 hr video , 
+13 oct : DSA LL
+14 oct : DSA Stack
+15 oct : DSA 
+16 oct :
+17 oct :
+18 oct : React Website for anshumaan + DSA
+19 oct : Maths
+20 oct : DSA , infix prefix , postfix
+21 oct : DSA
+22 oct : TREES
+23 oct : 
+24 oct : 
+25 oct : IITM
+26 oct : IITM
+27 oct : IIT-M EXAM DAY
+28 oct : DSA BST
+29 oct : DSA IMPLEMENTATIONS BST
+30 oct : VIRTUAL ROOM / CLASS . BACKEND AS PER MY KNOWLEDGE 
+31 OCT : FRONTEND , LOGIN , REGISTER , DASHBOARD , BACKEND , ROOM PAGE , socket.io
+1 NOV : Hosted , Added Interective Colloborative whiteboard 
+2 Nov : fixed CSS 
+3 Nov : added razorpay to h&m
+4 Nov : created a chat app
+5 Nov : 
+6 Nov : 
+7 Nov :

@@ -1,0 +1,45 @@
+
+.Navbar{
+    display: flex;
+    width: 100vw;
+    height: 110px;
+    padding:  0 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+.Navbar div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+.NavBar_col1 , .NavBar_col3{
+    width: 25%;
+    height: 100%;
+    /* background-color: orange; */
+    display: flex;
+}
+.NavBar_col2{
+    /* background-color: aqua; */
+    width: 75%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.NavBar_col1 img{
+    width: 155px;
+}
+.NavBar_col3{
+    justify-content: right;
+    gap: 25px;
+}
+.NavBar_col2 button , .NavBar_col3 button{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
