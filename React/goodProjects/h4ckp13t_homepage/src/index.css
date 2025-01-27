@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+body{
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: nothing;
+  src: url('./resources/ndot-47-inspired-by-nothing.otf') format("opentype");
+}
+.ctf{
+  background: url("./resources/bg_ctf.png");
+  background-size: cover;
+}
+.ctf a p , .text p {
+  font-family: nothing;
+}
+
+body {
+  cursor: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%20id%3D%22Interface-Essential-Cursor--Streamline-Pixel%22%20height%3D%2232%22%20width%3D%2232%22%3E%3Cdesc%3EInterface%20Essential%20Cursor%20Streamline%20Icon%3A%20https%3A//streamlinehq.com%3C/desc%3E%3Ctitle%3Einterface-essential-cursor%3C/title%3E%3Cg%3E%3Cpath%20d%3D%22m17.52%2019.805%200%203.05%201.53%200%200%20-1.52%206.09%200%200%20-3.05%201.52%200%200%201.52%20-6.1%200z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M22.09%2016.755h1.53v1.53h-1.53Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M20.57%2025.905h1.52v3.04h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M20.57%2015.235h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M19.05%2022.855h1.52v3.05h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M19.05%2013.715h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M17.52%2028.945h3.05v1.53h-3.05Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M17.52%2012.185h1.53v1.53h-1.53Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M16%2025.905h1.52v3.04H16Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M16%2010.665h1.52v1.52H16Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M14.47%2022.855H16v3.05h-1.53Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M14.47%209.135H16v1.53h-1.53Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M12.95%2021.335h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M12.95%207.615h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M11.43%2022.855h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M11.43%206.095h1.52v1.52h-1.52Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M9.9%2024.375h1.53v1.53H9.9Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22M9.9%204.565h1.53v1.53H9.9Z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3Cpath%20d%3D%22m6.86%201.525%200%2025.9%203.04%200%200%20-1.52%20-1.52%200%200%20-21.34%201.52%200%200%200%201.52%200%200%20-1.52%20-1.52%200%200%200%20-1.52%20-1.52%200z%22%20fill%3D%22%23EF9E00%22%20stroke-width%3D%221%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E'), auto;
+}

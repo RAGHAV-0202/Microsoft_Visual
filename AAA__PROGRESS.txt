@@ -165,4 +165,23 @@ Stated DSA on 7 april 2024
 4 Nov : created a chat app
 5 Nov : 
 6 Nov : 
+<<<<<<< HEAD
 7 Nov :
+8 Nov : 
+9 Nov : Taught C to someone
+10 Nov : College work
+11 Nov : Practiced for frontend frenzy competiton
+12 Nov : Got #1 Position in frontend frenzy competiton
+13 Nov : 
+14 Nov : wasted
+15 Nov : LeetCode 2 que LL
+
+
+2025
+
+22 Jan : H4CKP13T website
+23 Jan : H4CKP13T website
+24 Jan : Started New animated website from yt
+=======
+7 Nov :
+>>>>>>> parent of bd0e4a5 (commit)

@@ -1,0 +1,131 @@
+
+
+.workShopPage{
+    justify-content: space-between;
+}
+
+.workshop_content{
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    padding: 64px 0;
+    gap: 20px;
+}
+
+.workShopName{
+    /* background-color: darkblue; */
+    padding: 12px 0;
+    font-size: 66px;
+    font-weight: 700;
+
+}
+
+.speakerDetails{
+    padding : 70px 0 0 0 ;
+    /* background-color: darkblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+
+.speakerDetails h2{
+    font-size: 36px;
+    padding: 15px 0;
+    margin: 15px 0;
+}
+.speakerDetails img{
+    width: 224px;
+    height: 224px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0 ;
+}
+
+.speakerName{
+    font-size: 32px !important;
+    font-weight: 500;
+    width: max-content;
+}
+
+.speakerDesignation{
+    font-size: 22px;
+    color: #BFB3BC;
+}
+
+.speakerCompany{
+    line-height: 34px;
+    padding-bottom: 30px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.thin_line{
+    display: flex;
+    width: 200px ;
+    height: 2px;
+    background: linear-gradient(90deg, #6B03C9 0%, #F90109 100%);
+    margin: 10px 0;
+    margin-bottom: 35px;
+}
+
+.agenda{
+    margin-top: 30px;
+}
+.agenda_particular{
+    margin-bottom: 40px;
+}
+.Agenda_Heading{
+    font-size: 28px;
+}
+.agenda_particular p {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #BFB3BC;
+}
+.agenda_particular p::before {
+    content: "• ";
+    color: white;
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+li {
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+li::before {
+    content: "• ";
+    color: white;
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.red{
+    color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.speakerDetails > p {
+    font-size: 20px;
+    color: #BFB3BC;
+}
+
+@media screen and (width < 768px) {
+    .workShopPage > .centeredDiv{
+        padding-left: 20px !important; 
+        padding-right: 20px !important;
+    }
+    .speakerDetails p , li{
+        font-size: 14px;
+    }
+    .workShopPage h2 , .Agenda_Heading{
+        font-size: 16px;
+    }
+}

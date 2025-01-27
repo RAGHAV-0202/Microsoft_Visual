@@ -16,3 +16,10 @@ predict_disease.py
 label_transform.pkl
 
 Model
+
+ShortFusion
+oauth2.json
+secret1.json
+secret2.json
+secret3.json
+secret4.json
