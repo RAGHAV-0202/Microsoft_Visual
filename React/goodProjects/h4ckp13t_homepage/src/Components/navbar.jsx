@@ -75,9 +75,10 @@ const Navbar = () =>{
                     
                         <div className='navbar_links'>
                             {/* <button>Conference</button> */}
-                            <a href='/workshop' >Workshops</a>
+                            <a href='/workshops' >Workshops</a>
                             {/* <button>Village</button> */}
                             <a href='/ctf'>CTF</a>
+                            <a href='/village'>Village</a>
                             <a href='/partners'>Partners</a>
                         </div>
 
@@ -107,10 +108,12 @@ const Navbar = () =>{
                 <div className='extended flex flex-col  '>
                     <div className='navbar_links '>
                         {/* <button>Conference</button> */}
-                        <a href='/workshop' >Workshops</a>
+                        <a href='/workshops' >Workshops</a>
                         {/* <button>Village</button> */}
                         <a href='/ctf'>CTF</a>
+                        <a href='/village'>Village</a>
                         <a href='/partners'>Partners</a>
+                        
                         <a className='noBorder' href='https://chat.whatsapp.com/FQ3BoGFN6Yd2uuKhjjCzYw'>Join Us</a>
                     </div>
                 </div>

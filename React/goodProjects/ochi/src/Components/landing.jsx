@@ -1,9 +1,12 @@
 // import React from 'react'
+import { motion } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa";
 
+
 function Landing() {
+
   return (
-    <div className="w-full h-full min-h-screen bg-zinc-900 border-t-1"> 
+    <div data-scroll data-scroll-speed="-0.3" className="w-full h-full min-h-[100vh] bg-zinc-900 border-t-1"> 
     
         <div className="textstructure mt-50 px-20">
 
@@ -16,7 +19,12 @@ function Landing() {
             </div>
             <div className="masker">
                 <div className = "w-fit flex items-center  flex-row">
-                    <div className="w-[9vw] h-[5vw] bg-amber-200 flex relative top-[0.6vw] rounded-lg mr-[1.5vw]"></div>
+
+                    <motion.div initial={{width : "5px"}} animate={{width : "9vw"}} transition={{ease : [0.76, 0, 0.24, 1] , delay : 0.5 , duration : 0.5}} className="w-[9vw] h-[5vw] overflow-hidden flex relative top-[0.6vw] rounded-lg mr-[1.5vw]">
+                        <img className="w-full h-full" src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="img"></img>
+                    </motion.div>
+
+
                     <h1 className="leading-[6vw] uppercase text-[8vw] font-['Founders'] tracking-wide font-semibold">
                         Eye opening
                     </h1>

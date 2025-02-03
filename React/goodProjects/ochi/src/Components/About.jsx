@@ -3,7 +3,7 @@ import { GoDotFill } from "react-icons/go";
 
 function About() {
   return (
-    <div className="about w-full px-20 py-25 flex rounded-t-4xl bg-[#CDEA68] flex-col">
+    <div data-scroll data-scroll-section data-scroll-speed="-0.3" className="z-20 about w-full px-20 py-25 flex rounded-t-4xl bg-[#CDEA68] flex-col">
         <h4 className="text-[3.5vw] text-black font-['Neue']">
             Ochi is a strategic presentation agency for forward-thinking businesses that need to <span className="underline"> raise funds, sell products, explain complex ideas</span>, and <span className="underline">hire great people.</span> 
         </h4>
