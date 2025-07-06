@@ -64,3 +64,67 @@ int main(){
 
     return 0;
 }
+
+
+vector<int> bfsOfGraph(vector<vector<int>> &adj) {
+    
+    int visited[adj.size()] = {0} ;
+    visited[0] = 1 ;
+    
+    queue <int> q ;
+    q.push(0);
+    
+    vector<int> bfs ;
+    
+    while(!q.empty()){
+        int node = q.front() ;
+        q.pop();
+        bfs.push_back(node);
+        
+        for(auto it : adj[node]){
+            if(!visited[it] == 1){
+                visited[it] = 1 ;
+                q.push(it);
+            }
+        }
+    }
+    
+    return bfs; 
+}
+
+vector <int> bfs2(vector<vector<int>> &adj){
+    vector <int> visited(adj.size() , 0);
+    visited[0] = 1 ;
+    queue <int> q ;
+    q.push(0);
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        cout << node << " ";
+        for(auto it : adj[node]){
+            if(!visited[it]){
+                visited[it] = 1 ;
+                q.push(it);
+            }
+        }
+    }
+}
+
+
+
+void dfs(int node , int visited , vector <int> &ls , vector<vector<int>> &adj){
+    visited[node] = 1 ;
+    ls.push_back(node);
+
+    for(auto it : adj[node]){
+        if(!visited[it]){
+            dfs(it , visited , ls , adj);
+        }
+    }
+}
+
+vector<int> dfsOfGraph(vector<vector<int>> &adj){
+    vector<int> ls ;
+    int visited[adj.size()] = {0};
+    int start = 0 ;
+}
